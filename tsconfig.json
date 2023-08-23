@@ -1,0 +1,29 @@
+{
+	"extends": "@vue/tsconfig/tsconfig.json",
+	"compilerOptions": {
+		"ignoreDeprecations": "5.0",
+		// "sourceMap": true,
+		// "baseUrl": ".",
+		"sourceMap": true,
+		"baseUrl": ".",
+		"module": "ESNext",
+		"target": "es2016",
+		"lib": ["DOM", "ESNext"],
+		"strict": true,
+		"jsx": "preserve",
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"moduleResolution": "bundler",
+		"resolveJsonModule": true,
+		"noUnusedLocals": true,
+		"strictNullChecks": true,
+		"allowJs": true,
+		"forceConsistentCasingInFileNames": true,
+		"paths": {
+			"@/*": ["./src/*"]
+		},
+		// "lib": ["esnext", "dom"],
+		"types": ["@dcloudio/types", "@uni-helper/uni-app-types"]
+	},
+	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+}

@@ -1,0 +1,81 @@
+{
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			// uni-ui 规则如下配置
+			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
+		}
+	},
+	"pages": [
+		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/home/home",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/category/category",
+			"style": {
+				"navigationBarTitleText": "category"
+			}
+		},
+		{
+			"path": "pages/cart/cart",
+			"style": {
+				"navigationBarTitleText": "cart"
+			}
+		},
+		{
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "user"
+			}
+		},
+		{
+			"path": "pages/hot/hot",
+			"style": {
+				"navigationBarTitleText": "hot"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "坤坤商城",
+		"navigationBarBackgroundColor": "#fbb957",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#333",
+		"selectedColor": "#fbb957",
+		"backgroundColor": "#fff",
+		"borderStyle": "white",
+		"list": [
+			{
+				"pagePath": "pages/home/home",
+				"text": "首页",
+				"iconPath": "static/tabs/home_default.png",
+				"selectedIconPath": "static/tabs/home_selected.png"
+			},
+			{
+				"pagePath": "pages/category/category",
+				"text": "分类",
+				"iconPath": "static/tabs/category_default.png",
+				"selectedIconPath": "static/tabs/category_selected.png"
+			},
+			{
+				"pagePath": "pages/cart/cart",
+				"text": "购物车",
+				"iconPath": "static/tabs/cart_default.png",
+				"selectedIconPath": "static/tabs/cart_selected.png"
+			},
+			{
+				"pagePath": "pages/user/user",
+				"text": "我的",
+				"iconPath": "static/tabs/user_default.png",
+				"selectedIconPath": "static/tabs/user_selected.png"
+			}
+		]
+	}
+}
