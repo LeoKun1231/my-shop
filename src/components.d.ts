@@ -16,6 +16,7 @@ declare module 'vue' {
     HomeHeader: typeof import('./pages/home/components/home-header.vue')['default']
     HomeRecommend: typeof import('./pages/home/components/home-recommend.vue')['default']
     HomeSkeleton: typeof import('./pages/home/components/home-skeleton.vue')['default']
+    HotSkeletion: typeof import('./pages/hot/components/hot-skeletion.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
