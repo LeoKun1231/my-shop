@@ -2,13 +2,13 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-11 18:59:32
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-08-22 19:55:46
+ * @LastEditTime: 2023-08-25 19:16:39
  * @FilePath: \hello-uniapp\src\pages\home\home.vue
  * @Description: 首页
 -->
 <script setup lang="ts">
 import AppGuessLike from '@/components/app-guess-like/app-guess-like.vue'
-import type { IHomeCategory, IHomeHotRecommend } from '@/types/user'
+import type { IHomeCategory, IHomeHotRecommend } from '@/types/home'
 
 const appGuessLikeRef = ref<InstanceType<typeof AppGuessLike>>()
 const isLoading = ref(false)
@@ -47,7 +47,7 @@ const handleScrollToLower = () => {
  */
 const bannerURLs = ref<string[]>([])
 async function getBannerData() {
-	const { result } = await getHomeBannersAPI()
+	const { result } = await getGlobalBannersAPI()
 	bannerURLs.value = result.map((item) => item.imgUrl)
 }
 
@@ -72,9 +72,15 @@ async function getRecommendData() {
 <template>
 	<home-header />
 	<home-skeleton v-if="isLoading" />
-	<app-scroll-view v-else :refresher-triggered="isRefresh" :refresherrefresh="handleRefresh" :scrolltolower="handleScrollToLower">
+	<app-scroll-view
+		class="fles-1 h-full overflow-hidden"
+		v-else
+		:refresher-triggered="isRefresh"
+		:refresherrefresh="handleRefresh"
+		:scrolltolower="handleScrollToLower"
+	>
 		<app-swiper id="appSwiper" :urls="bannerURLs" />
-		<view mx-2>
+		<view class="mx-2">
 			<home-category :categories="categories" />
 			<home-recommend :recommends="recommends" />
 			<app-guess-like ref="appGuessLikeRef" />
@@ -87,5 +93,7 @@ page {
 	background-color: #f7f7f7;
 	display: flex;
 	flex-direction: column;
+	overflow: hidden;
 }
 </style>
+@/types/home

@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-10 12:10:48
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-08-20 09:29:36
+ * @LastEditTime: 2023-08-24 20:52:29
  * @FilePath: \hello-uniapp\vite.config.ts
  * @Description:
  */
@@ -15,6 +15,12 @@ import Components from 'unplugin-vue-components/vite'
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [
+		/**
+		 * unocss
+		 * @see https://github.com/antfu/unocss
+		 * see unocss.config.ts for config
+		 */
+		Unocss(),
 		// https://github.com/antfu/unplugin-auto-import
 		AutoImport({
 			imports: ['vue', 'uni-app'],
@@ -33,12 +39,6 @@ export default defineConfig({
 			dirs: ['src/components', 'src/pages/**/components']
 		}),
 
-		uni(),
-		/**
-		 * unocss
-		 * @see https://github.com/antfu/unocss
-		 * see unocss.config.ts for config
-		 */
-		Unocss()
+		uni()
 	]
 })

@@ -7,6 +7,7 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AppCategory: typeof import('./components/app-category/app-category.vue')['default']
     AppGuessLike: typeof import('./components/app-guess-like/app-guess-like.vue')['default']
     AppScrollView: typeof import('./components/app-scroll-view/app-scroll-view.vue')['default']
     AppShopItemV1: typeof import('./components/app-shop-item-v1/app-shop-item-v1.vue')['default']

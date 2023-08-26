@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-10 17:03:10
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-08-18 20:16:54
+ * @LastEditTime: 2023-08-24 21:03:00
  * @FilePath: \hello-uniapp\uno.config.ts
  * @Description:
  */
@@ -47,6 +47,8 @@ export default defineConfig({
 	 * @see https://github.com/unocss/unocss#shortcuts
 	 */
 	shortcuts: [
+		['around', 'flex justify-around items-center'],
+		['between', 'flex justify-between items-center'],
 		['center', 'flex justify-center items-center'],
 		[
 			'btn',

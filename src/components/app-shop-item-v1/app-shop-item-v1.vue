@@ -16,10 +16,10 @@ defineProps<{
 
 <template>
 	<view class="w-40vw bg-white p-3 mb-2 rounded-3 shadow-md">
-		<image rounded-3 w-full h-42 mode="aspectFill" :src="guessLike.picture" />
+		<image class="rounded-3 w-full h-42" mode="aspectFill" :src="guessLike.picture" />
 		<view class="line-clamp-1 my-1 text-dark-100">{{ guessLike.name }}</view>
 		<!-- 在scroll-view中 view里面嵌套text 添加新数据会导致scroll-view 重回顶部 -->
-		<view flex items-center>
+		<view class="flex items-center">
 			<view class="text-[#f00]">¥</view>
 			<view class="text-[#f00] ml-0.25 font-blod">{{ guessLike.price }}</view>
 		</view>

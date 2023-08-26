@@ -12,18 +12,18 @@ const { safeAreaTop } = useSystem()
 
 <template>
 	<view class="home-header" :style="{ paddingTop: safeAreaTop + 'px' }">
-		<view flex items-center py-3 pl-6>
+		<view class="flex items-center py-3 pl-6">
 			<view class="text-white text-xl">坤坤商城</view>
 			<view class="w-0.25 h-4 bg-white mx-2"></view>
 			<view class="text-white text-xs">你值得放心</view>
 		</view>
-		<view center px-4 pb-3>
-			<view h-6 w-full bg-orange-200 border-rounded-3 text-white text-xs flex items-center justify-between>
-				<view center>
-					<view i-carbon-search font-bold ml-3></view>
-					<view ml-1>搜索商品</view>
+		<view class="center px-4 pb-3">
+			<view class="h-6 w-full bg-orange-200 border-rounded-3 text-white text-xs between">
+				<view class="center">
+					<view class="i-carbon-search font-bold ml-3"></view>
+					<view class="ml-1">搜索商品</view>
 				</view>
-				<view i-carbon-scan-alt mr-3></view>
+				<view class="i-carbon-scan-alt mr-3"></view>
 			</view>
 		</view>
 	</view>

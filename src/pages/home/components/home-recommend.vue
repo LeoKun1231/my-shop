@@ -23,15 +23,16 @@ function goToRecommend(index: number) {
 <template>
 	<view class="home-recommend grid grid-cols-2 gap-2 bg-white py-3">
 		<view v-for="(recommend, index) in recommends" :key="recommend.id" @click="goToRecommend(index + 1)">
-			<view mb-1>
-				<text text-lg font-bold ml-2 mr-3>{{ recommend.title }}</text>
-				<text text-gray-400>{{ recommend.alt }}</text>
+			<view class="mb-1">
+				<text class="text-lg font-bold ml-2 mr-3">{{ recommend.title }}</text>
+				<text class="text-gray-400">{{ recommend.alt }}</text>
 			</view>
-			<view flex items-center justify-around>
-				<image h-20 w-20 :src="pic" v-for="pic in recommend.pictures" :key="pic" />
+			<view class="around">
+				<image class="h-20 w-20" :src="pic" v-for="pic in recommend.pictures" :key="pic" />
 			</view>
 		</view>
 	</view>
 </template>
 
 <style scoped lang="scss"></style>
+@/types/home

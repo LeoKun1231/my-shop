@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-21 19:31:35
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-08-24 08:55:05
+ * @LastEditTime: 2023-08-25 20:11:49
  * @FilePath: \hello-uniapp\src\pages\hot\hot.vue
  * @Description: 
 -->
@@ -47,7 +47,7 @@ async function getHotData() {
 	bannerPic.value = result.bannerPicture
 	titles.value = result.subTypes.map((item) => item.title)
 	subTypes.value = result.subTypes
-	// isLoading.value = false
+	isLoading.value = false
 }
 /**
  * 防止滚动到底部 发送太多请求
@@ -80,7 +80,7 @@ async function handleScrollToLower() {
 	<view v-else class="hot">
 		<view class="h-fit">
 			<view class="rounded-bl-10 rounded-br-10 overflow-hidden">
-				<image w-full h-30 :src="bannerPic"></image>
+				<image class="w-full h-30" :src="bannerPic"></image>
 			</view>
 			<view class="relative z-10 w-full center mt-[-2.5rem]">
 				<app-tab v-model:current-index="currentIndex" :titles="titles" />
@@ -88,11 +88,16 @@ async function handleScrollToLower() {
 		</view>
 
 		<template v-for="(subType, index) in subTypes" :key="subType.id">
-			<app-scroll-view v-show="currentIndex == index" :refresher-enabled="false" :scrolltolower="handleScrollToLower">
-				<view class="flex flex-wrap items-center justify-around">
+			<app-scroll-view
+				class="flex-1 h-full overflow-hidden"
+				v-show="currentIndex == index"
+				:refresher-enabled="false"
+				:scrolltolower="handleScrollToLower"
+			>
+				<view class="flex-wrap around">
 					<app-shop-item-v1 v-for="shop in subType?.goodsItems?.items" :guess-like="shop" :key="shop.id + Math.random()" />
 				</view>
-				<uni-load-more py-2 :status="loadingStatus" />
+				<uni-load-more class="py-2" :status="loadingStatus" />
 			</app-scroll-view>
 		</template>
 	</view>

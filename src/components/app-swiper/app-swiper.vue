@@ -36,7 +36,7 @@ function onImagePreview() {
 
 <template>
 	<uni-swiper-dot :info="urls" :current="currentIndex" field="content">
-		<swiper h-40 @change="onSwiperChange" autoplay circular>
+		<swiper class="h-40" @change="onSwiperChange" autoplay circular>
 			<swiper-item v-for="item in urls" :key="item">
 				<image class="h-full w-full" :src="item" mode="aspectFill" @click="onImagePreview()" />
 			</swiper-item>

@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-10 12:10:48
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-08-20 15:42:04
+ * @LastEditTime: 2023-08-25 19:09:20
  * @FilePath: \hello-uniapp\src\App.vue
  * @Description: 
 -->
@@ -18,15 +18,8 @@ onHide(() => {
 })
 </script>
 <style lang="scss">
+@import './styles/main.css';
 image {
 	vertical-align: middle;
-}
-
-app-scroll-view,
-scroll-view {
-	box-sizing: border-box;
-	flex: 1;
-	height: 100%;
-	overflow: hidden;
 }
 </style>

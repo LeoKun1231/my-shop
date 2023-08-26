@@ -60,7 +60,7 @@
 			},
 			{
 				"pagePath": "pages/category/category",
-				"text": "分类",
+				"text": "商品分类",
 				"iconPath": "static/tabs/category_default.png",
 				"selectedIconPath": "static/tabs/category_selected.png"
 			},

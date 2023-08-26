@@ -55,15 +55,15 @@ defineExpose({
 
 <template>
 	<view class="app-guess-like">
-		<view center py-3>
-			<image mode="aspectFill" w-3 h-3 src="@/static/images/bubble.png"></image>
+		<view class="center py-3">
+			<image mode="aspectFill" class="w-3 h-3" src="@/static/images/bubble.png"></image>
 			<view class="text-lg px-1 text-gray-600">猜你喜欢</view>
-			<image mode="aspectFill" w-3 h-3 src="@/static/images/bubble.png"></image>
+			<image mode="aspectFill" class="w-3 h-3" src="@/static/images/bubble.png"></image>
 		</view>
-		<view class="container flex flex-wrap justify-between">
+		<view class="container flex-wrap between">
 			<app-shop-item-v1 :guess-like="guessLike" v-for="guessLike in guessLikeLists" :key="guessLike.id + Math.random()" />
 		</view>
-		<uni-load-more py-2 :status="loadingStatus" />
+		<uni-load-more class="py-2" :status="loadingStatus" />
 	</view>
 </template>
 
