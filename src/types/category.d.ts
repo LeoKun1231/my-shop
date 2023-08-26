@@ -1,3 +1,5 @@
+import type { IGlobalGuessLike } from './global'
+
 /**
  * 一级分类项
  */
@@ -33,7 +35,7 @@ export interface ICategorySecond {
 	/**
 	 * 商品集合
 	 */
-	goods: ICategoryGoods[]
+	goods: ICategoryGood[]
 	/**
 	 * 二级分类id
 	 */
@@ -54,27 +56,4 @@ export interface ICategorySecond {
 /**
  * 商品项
  */
-export interface ICategoryGood {
-	/**
-	 * 商品描述
-	 */
-	desc: string
-	discount: null
-	/**
-	 * 商品id
-	 */
-	id: string
-	/**
-	 * 商品名称
-	 */
-	name: string
-	orderNum: number
-	/**
-	 * 商品图片
-	 */
-	picture: string
-	/**
-	 * 商品价格
-	 */
-	price: string
-}
+export interface ICategoryGood extends IGlobalGuessLike {}

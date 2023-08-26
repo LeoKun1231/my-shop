@@ -6,7 +6,12 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
+  const appCategory: (typeof import('../components/app-category/app-category.vue'))['default']
+  const appGuessLike: (typeof import('../components/app-guess-like/app-guess-like.vue'))['default']
   const appScrollView: (typeof import('../components/app-scroll-view/app-scroll-view.vue'))['default']
+  const appShopItemV1: (typeof import('../components/app-shop-item-v1/app-shop-item-v1.vue'))['default']
+  const appSwiper: typeof import('../components/app-swiper/app-swiper.vue')['default']
+  const appTab: (typeof import('../components/app-tab/app-tab.vue'))['default']
   const asyncComputed: (typeof import('@vueuse/core'))['asyncComputed']
   const autoResetRef: (typeof import('@vueuse/core'))['autoResetRef']
   const computed: typeof import('vue')['computed']
@@ -34,7 +39,7 @@ declare global {
   const effectScope: typeof import('vue')['effectScope']
   const extendRef: (typeof import('@vueuse/core'))['extendRef']
   const get: typeof import('../utils/request')['get']
-  const getBannersAPI: typeof import('../api/home')['getBannersAPI']
+  const getBannersAPI: (typeof import('../api/home'))['getBannersAPI']
   const getCategroyDataAPI: typeof import('../api/category')['getCategroyDataAPI']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']

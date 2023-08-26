@@ -2,12 +2,12 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-13 19:36:17
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-08-21 21:37:24
+ * @LastEditTime: 2023-08-26 11:21:45
  * @FilePath: \hello-uniapp\src\pages\home\components\home-recommend.vue
  * @Description:首页热门推荐
 -->
 <script setup lang="ts">
-import type { IHomeHotRecommend } from '@/types/user'
+import type { IHomeHotRecommend } from '@/types/home'
 
 defineProps<{
 	recommends: IHomeHotRecommend[]
@@ -35,4 +35,3 @@ function goToRecommend(index: number) {
 </template>
 
 <style scoped lang="scss"></style>
-@/types/home

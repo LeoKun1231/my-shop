@@ -1,3 +1,11 @@
+/*
+ * @Author: Leo l024983409@qq.com
+ * @Date: 2023-08-13 20:15:18
+ * @LastEditors: Leo l024983409@qq.com
+ * @LastEditTime: 2023-08-26 10:13:05
+ * @FilePath: \hello-uniapp\src\api\global.ts
+ * @Description:
+ */
 import type { IGlobalGuessLike, IGlobalPageParams, IGlobalPageResult, IGlobalBanner } from '@/types/global'
 
 /**
@@ -5,7 +13,7 @@ import type { IGlobalGuessLike, IGlobalPageParams, IGlobalPageResult, IGlobalBan
  * @description: 获取轮播图数据
  * @return {*}
  */
-export const getGlobalBannersAPI = (distributionSite?: number) => {
+export const getGlobalBannersAPI = (distributionSite = 1) => {
 	return get<IGlobalBanner[]>({
 		url: '/home/banner',
 		data: {

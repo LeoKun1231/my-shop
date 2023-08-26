@@ -18,25 +18,31 @@
 		{
 			"path": "pages/category/category",
 			"style": {
-				"navigationBarTitleText": "category"
+				"navigationBarTitleText": "商品分类"
 			}
 		},
 		{
 			"path": "pages/cart/cart",
 			"style": {
-				"navigationBarTitleText": "cart"
+				"navigationBarTitleText": "购物车"
 			}
 		},
 		{
 			"path": "pages/user/user",
 			"style": {
-				"navigationBarTitleText": "user"
+				"navigationBarTitleText": "用户"
 			}
 		},
 		{
 			"path": "pages/hot/hot",
 			"style": {
-				"navigationBarTitleText": "hot"
+				"navigationBarTitleText": "热门推荐"
+			}
+		},
+		{
+			"path": "pages/detail/detail",
+			"style": {
+				"navigationBarTitleText": "详情"
 			}
 		}
 	],

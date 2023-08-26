@@ -13,6 +13,8 @@ declare module 'vue' {
     AppShopItemV1: typeof import('./components/app-shop-item-v1/app-shop-item-v1.vue')['default']
     AppSwiper: typeof import('./components/app-swiper/app-swiper.vue')['default']
     AppTab: typeof import('./components/app-tab/app-tab.vue')['default']
+    CategoryGoodsSkeleton: typeof import('./pages/category/components/category-goods-skeleton.vue')['default']
+    CategorySkeleton: typeof import('./pages/category/components/category-skeleton.vue')['default']
     HomeCategory: typeof import('./pages/home/components/home-category.vue')['default']
     HomeHeader: typeof import('./pages/home/components/home-header.vue')['default']
     HomeRecommend: typeof import('./pages/home/components/home-recommend.vue')['default']

@@ -2,12 +2,14 @@
 import { throttle } from 'lodash'
 withDefaults(
 	defineProps<{
+		showTop?: boolean
 		refresherEnabled?: boolean
 		refresherTriggered?: boolean
 		refresherrefresh?: () => void
-		scrolltolower: () => void
+		scrolltolower?: () => void
 	}>(),
 	{
+		showTop: true,
 		refresherEnabled: true
 	}
 )
@@ -22,7 +24,6 @@ const { windowBottom } = useSystem()
  * 监听scrollView滚动
  */
 const handleScroll = throttle<UniHelper.ScrollViewOnScroll>((e) => {
-	console.log(e.detail.scrollTop)
 	isShowFab.value = isShowFab.value || e.detail.scrollTop >= 1200
 	isShowFabWithAnimation.value = e.detail.scrollTop >= 1200
 }, 100)
@@ -57,6 +58,7 @@ defineExpose({
 	scrollToTop
 })
 </script>
+
 <template>
 	<scroll-view
 		scroll-y
@@ -72,7 +74,7 @@ defineExpose({
 		<slot></slot>
 	</scroll-view>
 	<view
-		v-if="isShowFab"
+		v-if="isShowFab && showTop"
 		:class="{
 			disapper: !isShowFabWithAnimation,
 			show: isShowFabWithAnimation,
