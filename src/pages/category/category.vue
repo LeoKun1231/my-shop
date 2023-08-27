@@ -48,6 +48,9 @@ async function getCategoryData() {
 	firstCatrgories.value = result.map((item) => item.name)
 }
 
+/**
+ * 跳转到详情页
+ */
 const handleGoToDetail = () => {
 	uni.showToast({
 		icon: 'none',
