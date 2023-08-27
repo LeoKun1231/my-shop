@@ -57,7 +57,8 @@ export default defineConfig({
 		[
 			'icon-btn',
 			'text-[0.9em] inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600 !outline-none'
-		]
+		],
+		['b-bottom', 'border-b-1 border-b-solid border-b-[#eee]']
 	],
 	transformers: [
 		transformerDirectives(), // 启用 @apply 功能

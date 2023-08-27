@@ -55,6 +55,9 @@ async function getHotData() {
 const isRequestDone = ref(true) //判断请求是否结束
 const loadingStatus = ref<LoadingStatus>('more')
 
+/**
+ * 下拉刷新
+ */
 async function handleScrollToLower() {
 	const currentSubType = subTypes.value[currentIndex.value]
 	if (!isRequestDone.value) return
@@ -69,6 +72,7 @@ async function handleScrollToLower() {
 		page: currentSubType.goodsItems.page++,
 		pageSize: currentSubType.goodsItems.pageSize
 	})
+	loadingStatus.value = 'more'
 	isRequestDone.value = true
 	const newCurrentSubTypesItem = result.subTypes[currentIndex.value]
 	currentSubType.goodsItems.items.push(...newCurrentSubTypesItem.goodsItems.items)

@@ -9,13 +9,19 @@
 <script setup lang="ts">
 import type { IGlobalGuessLike } from '@/types/global'
 
-defineProps<{
+const props = defineProps<{
 	guessLike: IGlobalGuessLike
 }>()
+
+const handleGoToDetail = () => {
+	uni.navigateTo({
+		url: '/pages/detail/detail?id=' + props.guessLike.id
+	})
+}
 </script>
 
 <template>
-	<view class="w-40vw bg-white p-3 mb-2 rounded-3 shadow-md">
+	<view class="w-40vw bg-white p-3 mb-2 rounded-3 shadow-md" @click="handleGoToDetail">
 		<image class="rounded-3 w-full h-42" mode="aspectFill" :src="guessLike.picture" />
 		<view class="line-clamp-1 my-1 text-dark-100">{{ guessLike.name }}</view>
 		<!-- 在scroll-view中 view里面嵌套text 添加新数据会导致scroll-view 重回顶部 -->

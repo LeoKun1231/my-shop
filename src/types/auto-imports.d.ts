@@ -43,6 +43,7 @@ declare global {
   const getCategroyDataAPI: typeof import('../api/category')['getCategroyDataAPI']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
+  const getDetailAPI: typeof import('../api/detail')['getDetailAPI']
   const getGlobalBannersAPI: typeof import('../api/global')['getGlobalBannersAPI']
   const getGlobalGuessLikeAPI: typeof import('../api/global')['getGlobalGuessLikeAPI']
   const getHomeCategory: (typeof import('../api/home'))['getHomeCategory']
@@ -344,6 +345,7 @@ declare module 'vue' {
     readonly getCategroyDataAPI: UnwrapRef<typeof import('../api/category')['getCategroyDataAPI']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
+    readonly getDetailAPI: UnwrapRef<typeof import('../api/detail')['getDetailAPI']>
     readonly getGlobalBannersAPI: UnwrapRef<typeof import('../api/global')['getGlobalBannersAPI']>
     readonly getGlobalGuessLikeAPI: UnwrapRef<typeof import('../api/global')['getGlobalGuessLikeAPI']>
     readonly getHomeCategoryAPI: UnwrapRef<typeof import('../api/home')['getHomeCategoryAPI']>
@@ -435,6 +437,7 @@ declare module '@vue/runtime-core' {
     readonly getCategroyDataAPI: UnwrapRef<typeof import('../api/category')['getCategroyDataAPI']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
+    readonly getDetailAPI: UnwrapRef<typeof import('../api/detail')['getDetailAPI']>
     readonly getGlobalBannersAPI: UnwrapRef<typeof import('../api/global')['getGlobalBannersAPI']>
     readonly getGlobalGuessLikeAPI: UnwrapRef<typeof import('../api/global')['getGlobalGuessLikeAPI']>
     readonly getHomeCategoryAPI: UnwrapRef<typeof import('../api/home')['getHomeCategoryAPI']>

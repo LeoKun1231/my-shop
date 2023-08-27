@@ -2,6 +2,7 @@
 import { throttle } from 'lodash'
 withDefaults(
 	defineProps<{
+		paddingBottom?: number
 		showTop?: boolean
 		refresherEnabled?: boolean
 		refresherTriggered?: boolean
@@ -10,7 +11,8 @@ withDefaults(
 	}>(),
 	{
 		showTop: true,
-		refresherEnabled: true
+		refresherEnabled: true,
+		paddingBottom: 0
 	}
 )
 
@@ -60,30 +62,32 @@ defineExpose({
 </script>
 
 <template>
-	<scroll-view
-		scroll-y
-		scroll-with-animation
-		class="flex-1 h-full overflow-hidden"
-		:refresher-enabled="refresherEnabled"
-		:scroll-top="scrollTop"
-		:refresher-triggered="refresherTriggered"
-		@scroll="handleScroll"
-		@refresherrefresh="refresherrefresh"
-		@scrolltolower="scrolltolower"
-	>
-		<slot></slot>
-	</scroll-view>
-	<view
-		v-if="isShowFab && showTop"
-		:class="{
-			disapper: !isShowFabWithAnimation,
-			show: isShowFabWithAnimation,
-			'h-12 w-12 rounded-full fab fixed bg-[#fbb957] right-4 center': true
-		}"
-		:style="{ bottom: windowBottom + 30 + 'px' }"
-		@click="handleFabClick"
-	>
-		<view class="i-carbon-arrow-up text-7 text-white"></view>
+	<view class="flex h-full overflow-hidden">
+		<scroll-view
+			scroll-y
+			scroll-with-animation
+			class="flex-1 h-full overflow-hidden"
+			:refresher-enabled="refresherEnabled"
+			:scroll-top="scrollTop"
+			:refresher-triggered="refresherTriggered"
+			@scroll="handleScroll"
+			@refresherrefresh="refresherrefresh"
+			@scrolltolower="scrolltolower"
+		>
+			<slot></slot>
+		</scroll-view>
+		<view
+			v-if="isShowFab && showTop"
+			:class="{
+				disapper: !isShowFabWithAnimation,
+				show: isShowFabWithAnimation,
+				'h-12 w-12 rounded-full fab fixed bg-[#fbb957] right-4 center': true
+			}"
+			:style="{ bottom: windowBottom + paddingBottom + 30 + 'px' }"
+			@click="handleFabClick"
+		>
+			<view class="i-carbon-arrow-up text-7 text-white"></view>
+		</view>
 	</view>
 </template>
 

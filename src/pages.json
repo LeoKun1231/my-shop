@@ -42,7 +42,7 @@
 		{
 			"path": "pages/detail/detail",
 			"style": {
-				"navigationBarTitleText": "详情"
+				"navigationBarTitleText": "商品详情"
 			}
 		}
 	],
