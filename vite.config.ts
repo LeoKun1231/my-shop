@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-10 12:10:48
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-08-24 20:52:29
+ * @LastEditTime: 2023-08-27 20:29:33
  * @FilePath: \hello-uniapp\vite.config.ts
  * @Description:
  */
@@ -23,7 +23,7 @@ export default defineConfig({
 		Unocss(),
 		// https://github.com/antfu/unplugin-auto-import
 		AutoImport({
-			imports: ['vue', 'uni-app'],
+			imports: ['vue', 'uni-app', 'pinia'],
 			dts: 'src/types/auto-imports.d.ts',
 			dirs: ['src/composables/**', 'src/store/**', 'src/api/**', 'src/utils/**', 'src/components/**', 'src/constants/**'],
 			vueTemplate: true

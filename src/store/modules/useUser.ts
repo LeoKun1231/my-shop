@@ -1,29 +1,13 @@
 import { defineStore } from 'pinia'
+import type { ILoginInfo } from '@/types/login'
 
 export const useUserStore = defineStore(
 	'user',
 	() => {
-		const users = reactive({
-			name: '小明',
-			id: 1,
-			friends: [
-				{
-					name: '小红',
-					id: 2
-				}
-			]
-		})
-
-		const add = () => {
-			users.friends.push({
-				id: 3,
-				name: '小白'
-			})
-		}
+		const user = ref<ILoginInfo>()
 
 		return {
-			users,
-			add
+			user
 		}
 	},
 	{

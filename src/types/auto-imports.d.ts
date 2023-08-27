@@ -6,6 +6,7 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
+  const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
   const appCategory: (typeof import('../components/app-category/app-category.vue'))['default']
   const appGuessLike: (typeof import('../components/app-guess-like/app-guess-like.vue'))['default']
   const appLoadMore: typeof import('../components/app-load-more/app-load-more.vue')['default']
@@ -26,6 +27,7 @@ declare global {
   const createEventHook: (typeof import('@vueuse/core'))['createEventHook']
   const createGlobalState: (typeof import('@vueuse/core'))['createGlobalState']
   const createInjectionState: (typeof import('@vueuse/core'))['createInjectionState']
+  const createPinia: typeof import('pinia')['createPinia']
   const createReactiveFn: (typeof import('@vueuse/core'))['createReactiveFn']
   const createReusableTemplate: (typeof import('@vueuse/core'))['createReusableTemplate']
   const createSharedComposable: (typeof import('@vueuse/core'))['createSharedComposable']
@@ -36,10 +38,12 @@ declare global {
   const debouncedWatch: (typeof import('@vueuse/core'))['debouncedWatch']
   const defineAsyncComponent: typeof import('vue')['defineAsyncComponent']
   const defineComponent: typeof import('vue')['defineComponent']
+  const defineStore: typeof import('pinia')['defineStore']
   const eagerComputed: (typeof import('@vueuse/core'))['eagerComputed']
   const effectScope: typeof import('vue')['effectScope']
   const extendRef: (typeof import('@vueuse/core'))['extendRef']
   const get: typeof import('../utils/request')['get']
+  const getActivePinia: typeof import('pinia')['getActivePinia']
   const getBannersAPI: (typeof import('../api/home'))['getBannersAPI']
   const getCategroyDataAPI: typeof import('../api/category')['getCategroyDataAPI']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
@@ -63,6 +67,11 @@ declare global {
   const isReadonly: typeof import('vue')['isReadonly']
   const isRef: typeof import('vue')['isRef']
   const makeDestructurable: (typeof import('@vueuse/core'))['makeDestructurable']
+  const mapActions: typeof import('pinia')['mapActions']
+  const mapGetters: typeof import('pinia')['mapGetters']
+  const mapState: typeof import('pinia')['mapState']
+  const mapStores: typeof import('pinia')['mapStores']
+  const mapWritableState: typeof import('pinia')['mapWritableState']
   const markRaw: typeof import('vue')['markRaw']
   const nextTick: typeof import('vue')['nextTick']
   const onActivated: typeof import('vue')['onActivated']
@@ -108,6 +117,7 @@ declare global {
   const onUpdated: typeof import('vue')['onUpdated']
   const pausableWatch: (typeof import('@vueuse/core'))['pausableWatch']
   const post: typeof import('../utils/request')['post']
+  const postLoginAPI: typeof import('../api/login')['postLoginAPI']
   const provide: typeof import('vue')['provide']
   const reactify: (typeof import('@vueuse/core'))['reactify']
   const reactifyObject: (typeof import('@vueuse/core'))['reactifyObject']
@@ -126,10 +136,13 @@ declare global {
   const resolveComponent: typeof import('vue')['resolveComponent']
   const resolveRef: (typeof import('@vueuse/core'))['resolveRef']
   const resolveUnref: (typeof import('@vueuse/core'))['resolveUnref']
+  const setActivePinia: typeof import('pinia')['setActivePinia']
+  const setMapStoreSuffix: typeof import('pinia')['setMapStoreSuffix']
   const shallowReactive: typeof import('vue')['shallowReactive']
   const shallowReadonly: typeof import('vue')['shallowReadonly']
   const shallowRef: typeof import('vue')['shallowRef']
   const store: typeof import('../store/index')['default']
+  const storeToRefs: typeof import('pinia')['storeToRefs']
   const syncRef: (typeof import('@vueuse/core'))['syncRef']
   const syncRefs: (typeof import('@vueuse/core'))['syncRefs']
   const templateRef: (typeof import('@vueuse/core'))['templateRef']
@@ -337,14 +350,18 @@ import { UnwrapRef } from 'vue'
 declare module 'vue' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
     readonly appLoadMore: UnwrapRef<typeof import('../components/app-load-more/app-load-more.vue')['default']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
+    readonly createPinia: UnwrapRef<typeof import('pinia')['createPinia']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
     readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
+    readonly defineStore: UnwrapRef<typeof import('pinia')['defineStore']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly get: UnwrapRef<typeof import('../utils/request')['get']>
+    readonly getActivePinia: UnwrapRef<typeof import('pinia')['getActivePinia']>
     readonly getCategroyDataAPI: UnwrapRef<typeof import('../api/category')['getCategroyDataAPI']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
@@ -361,6 +378,11 @@ declare module 'vue' {
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
+    readonly mapActions: UnwrapRef<typeof import('pinia')['mapActions']>
+    readonly mapGetters: UnwrapRef<typeof import('pinia')['mapGetters']>
+    readonly mapState: UnwrapRef<typeof import('pinia')['mapState']>
+    readonly mapStores: UnwrapRef<typeof import('pinia')['mapStores']>
+    readonly mapWritableState: UnwrapRef<typeof import('pinia')['mapWritableState']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
@@ -401,15 +423,19 @@ declare module 'vue' {
     readonly onUnmounted: UnwrapRef<typeof import('vue')['onUnmounted']>
     readonly onUpdated: UnwrapRef<typeof import('vue')['onUpdated']>
     readonly post: UnwrapRef<typeof import('../utils/request')['post']>
+    readonly postLoginAPI: UnwrapRef<typeof import('../api/login')['postLoginAPI']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
     readonly readonly: UnwrapRef<typeof import('vue')['readonly']>
     readonly ref: UnwrapRef<typeof import('vue')['ref']>
     readonly resolveComponent: UnwrapRef<typeof import('vue')['resolveComponent']>
+    readonly setActivePinia: UnwrapRef<typeof import('pinia')['setActivePinia']>
+    readonly setMapStoreSuffix: UnwrapRef<typeof import('pinia')['setMapStoreSuffix']>
     readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
     readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
     readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
     readonly store: UnwrapRef<typeof import('../store/index')['default']>
+    readonly storeToRefs: UnwrapRef<typeof import('pinia')['storeToRefs']>
     readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
     readonly toRef: UnwrapRef<typeof import('vue')['toRef']>
     readonly toRefs: UnwrapRef<typeof import('vue')['toRefs']>
@@ -431,14 +457,18 @@ declare module 'vue' {
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
     readonly appLoadMore: UnwrapRef<typeof import('../components/app-load-more/app-load-more.vue')['default']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
+    readonly createPinia: UnwrapRef<typeof import('pinia')['createPinia']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
     readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
+    readonly defineStore: UnwrapRef<typeof import('pinia')['defineStore']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly get: UnwrapRef<typeof import('../utils/request')['get']>
+    readonly getActivePinia: UnwrapRef<typeof import('pinia')['getActivePinia']>
     readonly getCategroyDataAPI: UnwrapRef<typeof import('../api/category')['getCategroyDataAPI']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
@@ -455,6 +485,11 @@ declare module '@vue/runtime-core' {
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
+    readonly mapActions: UnwrapRef<typeof import('pinia')['mapActions']>
+    readonly mapGetters: UnwrapRef<typeof import('pinia')['mapGetters']>
+    readonly mapState: UnwrapRef<typeof import('pinia')['mapState']>
+    readonly mapStores: UnwrapRef<typeof import('pinia')['mapStores']>
+    readonly mapWritableState: UnwrapRef<typeof import('pinia')['mapWritableState']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
@@ -495,15 +530,19 @@ declare module '@vue/runtime-core' {
     readonly onUnmounted: UnwrapRef<typeof import('vue')['onUnmounted']>
     readonly onUpdated: UnwrapRef<typeof import('vue')['onUpdated']>
     readonly post: UnwrapRef<typeof import('../utils/request')['post']>
+    readonly postLoginAPI: UnwrapRef<typeof import('../api/login')['postLoginAPI']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
     readonly readonly: UnwrapRef<typeof import('vue')['readonly']>
     readonly ref: UnwrapRef<typeof import('vue')['ref']>
     readonly resolveComponent: UnwrapRef<typeof import('vue')['resolveComponent']>
+    readonly setActivePinia: UnwrapRef<typeof import('pinia')['setActivePinia']>
+    readonly setMapStoreSuffix: UnwrapRef<typeof import('pinia')['setMapStoreSuffix']>
     readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
     readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
     readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
     readonly store: UnwrapRef<typeof import('../store/index')['default']>
+    readonly storeToRefs: UnwrapRef<typeof import('pinia')['storeToRefs']>
     readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
     readonly toRef: UnwrapRef<typeof import('vue')['toRef']>
     readonly toRefs: UnwrapRef<typeof import('vue')['toRefs']>
