@@ -8,6 +8,7 @@ declare global {
   const EffectScope: typeof import('vue')['EffectScope']
   const appCategory: (typeof import('../components/app-category/app-category.vue'))['default']
   const appGuessLike: (typeof import('../components/app-guess-like/app-guess-like.vue'))['default']
+  const appLoadMore: typeof import('../components/app-load-more/app-load-more.vue')['default']
   const appScrollView: (typeof import('../components/app-scroll-view/app-scroll-view.vue'))['default']
   const appShopItemV1: (typeof import('../components/app-shop-item-v1/app-shop-item-v1.vue'))['default']
   const appSwiper: typeof import('../components/app-swiper/app-swiper.vue')['default']
@@ -52,6 +53,7 @@ declare global {
   const getHotData: (typeof import('../api/hot'))['getHotData']
   const getHotDataAPI: typeof import('../api/hot')['getHotDataAPI']
   const h: typeof import('vue')['h']
+  const i18n: typeof import('../components/app-load-more/i18n/index.js')['default']
   const ignorableWatch: (typeof import('@vueuse/core'))['ignorableWatch']
   const inject: typeof import('vue')['inject']
   const isDark: (typeof import('./composables/useDark'))['isDark']
@@ -335,6 +337,7 @@ import { UnwrapRef } from 'vue'
 declare module 'vue' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly appLoadMore: UnwrapRef<typeof import('../components/app-load-more/app-load-more.vue')['default']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
@@ -352,6 +355,7 @@ declare module 'vue' {
     readonly getHomeHotRecommendAPI: UnwrapRef<typeof import('../api/home')['getHomeHotRecommendAPI']>
     readonly getHotDataAPI: UnwrapRef<typeof import('../api/hot')['getHotDataAPI']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
+    readonly i18n: UnwrapRef<typeof import('../components/app-load-more/i18n/index.js')['default']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
     readonly isProxy: UnwrapRef<typeof import('vue')['isProxy']>
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
@@ -427,6 +431,7 @@ declare module 'vue' {
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly appLoadMore: UnwrapRef<typeof import('../components/app-load-more/app-load-more.vue')['default']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
@@ -444,6 +449,7 @@ declare module '@vue/runtime-core' {
     readonly getHomeHotRecommendAPI: UnwrapRef<typeof import('../api/home')['getHomeHotRecommendAPI']>
     readonly getHotDataAPI: UnwrapRef<typeof import('../api/hot')['getHotDataAPI']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
+    readonly i18n: UnwrapRef<typeof import('../components/app-load-more/i18n/index.js')['default']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
     readonly isProxy: UnwrapRef<typeof import('vue')['isProxy']>
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
