@@ -47,6 +47,13 @@ async function getCategoryData() {
 	categoryData.value = result
 	firstCatrgories.value = result.map((item) => item.name)
 }
+
+const handleGoToDetail = () => {
+	uni.showToast({
+		icon: 'none',
+		title: '接口未开发'
+	})
+}
 </script>
 
 <template>
@@ -60,7 +67,7 @@ async function getCategoryData() {
 						<app-swiper height="8rem" :urls="banners" />
 					</view>
 					<view>
-						<view v-for="item in currentCategory?.children" :key="item.id">
+						<view v-for="item in currentCategory?.children" :key="item.id" @click="handleGoToDetail">
 							<view class="between py-3 mb-2 border-b-1 border-b-solid border-b-[#f7f7f7]">
 								<view>{{ item.name }}</view>
 								<view class="text-gray-300 center text-xs">

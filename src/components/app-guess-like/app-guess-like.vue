@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-13 20:12:43
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-08-26 18:22:44
+ * @LastEditTime: 2023-08-27 16:59:26
  * @FilePath: \hello-uniapp\src\components\app-guess-like\app-guess-like.vue
  * @Description:猜你喜欢页面
 -->
@@ -63,7 +63,7 @@ defineExpose({
 		<view class="container flex-wrap between">
 			<app-shop-item-v1 :guess-like="guessLike" v-for="guessLike in guessLikeLists" :key="guessLike.id + Math.random()" />
 		</view>
-		<uni-load-more class="py-2" :status="loadingStatus" />
+		<app-load-more class="py-2" :status="loadingStatus" />
 	</view>
 </template>
 

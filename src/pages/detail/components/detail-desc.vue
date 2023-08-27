@@ -19,7 +19,7 @@ defineProps<{
 			<view class="col-span-3">{{ item.value }}</view>
 		</view>
 	</view>
-	<image class="w-full" v-for="pic in pictures" :key="pic" :src="pic" mode="widthFix" />
+	<image class="w-750rpx" v-for="pic in pictures" :key="pic" :src="pic" mode="widthFix" />
 </template>
 
 <style scoped lang="scss"></style>
