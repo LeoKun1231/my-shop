@@ -37,7 +37,8 @@
 		{
 			"path": "pages/user/user",
 			"style": {
-				"navigationBarTitleText": "用户"
+				"navigationBarTitleText": "用户",
+				"navigationStyle": "custom"
 			}
 		},
 		{

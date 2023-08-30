@@ -7,6 +7,7 @@ const handleWeixinLogin = () => {
 }
 const userStore = useUserStore()
 const { user } = storeToRefs(userStore)
+
 const handleMockLogin = async () => {
 	const res = await postLoginAPI('18600000000')
 	user.value = res.result

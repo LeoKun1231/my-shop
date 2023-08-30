@@ -23,7 +23,6 @@ declare module 'vue' {
     DetailDesc: typeof import('./pages/detail/components/detail-desc.vue')['default']
     DetailRecommend: typeof import('./pages/detail/components/detail-recommend.vue')['default']
     DetailService: typeof import('./pages/detail/components/detail-service.vue')['default']
-    DetailSkeleton: typeof import('./pages/detail/components/detail-skeleton.vue')['default']
     DetailSwiper: typeof import('./pages/detail/components/detail-swiper.vue')['default']
     HomeCategory: typeof import('./pages/home/components/home-category.vue')['default']
     HomeHeader: typeof import('./pages/home/components/home-header.vue')['default']
@@ -32,5 +31,6 @@ declare module 'vue' {
     HotSkeletion: typeof import('./pages/hot/components/hot-skeletion.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    UserHeader: typeof import('./pages/user/components/user-header.vue')['default']
   }
 }

@@ -7,11 +7,10 @@
  * @Description: 首页
 -->
 <script setup lang="ts">
-import AppGuessLike from '@/components/app-guess-like/app-guess-like.vue'
 import type { IHomeCategory, IHomeHotRecommend } from '@/types/home'
-
-const appGuessLikeRef = ref<InstanceType<typeof AppGuessLike>>()
 const isLoading = ref(false)
+
+const { appGuessLikeRef, getMore, refreshData } = useAppGuessLike()
 
 loadData()
 
@@ -31,7 +30,7 @@ async function loadData(fn?: () => Promise<void>) {
 const isRefresh = ref<boolean>(false)
 const handleRefresh = async () => {
 	isRefresh.value = true
-	await loadData(appGuessLikeRef.value?.refreshData)
+	await loadData(refreshData())
 	isRefresh.value = false
 }
 
@@ -39,7 +38,7 @@ const handleRefresh = async () => {
  * 上拉加载
  */
 const handleScrollToLower = () => {
-	appGuessLikeRef.value?.getGuessLikeData()
+	getMore()
 }
 
 /**
@@ -96,4 +95,3 @@ page {
 	overflow: hidden;
 }
 </style>
-@/types/home

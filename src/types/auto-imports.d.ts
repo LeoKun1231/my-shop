@@ -12,7 +12,7 @@ declare global {
   const appLoadMore: typeof import('../components/app-load-more/app-load-more.vue')['default']
   const appScrollView: (typeof import('../components/app-scroll-view/app-scroll-view.vue'))['default']
   const appShopItemV1: (typeof import('../components/app-shop-item-v1/app-shop-item-v1.vue'))['default']
-  const appSwiper: typeof import('../components/app-swiper/app-swiper.vue')['default']
+  const appSwiper: (typeof import('../components/app-swiper/app-swiper.vue'))['default']
   const appTab: (typeof import('../components/app-tab/app-tab.vue'))['default']
   const asyncComputed: (typeof import('@vueuse/core'))['asyncComputed']
   const autoResetRef: (typeof import('@vueuse/core'))['autoResetRef']
@@ -165,6 +165,7 @@ declare global {
   const until: (typeof import('@vueuse/core'))['until']
   const useActiveElement: (typeof import('@vueuse/core'))['useActiveElement']
   const useAnimate: (typeof import('@vueuse/core'))['useAnimate']
+  const useAppGuessLike: typeof import('../composables/useAppGuessLike')['default']
   const useArrayDifference: (typeof import('@vueuse/core'))['useArrayDifference']
   const useArrayEvery: (typeof import('@vueuse/core'))['useArrayEvery']
   const useArrayFilter: (typeof import('@vueuse/core'))['useArrayFilter']
@@ -323,6 +324,7 @@ declare global {
   const useWindowFocus: (typeof import('@vueuse/core'))['useWindowFocus']
   const useWindowScroll: (typeof import('@vueuse/core'))['useWindowScroll']
   const useWindowSize: (typeof import('@vueuse/core'))['useWindowSize']
+  const userAppGuessLike: (typeof import('../composables/useAppGuessLike'))['default']
   const watch: typeof import('vue')['watch']
   const watchArray: (typeof import('@vueuse/core'))['watchArray']
   const watchAtMost: (typeof import('@vueuse/core'))['watchAtMost']
@@ -442,6 +444,7 @@ declare module 'vue' {
     readonly toValue: UnwrapRef<typeof import('vue')['toValue']>
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
     readonly unref: UnwrapRef<typeof import('vue')['unref']>
+    readonly useAppGuessLike: UnwrapRef<typeof import('../composables/useAppGuessLike')['default']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
@@ -549,6 +552,7 @@ declare module '@vue/runtime-core' {
     readonly toValue: UnwrapRef<typeof import('vue')['toValue']>
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
     readonly unref: UnwrapRef<typeof import('vue')['unref']>
+    readonly useAppGuessLike: UnwrapRef<typeof import('../composables/useAppGuessLike')['default']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
