@@ -110,6 +110,12 @@
 						"navigationBarTitleText": "个人中心",
 						"navigationStyle": "custom"
 					}
+				},
+				{
+					"path": "address/address",
+					"style": {
+						"navigationBarTitleText": "我的地址"
+					}
 				}
 			]
 		}

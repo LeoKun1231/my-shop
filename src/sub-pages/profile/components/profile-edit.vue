@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-31 11:03:02
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-08-31 17:09:36
+ * @LastEditTime: 2023-08-31 19:13:45
  * @FilePath: \hello-uniapp\src\sub-pages\profile\components\profile-edit.vue
  * @Description: 
 -->
@@ -46,21 +46,26 @@ const handleDatePickerChange: UniHelper.DatePickerOnChange = (e) => {
 	componentProfile.value.birthday = e.detail.value
 }
 
+const cityCode = ref<string[]>([])
+//城市改变 由于没有数据只能这么搞
 const handleCityChange: UniHelper.UniDataPickerOnChange = (e) => {
-	const cityData = e.detail.value.map((item) => item.text)
-	componentProfile.value.fullLocation = cityData.join(',')
+	const cityCodeData = e.detail.value.map((item) => item.value)
+	const cityNameData = e.detail.value.map((item) => item.text)
+	componentProfile.value.fullLocation = cityNameData.join(' ')
+	cityCode.value = cityCodeData
 }
 
 // 处理保存profile
 const handleSaveProfile = async () => {
-	const { birthday, fullLocation, gender, nickname, profession } = componentProfile.value
+	const { birthday, gender, nickname, profession } = componentProfile.value
 	await putUserProfileAPI({
 		birthday,
 		gender,
 		nickname,
 		profession,
-		cityCode: fullLocation[1],
-		provinceCode: fullLocation[0]
+		countyCode: cityCode.value[2],
+		cityCode: cityCode.value[1] + '00',
+		provinceCode: cityCode.value[0] + '0000'
 	})
 	user.value!.nickname = nickname
 	uni.showToast({
@@ -98,14 +103,15 @@ const handleSaveProfile = async () => {
 		</app-form-item>
 		<app-form-item label="城市">
 			<uni-data-picker
-				:model="componentProfile.fullLocation"
+				:model="componentProfile.fullLocation?.split(' ')"
 				placeholder="请选择地址"
 				popup-title="请选择城市"
 				:localdata="CityData as any"
-				:map="{ text: 'text', value: 'text' }"
+				:map="{ text: 'name', value: 'code' }"
 				:border="false"
 				@change="handleCityChange"
 			>
+				<view>{{ componentProfile.fullLocation }}</view>
 			</uni-data-picker>
 		</app-form-item>
 		<app-form-item class="border-b-transparent" label="职业">
