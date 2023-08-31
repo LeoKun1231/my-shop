@@ -8,6 +8,7 @@ declare global {
   const EffectScope: typeof import('vue')['EffectScope']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
   const appCategory: (typeof import('../components/app-category/app-category.vue'))['default']
+  const appFormItem: typeof import('../components/app-form-item/app-form-item.vue')['default']
   const appGuessLike: (typeof import('../components/app-guess-like/app-guess-like.vue'))['default']
   const appLoadMore: typeof import('../components/app-load-more/app-load-more.vue')['default']
   const appScrollView: (typeof import('../components/app-scroll-view/app-scroll-view.vue'))['default']
@@ -41,7 +42,9 @@ declare global {
   const defineStore: typeof import('pinia')['defineStore']
   const eagerComputed: (typeof import('@vueuse/core'))['eagerComputed']
   const effectScope: typeof import('vue')['effectScope']
+  const envD: typeof import('./env.d')['default']
   const extendRef: (typeof import('@vueuse/core'))['extendRef']
+  const formatDate: typeof import('../utils/date')['formatDate']
   const get: typeof import('../utils/request')['get']
   const getActivePinia: typeof import('pinia')['getActivePinia']
   const getBannersAPI: (typeof import('../api/home'))['getBannersAPI']
@@ -56,6 +59,7 @@ declare global {
   const getHomeHotRecommendAPI: typeof import('../api/home')['getHomeHotRecommendAPI']
   const getHotData: (typeof import('../api/hot'))['getHotData']
   const getHotDataAPI: typeof import('../api/hot')['getHotDataAPI']
+  const getUserProfileAPI: typeof import('../api/profile')['getUserProfileAPI']
   const h: typeof import('vue')['h']
   const i18n: typeof import('../components/app-load-more/i18n/index.js')['default']
   const ignorableWatch: (typeof import('@vueuse/core'))['ignorableWatch']
@@ -119,6 +123,9 @@ declare global {
   const post: typeof import('../utils/request')['post']
   const postLoginAPI: typeof import('../api/login')['postLoginAPI']
   const provide: typeof import('vue')['provide']
+  const put: typeof import('../utils/request')['put']
+  const putUserP: typeof import('../api/profile')['putUserP']
+  const putUserProfileAPI: typeof import('../api/profile')['putUserProfileAPI']
   const reactify: (typeof import('@vueuse/core'))['reactify']
   const reactifyObject: (typeof import('@vueuse/core'))['reactifyObject']
   const reactive: typeof import('vue')['reactive']
@@ -163,6 +170,7 @@ declare global {
   const unref: typeof import('vue')['unref']
   const unrefElement: (typeof import('@vueuse/core'))['unrefElement']
   const until: (typeof import('@vueuse/core'))['until']
+  const uploadSingleImage: typeof import('../utils/upload')['uploadSingleImage']
   const useActiveElement: (typeof import('@vueuse/core'))['useActiveElement']
   const useAnimate: (typeof import('@vueuse/core'))['useAnimate']
   const useAppGuessLike: typeof import('../composables/useAppGuessLike')['default']
@@ -353,6 +361,7 @@ declare module 'vue' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
+    readonly appFormItem: UnwrapRef<typeof import('../components/app-form-item/app-form-item.vue')['default']>
     readonly appLoadMore: UnwrapRef<typeof import('../components/app-load-more/app-load-more.vue')['default']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
@@ -362,6 +371,7 @@ declare module 'vue' {
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
     readonly defineStore: UnwrapRef<typeof import('pinia')['defineStore']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
+    readonly formatDate: UnwrapRef<typeof import('../utils/date')['formatDate']>
     readonly get: UnwrapRef<typeof import('../utils/request')['get']>
     readonly getActivePinia: UnwrapRef<typeof import('pinia')['getActivePinia']>
     readonly getCategroyDataAPI: UnwrapRef<typeof import('../api/category')['getCategroyDataAPI']>
@@ -373,6 +383,7 @@ declare module 'vue' {
     readonly getHomeCategoryAPI: UnwrapRef<typeof import('../api/home')['getHomeCategoryAPI']>
     readonly getHomeHotRecommendAPI: UnwrapRef<typeof import('../api/home')['getHomeHotRecommendAPI']>
     readonly getHotDataAPI: UnwrapRef<typeof import('../api/hot')['getHotDataAPI']>
+    readonly getUserProfileAPI: UnwrapRef<typeof import('../api/profile')['getUserProfileAPI']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly i18n: UnwrapRef<typeof import('../components/app-load-more/i18n/index.js')['default']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
@@ -427,6 +438,8 @@ declare module 'vue' {
     readonly post: UnwrapRef<typeof import('../utils/request')['post']>
     readonly postLoginAPI: UnwrapRef<typeof import('../api/login')['postLoginAPI']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
+    readonly put: UnwrapRef<typeof import('../utils/request')['put']>
+    readonly putUserProfileAPI: UnwrapRef<typeof import('../api/profile')['putUserProfileAPI']>
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
     readonly readonly: UnwrapRef<typeof import('vue')['readonly']>
     readonly ref: UnwrapRef<typeof import('vue')['ref']>
@@ -444,6 +457,7 @@ declare module 'vue' {
     readonly toValue: UnwrapRef<typeof import('vue')['toValue']>
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
     readonly unref: UnwrapRef<typeof import('vue')['unref']>
+    readonly uploadSingleImage: UnwrapRef<typeof import('../utils/upload')['uploadSingleImage']>
     readonly useAppGuessLike: UnwrapRef<typeof import('../composables/useAppGuessLike')['default']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
@@ -461,6 +475,7 @@ declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
+    readonly appFormItem: UnwrapRef<typeof import('../components/app-form-item/app-form-item.vue')['default']>
     readonly appLoadMore: UnwrapRef<typeof import('../components/app-load-more/app-load-more.vue')['default']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
@@ -470,6 +485,7 @@ declare module '@vue/runtime-core' {
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
     readonly defineStore: UnwrapRef<typeof import('pinia')['defineStore']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
+    readonly formatDate: UnwrapRef<typeof import('../utils/date')['formatDate']>
     readonly get: UnwrapRef<typeof import('../utils/request')['get']>
     readonly getActivePinia: UnwrapRef<typeof import('pinia')['getActivePinia']>
     readonly getCategroyDataAPI: UnwrapRef<typeof import('../api/category')['getCategroyDataAPI']>
@@ -481,6 +497,7 @@ declare module '@vue/runtime-core' {
     readonly getHomeCategoryAPI: UnwrapRef<typeof import('../api/home')['getHomeCategoryAPI']>
     readonly getHomeHotRecommendAPI: UnwrapRef<typeof import('../api/home')['getHomeHotRecommendAPI']>
     readonly getHotDataAPI: UnwrapRef<typeof import('../api/hot')['getHotDataAPI']>
+    readonly getUserProfileAPI: UnwrapRef<typeof import('../api/profile')['getUserProfileAPI']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly i18n: UnwrapRef<typeof import('../components/app-load-more/i18n/index.js')['default']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
@@ -535,6 +552,8 @@ declare module '@vue/runtime-core' {
     readonly post: UnwrapRef<typeof import('../utils/request')['post']>
     readonly postLoginAPI: UnwrapRef<typeof import('../api/login')['postLoginAPI']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
+    readonly put: UnwrapRef<typeof import('../utils/request')['put']>
+    readonly putUserProfileAPI: UnwrapRef<typeof import('../api/profile')['putUserProfileAPI']>
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
     readonly readonly: UnwrapRef<typeof import('vue')['readonly']>
     readonly ref: UnwrapRef<typeof import('vue')['ref']>
@@ -552,6 +571,7 @@ declare module '@vue/runtime-core' {
     readonly toValue: UnwrapRef<typeof import('vue')['toValue']>
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
     readonly unref: UnwrapRef<typeof import('vue')['unref']>
+    readonly uploadSingleImage: UnwrapRef<typeof import('../utils/upload')['uploadSingleImage']>
     readonly useAppGuessLike: UnwrapRef<typeof import('../composables/useAppGuessLike')['default']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>

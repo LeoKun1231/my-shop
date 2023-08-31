@@ -12,6 +12,34 @@ const icons = [
 ]
 
 const { safeAreaTop } = useSystem()
+
+/**
+ * 前往个人资料页
+ */
+const goToProfile = () => {
+	uni.navigateTo({
+		url: '/sub-pages/profile/profile'
+	})
+}
+
+/**
+ * 查看头像
+ */
+const lookAvatar = () => {
+	uni.previewImage({
+		current: user.value!.avatar,
+		urls: [user.value!.avatar]
+	})
+}
+
+/**
+ * 前往设置页面
+ */
+const handleGoToSetting = () => {
+	uni.navigateTo({
+		url: '/sub-pages/setting/setting'
+	})
+}
 </script>
 
 <template>
@@ -19,13 +47,23 @@ const { safeAreaTop } = useSystem()
 		<view class="bg-[#fbb957] rounded-bl-10 rounded-br-10 px-4 pb-20" :style="{ paddingTop: 30 + safeAreaTop + 'px' }">
 			<view class="between">
 				<view class="flex items-center">
-					<image :src="user?.avatar" class="w-16 h-16 rounded-full" />
+					<image
+						:src="
+							user?.avatar ||
+							'http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-06/db628d42-88a7-46e7-abb8-659448c33081.png'
+						"
+						class="w-16 h-16 rounded-full"
+						@click="lookAvatar"
+					/>
 					<view class="flex-col around h-14 ml-2 text-white">
-						<view>{{ user?.nickname || user?.account }}</view>
-						<view class="text-center border-1 border-white border-solid px-1 py-0.5 rounded-full text-xs">更新头像昵称</view>
+						<view>{{ user?.nickname || user?.account || '未登录' }}</view>
+						<view class="text-center border-1 border-white border-solid px-1 py-0.5 rounded-full text-xs" @click="goToProfile">
+							{{ user ? '更新头像昵称' : '点击登录账号' }}
+						</view>
 					</view>
 				</view>
-				<view class="h-14 flex items-end text-white">设置</view>
+
+				<view class="h-14 flex items-end text-white" @click="handleGoToSetting">设置</view>
 			</view>
 		</view>
 		<view class="m-auto bg-white w-94vw shadow-lg px-3 py-5 rounded-3 box-border order-box">

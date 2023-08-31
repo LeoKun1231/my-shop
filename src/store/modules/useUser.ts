@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-11 11:03:55
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-08-30 09:44:05
+ * @LastEditTime: 2023-08-30 17:01:40
  * @FilePath: \hello-uniapp\src\store\modules\useUser.ts
  * @Description:
  */
@@ -13,7 +13,6 @@ export const useUserStore = defineStore(
 	'user',
 	() => {
 		const user = ref<ILoginInfo>()
-		
 
 		return {
 			user

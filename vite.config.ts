@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-10 12:10:48
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-08-27 20:29:33
+ * @LastEditTime: 2023-08-31 10:37:11
  * @FilePath: \hello-uniapp\vite.config.ts
  * @Description:
  */
@@ -36,7 +36,7 @@ export default defineConfig({
 		Components({
 			dts: 'src/components.d.ts',
 			deep: true,
-			dirs: ['src/components', 'src/pages/**/components']
+			dirs: ['src/components', 'src/pages/**/components', 'src/sub-pages/**/components']
 		}),
 
 		uni()

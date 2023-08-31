@@ -1,5 +1,11 @@
 export type LoadingStatus = 'more' | 'loading' | 'noMore'
 
+export interface Data<T> {
+	code: number
+	msg: string
+	result: T
+}
+
 /**
  * 轮播图数据
  */

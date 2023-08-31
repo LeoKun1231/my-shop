@@ -71,7 +71,7 @@ const handleGoToDetail = () => {
 					</view>
 					<view>
 						<view v-for="item in currentCategory?.children" :key="item.id" @click="handleGoToDetail">
-							<view class="between py-3 mb-2 border-b-1 border-b-solid border-b-[#f7f7f7]">
+							<view class="between py-3 mb-2 border-b-1 border-b-solid border-b-[#f4f4f4]">
 								<view>{{ item.name }}</view>
 								<view class="text-gray-300 center text-xs">
 									<view>全部</view>

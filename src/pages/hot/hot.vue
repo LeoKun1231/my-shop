@@ -115,6 +115,6 @@ async function handleScrollToLower() {
 }
 page {
 	height: 100%;
-	background-color: #f7f7f7;
+	background-color: #f4f4f4;
 }
 </style>

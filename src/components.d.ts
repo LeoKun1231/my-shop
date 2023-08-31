@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppCategory: typeof import('./components/app-category/app-category.vue')['default']
+    AppFormItem: typeof import('./components/app-form-item/app-form-item.vue')['default']
     AppGuessLike: typeof import('./components/app-guess-like/app-guess-like.vue')['default']
     AppLoadMore: typeof import('./components/app-load-more/app-load-more.vue')['default']
     AppPopup: typeof import('./components/app-popup/app-popup.vue')['default']
@@ -29,8 +30,12 @@ declare module 'vue' {
     HomeRecommend: typeof import('./pages/home/components/home-recommend.vue')['default']
     HomeSkeleton: typeof import('./pages/home/components/home-skeleton.vue')['default']
     HotSkeletion: typeof import('./pages/hot/components/hot-skeletion.vue')['default']
+    Profile: typeof import('./sub-pages/profile/profile.vue')['default']
+    ProfileAvatar: typeof import('./sub-pages/profile/components/profile-avatar.vue')['default']
+    ProfileEdit: typeof import('./sub-pages/profile/components/profile-edit.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Setting: typeof import('./sub-pages/setting/setting.vue')['default']
     UserHeader: typeof import('./pages/user/components/user-header.vue')['default']
   }
 }

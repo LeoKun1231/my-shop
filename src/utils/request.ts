@@ -2,15 +2,11 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-11 13:23:01
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-08-19 13:07:59
+ * @LastEditTime: 2023-08-31 10:17:11
  * @FilePath: \hello-uniapp\src\utils\request.ts
  * @Description:网络请求封装
  */
-interface Data<T> {
-	code: number
-	msg: string
-	result: T
-}
+import type { Data } from '@/types/global'
 
 const RequestInterceptor: UniApp.InterceptorOptions = {
 	invoke(options: UniApp.RequestOptions) {
@@ -19,7 +15,8 @@ const RequestInterceptor: UniApp.InterceptorOptions = {
 			options.url = import.meta.env.VITE_BASE_URL + options.url
 		}
 		// 2.处理token 以及添加请求头标识
-		const token = ''
+		const userStore = useUserStore()
+		const token = userStore.user?.token
 		//添加token
 		if (token) {
 			options.header = {
@@ -89,5 +86,17 @@ export const post = <T>(options: UniApp.RequestOptions) => {
 	return request<T>({
 		...options,
 		method: 'POST'
+	})
+}
+
+/**
+ * @description:put 网络请请求
+ * @param {object} UniApp.RequestOptions
+ * @return {Promise}
+ */
+export const put = <T>(options: UniApp.RequestOptions) => {
+	return request<T>({
+		...options,
+		method: 'PUT'
 	})
 }
