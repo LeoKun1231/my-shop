@@ -114,7 +114,9 @@
 				{
 					"path": "address/address",
 					"style": {
-						"navigationBarTitleText": "我的地址"
+						"navigationBarTitleText": "我的地址",
+						"navigationBarTextStyle": "black",
+						"navigationBarBackgroundColor": "#fff"
 					}
 				}
 			]

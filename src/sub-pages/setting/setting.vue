@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-30 17:42:49
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-08-30 19:59:59
+ * @LastEditTime: 2023-09-01 12:19:00
  * @FilePath: \hello-uniapp\src\sub-pages\setting\setting.vue
  * @Description: 设置页
 -->
@@ -28,7 +28,7 @@ const handleLogout = () => {
 		confirmColor: '#fbb957',
 		success: (res) => {
 			if (res.confirm) {
-				user.value = null
+				user.value = undefined
 				uni.showToast({
 					title: '退出登录成功',
 					icon: 'none',
@@ -40,11 +40,21 @@ const handleLogout = () => {
 		}
 	})
 }
+
+/**
+ * 前往地址页
+ */
+const handleGoToAddress = () => {
+	uni.navigateTo({
+		url: '/sub-pages/address/address'
+	})
+}
+
 </script>
 
 <template>
 	<view class="setting p-3 text-[#666]">
-		<view v-if="user" class="mb-3 rounded-2 bg-white between px-3 py-3.5">
+		<view v-if="user" class="mb-3 rounded-2 bg-white between px-3 py-3.5" @click="handleGoToAddress">
 			<view>我的收获地址</view>
 			<view class="bg-[#999] text-lg i-carbon-chevron-right"></view>
 		</view>
