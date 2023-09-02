@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-30 20:05:48
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-08-31 13:02:55
+ * @LastEditTime: 2023-09-02 12:10:45
  * @FilePath: \hello-uniapp\src\sub-pages\profile\profile.vue
  * @Description: 
 -->
@@ -26,7 +26,7 @@ async function getUserProfileData() {
 	<profile-edit :profile="profileData" />
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 page {
 	background-color: #f4f4f4;
 }

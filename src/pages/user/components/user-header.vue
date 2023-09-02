@@ -1,3 +1,11 @@
+<!--
+ * @Author: Leo l024983409@qq.com
+ * @Date: 2023-08-30 10:25:42
+ * @LastEditors: Leo l024983409@qq.com
+ * @LastEditTime: 2023-09-02 12:12:52
+ * @FilePath: \hello-uniapp\src\pages\user\components\user-header.vue
+ * @Description: 
+-->
 <script setup lang="ts">
 const userStore = useUserStore()
 
@@ -55,7 +63,7 @@ const handleGoToSetting = () => {
 						class="w-16 h-16 rounded-full"
 						@click="lookAvatar"
 					/>
-					<view class="flex-col around h-14 ml-2 text-white">
+					<view class="flex-col around items-start h-14 ml-2 text-white">
 						<view>{{ user?.nickname || user?.account || '未登录' }}</view>
 						<view class="text-center border-1 border-white border-solid px-1 py-0.5 rounded-full text-xs" @click="goToProfile">
 							{{ user ? '更新头像昵称' : '点击登录账号' }}

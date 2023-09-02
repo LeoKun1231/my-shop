@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { throttle } from 'lodash'
+import throttle from 'lodash/throttle'
 withDefaults(
 	defineProps<{
 		paddingBottom?: number

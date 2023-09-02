@@ -10,7 +10,6 @@ const { user } = storeToRefs(userStore)
  * 返回
  */
 const goBack = () => {
-	console.log(11)
 	uni.navigateBack()
 }
 

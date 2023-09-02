@@ -2,14 +2,13 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-31 11:03:02
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-08-31 19:13:45
+ * @LastEditTime: 2023-09-02 20:16:40
  * @FilePath: \hello-uniapp\src\sub-pages\profile\components\profile-edit.vue
  * @Description: 
 -->
 <script setup lang="ts">
 import type { IProfile } from '@/types/profile'
-import { cloneDeep } from 'lodash'
-import CityData from '@/static/data/city.json'
+import cloneDeep from 'lodash/cloneDeep'
 
 // 定义props
 const props = defineProps<{
@@ -46,26 +45,47 @@ const handleDatePickerChange: UniHelper.DatePickerOnChange = (e) => {
 	componentProfile.value.birthday = e.detail.value
 }
 
-const cityCode = ref<string[]>([])
-//城市改变 由于没有数据只能这么搞
-const handleCityChange: UniHelper.UniDataPickerOnChange = (e) => {
-	const cityCodeData = e.detail.value.map((item) => item.value)
-	const cityNameData = e.detail.value.map((item) => item.text)
-	componentProfile.value.fullLocation = cityNameData.join(' ')
-	cityCode.value = cityCodeData
+const cityCodes = ref<[string, string, string]>(['', '', ''])
+
+// #ifdef MP-WEIXIN
+/**
+ * 处理城市选择
+ */
+const handleRegionPickerChange: UniHelper.RegionPickerOnChange = (e) => {
+	console.log(e.detail.value)
+	const fullLocation = e.detail.value.join(' ')
+	const [provinceCode, cityCode, countyCode] = e.detail.code!
+	cityCodes.value = [provinceCode, cityCode, countyCode]
+	componentProfile.value.fullLocation = fullLocation
 }
+// #endif
+
+// #ifdef APP-PLUS || H5
+/**
+ * 处理城市选择
+ */
+const handleCityPickerChange: UniHelper.UniDataPickerOnChange = (e) => {
+	//地址字符串
+	const fullLocation = e.detail.value.map((item) => item.text).join('/')
+	//省市区编码
+	const [provinceCode, cityCode, countyCode] = e.detail.value.map((item) => item.value)
+	cityCodes.value = [provinceCode, cityCode, countyCode]
+	componentProfile.value.fullLocation = fullLocation
+}
+// #endif
 
 // 处理保存profile
 const handleSaveProfile = async () => {
 	const { birthday, gender, nickname, profession } = componentProfile.value
+	const [provinceCode, cityCode, countyCode] = cityCodes.value
 	await putUserProfileAPI({
 		birthday,
 		gender,
 		nickname,
 		profession,
-		countyCode: cityCode.value[2],
-		cityCode: cityCode.value[1] + '00',
-		provinceCode: cityCode.value[0] + '0000'
+		countyCode,
+		cityCode,
+		provinceCode
 	})
 	user.value!.nickname = nickname
 	uni.showToast({
@@ -102,17 +122,29 @@ const handleSaveProfile = async () => {
 			</picker>
 		</app-form-item>
 		<app-form-item label="城市">
+			<!-- #ifdef MP-WEIXIN -->
+			<picker mode="region" @change="handleRegionPickerChange">
+				<view v-if="componentProfile.fullLocation">{{ componentProfile.fullLocation }}</view>
+				<view v-else class="text-[#808080] text-sm">请选择地址</view>
+			</picker>
+			<!-- #endif -->
+			<!-- #ifdef APP-PLUS || H5 -->
 			<uni-data-picker
-				:model="componentProfile.fullLocation?.split(' ')"
 				placeholder="请选择地址"
 				popup-title="请选择城市"
-				:localdata="CityData as any"
-				:map="{ text: 'name', value: 'code' }"
+				collection="opendb-city-china"
+				field="code as value, name as text"
+				orderby="value asc"
+				:step-searh="true"
 				:border="false"
-				@change="handleCityChange"
+				self-field="code"
+				parent-field="parent_code"
+				@change="handleCityPickerChange"
 			>
-				<view>{{ componentProfile.fullLocation }}</view>
+				<view v-if="componentProfile.fullLocation">{{ componentProfile.fullLocation }}</view>
+				<view v-else class="text-[#808080] text-sm">请选择地址</view>
 			</uni-data-picker>
+			<!-- #endif -->
 		</app-form-item>
 		<app-form-item class="border-b-transparent" label="职业">
 			<input v-model="componentProfile.profession" placeholder="请填写职业" />

@@ -100,3 +100,15 @@ export const put = <T>(options: UniApp.RequestOptions) => {
 		method: 'PUT'
 	})
 }
+
+/**
+ * @description:delete 网络请请求
+ * @param {object} UniApp.RequestOptions
+ * @return {Promise}
+ */
+export const deleteRequest = <T>(options: UniApp.RequestOptions) => {
+	return request<T>({
+		...options,
+		method: 'DELETE'
+	})
+}

@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-30 17:42:49
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-01 12:19:00
+ * @LastEditTime: 2023-09-02 12:04:42
  * @FilePath: \hello-uniapp\src\sub-pages\setting\setting.vue
  * @Description: 设置页
 -->
@@ -49,7 +49,6 @@ const handleGoToAddress = () => {
 		url: '/sub-pages/address/address'
 	})
 }
-
 </script>
 
 <template>
@@ -82,7 +81,7 @@ const handleGoToAddress = () => {
 	</view>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 page {
 	background-color: #f4f4f4;
 	view {

@@ -30,12 +30,10 @@ declare module 'vue' {
     HomeRecommend: typeof import('./pages/home/components/home-recommend.vue')['default']
     HomeSkeleton: typeof import('./pages/home/components/home-skeleton.vue')['default']
     HotSkeletion: typeof import('./pages/hot/components/hot-skeletion.vue')['default']
-    Profile: typeof import('./sub-pages/profile/profile.vue')['default']
     ProfileAvatar: typeof import('./sub-pages/profile/components/profile-avatar.vue')['default']
     ProfileEdit: typeof import('./sub-pages/profile/components/profile-edit.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Setting: typeof import('./sub-pages/setting/setting.vue')['default']
     UserHeader: typeof import('./pages/user/components/user-header.vue')['default']
   }
 }

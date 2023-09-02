@@ -22,4 +22,5 @@ onHide(() => {
 image {
 	vertical-align: middle;
 }
+
 </style>

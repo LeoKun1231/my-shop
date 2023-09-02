@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-11 19:03:23
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-08-30 10:37:34
+ * @LastEditTime: 2023-09-02 11:41:48
  * @FilePath: \hello-uniapp\src\pages\user\user.vue
  * @Description: 
 -->
@@ -20,7 +20,7 @@ onReachBottom(() => {
 	</view>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 page {
 	background-color: $app-bg-color;
 }
