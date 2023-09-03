@@ -24,6 +24,7 @@ declare module 'vue' {
     DetailDesc: typeof import('./pages/detail/components/detail-desc.vue')['default']
     DetailRecommend: typeof import('./pages/detail/components/detail-recommend.vue')['default']
     DetailService: typeof import('./pages/detail/components/detail-service.vue')['default']
+    DetailSku: typeof import('./pages/detail/components/detail-sku.vue')['default']
     DetailSwiper: typeof import('./pages/detail/components/detail-swiper.vue')['default']
     HomeCategory: typeof import('./pages/home/components/home-category.vue')['default']
     HomeHeader: typeof import('./pages/home/components/home-header.vue')['default']
@@ -35,5 +36,7 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     UserHeader: typeof import('./pages/user/components/user-header.vue')['default']
+    VkDataGoodsSkuPopup: typeof import('./components/vk-data-goods-sku-popup/vk-data-goods-sku-popup.vue')['default']
+    VkDataInputNumberBox: typeof import('./components/vk-data-input-number-box/vk-data-input-number-box.vue')['default']
   }
 }

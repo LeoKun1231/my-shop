@@ -47,18 +47,19 @@ cloudfunctions
 const createConfig = require('uni-config-center')
 
 const uniIdConfig = createConfig({
-    pluginId: 'uni-id', // 插件id
-    defaultConfig: { // 默认配置
-        tokenExpiresIn: 7200,
-        tokenExpiresThreshold: 600,
-    },
-    customMerge: function(defaultConfig, userConfig) { // 自定义默认配置和用户配置的合并规则，不设置的情况侠会对默认配置和用户配置进行深度合并
-        // defaudltConfig 默认配置
-        // userConfig 用户配置
-        return Object.assign(defaultConfig, userConfig)
-    }
+	pluginId: 'uni-id', // 插件id
+	defaultConfig: {
+		// 默认配置
+		tokenExpiresIn: 7200,
+		tokenExpiresThreshold: 600
+	},
+	customMerge: function (defaultConfig, userConfig) {
+		// 自定义默认配置和用户配置的合并规则，不设置的情况侠会对默认配置和用户配置进行深度合并
+		// defaudltConfig 默认配置
+		// userConfig 用户配置
+		return Object.assign(defaultConfig, userConfig)
+	}
 })
-
 
 // 以如下配置为例
 // {

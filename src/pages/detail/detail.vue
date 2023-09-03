@@ -2,12 +2,12 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-26 17:43:24
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-08-27 13:13:58
+ * @LastEditTime: 2023-09-03 10:26:40
  * @FilePath: \hello-uniapp\src\pages\detail\detail.vue
  * @Description: 商品详情
 -->
 <script setup lang="ts">
-import type { IDetaiiGoodResult } from '@/types/detail'
+import type { IDetailGoodResult } from '@/types/detail'
 
 const props = defineProps<{
 	id: string
@@ -15,7 +15,7 @@ const props = defineProps<{
 
 getGoodDetailData(props.id)
 
-const detailData = ref<IDetaiiGoodResult>()
+const detailData = ref<IDetailGoodResult>()
 
 async function getGoodDetailData(id: string) {
 	const { result } = await getDetailAPI(id)
@@ -60,7 +60,7 @@ const buttonGroup = ref([
 	<view class="h-[calc(100vh-50px)] overflow-hidden" v-if="detailData">
 		<app-scroll-view class="h-full" :refresher-enabled="false" :padding-bottom="50">
 			<detail-swiper :urls="detailData?.mainPictures" />
-			<detail-content :name="detailData?.name" :price="detailData?.price" :desc="detailData?.desc" />
+			<detail-content :goods="detailData" />
 			<detail-desc :desc="detailData?.details?.properties" :pictures="detailData?.details?.pictures" />
 			<detail-recommend :goods="detailData?.similarProducts" />
 		</app-scroll-view>

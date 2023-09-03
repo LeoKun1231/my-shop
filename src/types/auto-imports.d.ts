@@ -117,6 +117,8 @@ declare global {
   const useSlots: typeof import('vue')['useSlots']
   const useSystem: typeof import('../composables/useSystem')['useSystem']
   const useUserStore: typeof import('../store/modules/useUser')['useUserStore']
+  const vkDataGoodsSkuPopup: typeof import('../components/vk-data-goods-sku-popup/vk-data-goods-sku-popup.vue')['default']
+  const vkDataInputNumberBox: typeof import('../components/vk-data-input-number-box/vk-data-input-number-box.vue')['default']
   const watch: typeof import('vue')['watch']
   const watchEffect: typeof import('vue')['watchEffect']
   const watchPostEffect: typeof import('vue')['watchPostEffect']
@@ -243,6 +245,8 @@ declare module 'vue' {
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useSystem: UnwrapRef<typeof import('../composables/useSystem')['useSystem']>
     readonly useUserStore: UnwrapRef<typeof import('../store/modules/useUser')['useUserStore']>
+    readonly vkDataGoodsSkuPopup: UnwrapRef<typeof import('../components/vk-data-goods-sku-popup/vk-data-goods-sku-popup.vue')['default']>
+    readonly vkDataInputNumberBox: UnwrapRef<typeof import('../components/vk-data-input-number-box/vk-data-input-number-box.vue')['default']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
     readonly watchPostEffect: UnwrapRef<typeof import('vue')['watchPostEffect']>
@@ -363,6 +367,8 @@ declare module '@vue/runtime-core' {
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useSystem: UnwrapRef<typeof import('../composables/useSystem')['useSystem']>
     readonly useUserStore: UnwrapRef<typeof import('../store/modules/useUser')['useUserStore']>
+    readonly vkDataGoodsSkuPopup: UnwrapRef<typeof import('../components/vk-data-goods-sku-popup/vk-data-goods-sku-popup.vue')['default']>
+    readonly vkDataInputNumberBox: UnwrapRef<typeof import('../components/vk-data-input-number-box/vk-data-input-number-box.vue')['default']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
     readonly watchPostEffect: UnwrapRef<typeof import('vue')['watchPostEffect']>

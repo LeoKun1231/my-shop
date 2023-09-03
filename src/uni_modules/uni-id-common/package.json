@@ -4,17 +4,17 @@
 	"version": "1.0.16",
 	"description": "包含uni-id token生成、校验、刷新功能的云函数公共模块",
 	"keywords": [
-        "uni-id-common",
-        "uniCloud",
-        "token",
-        "权限"
-    ],
+		"uni-id-common",
+		"uniCloud",
+		"token",
+		"权限"
+	],
 	"repository": "https://gitcode.net/dcloud/uni-id-common",
 	"engines": {
 		"HBuilderX": "^3.1.0"
 	},
-    "dcloudext": {
-        "sale": {
+	"dcloudext": {
+		"sale": {
 			"regular": {
 				"price": "0.00"
 			},
@@ -30,11 +30,13 @@
 			"data": "无",
 			"permissions": "无"
 		},
-        "npmurl": "",
-        "type": "unicloud-template-function"
+		"npmurl": "",
+		"type": "unicloud-template-function"
 	},
 	"uni_modules": {
-		"dependencies": ["uni-config-center"],
+		"dependencies": [
+			"uni-config-center"
+		],
 		"encrypt": [],
 		"platforms": {
 			"cloud": {
@@ -72,7 +74,7 @@
 					"钉钉": "u",
 					"快手": "u",
 					"飞书": "u",
-                    "京东": "u"
+					"京东": "u"
 				},
 				"快应用": {
 					"华为": "u",

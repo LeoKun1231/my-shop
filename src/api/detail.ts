@@ -1,10 +1,10 @@
-import type { IDetaiiGoodResult } from '@/types/detail'
+import type { IDetailGoodResult } from '@/types/detail'
 
 /**
  * 获取商品详情
  */
 export const getDetailAPI = (id: string) => {
-	return get<IDetaiiGoodResult>({
+	return get<IDetailGoodResult>({
 		url: '/goods',
 		data: {
 			id

@@ -1,0 +1,139 @@
+<script setup lang="ts">
+import type { IDetailGoodResult } from '@/types/detail'
+import type { SkuPopupLocaldata } from '@/components/vk-data-goods-sku-popup/vk-data-goods-sku-popup'
+import cloneDeep from 'lodash/cloneDeep'
+
+const props = defineProps<{
+	goods: IDetailGoodResult
+}>()
+
+enum SkuMode {
+	/**
+	 * 显示加入购物车和立即购买按钮
+	 */
+	Both = 1,
+	/**
+	 * 只显示加入购物车按钮
+	 */
+	Cart = 2,
+	/**
+	 * 只显示立即购买按钮
+	 */
+	Buy = 3
+}
+
+const skuOpen = ref(false)
+const skuMode = ref<SkuMode>(SkuMode.Both)
+const goodInfo = ref<SkuPopupLocaldata>()
+const skuPopupRef = ref()
+
+const goods = cloneDeep(props.goods)
+
+watch(
+	() => props.goods,
+	() => {
+		const spec_list = goods.specs.map((item) => ({ name: item.name, list: item.values }))
+		for (const item of spec_list) {
+			item.list.sort((a, b) => a.name.localeCompare(b.name))
+		}
+		goodInfo.value = {
+			_id: goods.id,
+			name: goods.name,
+			goods_thumb: goods.mainPictures[0],
+			spec_list,
+			sku_list: goods.skus.map((item) => ({
+				_id: item.id,
+				goods_id: goods.id,
+				goods_name: goods.name,
+				image: item.picture,
+				price: parseInt(item.price),
+				stock: item.inventory,
+				sku_name_arr: item.specs.map((spec) => spec.valueName)
+			}))
+		}
+	},
+	{
+		immediate: true
+	}
+)
+
+const openOrClose = (isOpen: boolean) => {
+	skuOpen.value = isOpen
+	nextTick(() => {
+		if (skuOpen.value) {
+			console.log(skuPopupRef.value)
+			skuPopupRef.value?.selectSku({
+				sku: goodInfo.value?.spec_list.map((item) => item.list[0].name),
+				num: 1
+			})
+		}
+	})
+}
+
+// 加入购物车前的判断
+function addCartFn(obj: any) {
+	let { selectShop } = obj
+	// 模拟添加到购物车,请替换成你自己的添加到购物车逻辑
+	let res = {} as any
+	let name = selectShop.goods_name
+	if (selectShop.sku_name != '默认') {
+		name += '-' + selectShop.sku_name_arr
+	}
+	res.msg = `${name} 已添加到购物车`
+	if (typeof obj.success == 'function') obj.success(res)
+}
+// 加入购物车按钮
+function addCart(selectShop: any) {
+	console.log('监听 - 加入购物车')
+	addCartFn({
+		selectShop: selectShop,
+		success: function (res: any) {
+			// 实际业务时,请替换自己的加入购物车逻辑
+			toast(res.msg)
+			setTimeout(function () {
+				skuOpen.value = false
+			}, 300)
+		}
+	})
+}
+
+// 立即购买
+function buyNow(selectShop: any) {
+	console.log('监听 - 立即购买')
+	addCartFn({
+		selectShop: selectShop,
+		success: function () {
+			// 实际业务时,请替换自己的立即购买逻辑
+			toast('立即购买')
+		}
+	})
+}
+
+function toast(msg: string) {
+	uni.showToast({
+		title: msg,
+		icon: 'none'
+	})
+}
+
+defineExpose({
+	openOrClose
+})
+</script>
+
+<template>
+	<view class="app">
+		<vk-data-goods-sku-popup
+			ref="skuPopupRef"
+			v-model="skuOpen"
+			border-radius="20"
+			:localdata="goodInfo"
+			:mode="skuMode"
+			:amount-type="0"
+			@add-cart="addCart"
+			@buy-now="buyNow"
+		></vk-data-goods-sku-popup>
+	</view>
+</template>
+
+<style scoped lang="scss"></style>

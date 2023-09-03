@@ -1,8 +1,16 @@
+/*
+ * @Author: Leo l024983409@qq.com
+ * @Date: 2023-08-30 20:18:16
+ * @LastEditors: Leo l024983409@qq.com
+ * @LastEditTime: 2023-09-03 10:29:01
+ * @FilePath: \hello-uniapp\src\types\detail.d.ts
+ * @Description:
+ */
 import type { IAddress } from './address'
 import type { IGlobalGuessLike } from './global'
 
 /** 商品信息 */
-export interface IDetaiiGoodResult {
+export interface IDetailGoodResult {
 	/** id */
 	id: string
 	/** 商品名称 */
