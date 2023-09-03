@@ -81,6 +81,9 @@ export type SkuPopupProps = {
 	/** 被选中的值 */
 	selectArr?: string[]
 
+	/** 默认选择 */
+	selectSku: (e: { sku: string[]; num: number }) => void
+
 	/** 打开弹出层 */
 	onOpen: () => void
 	/** 关闭弹出层 */

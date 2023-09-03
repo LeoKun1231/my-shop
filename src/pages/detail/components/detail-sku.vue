@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { IDetailGoodResult } from '@/types/detail'
-import type { SkuPopupLocaldata } from '@/components/vk-data-goods-sku-popup/vk-data-goods-sku-popup'
+import type { SkuPopupLocaldata, SkuPopupInstanceType } from '@/components/vk-data-goods-sku-popup/vk-data-goods-sku-popup'
 import cloneDeep from 'lodash/cloneDeep'
 
 const props = defineProps<{
@@ -25,7 +25,7 @@ enum SkuMode {
 const skuOpen = ref(false)
 const skuMode = ref<SkuMode>(SkuMode.Both)
 const goodInfo = ref<SkuPopupLocaldata>()
-const skuPopupRef = ref()
+const skuPopupRef = ref<SkuPopupInstanceType>()
 
 const goods = cloneDeep(props.goods)
 
@@ -62,8 +62,8 @@ const openOrClose = (isOpen: boolean) => {
 	nextTick(() => {
 		if (skuOpen.value) {
 			console.log(skuPopupRef.value)
-			skuPopupRef.value?.selectSku({
-				sku: goodInfo.value?.spec_list.map((item) => item.list[0].name),
+			skuPopupRef.value?.selectSku?.({
+				sku: goodInfo.value?.spec_list.map((item) => item.list[0].name) || [],
 				num: 1
 			})
 		}
