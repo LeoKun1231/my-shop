@@ -88,6 +88,7 @@ declare global {
   const onUnmounted: typeof import('vue')['onUnmounted']
   const onUpdated: typeof import('vue')['onUpdated']
   const post: typeof import('./src/utils/request')['post']
+  const postAddCartAPI: typeof import('./src/api/cart')['postAddCartAPI']
   const postAddressAPI: typeof import('./src/api/address')['postAddressAPI']
   const postLoginAPI: typeof import('./src/api/login')['postLoginAPI']
   const provide: typeof import('vue')['provide']
@@ -218,6 +219,7 @@ declare module 'vue' {
     readonly onUnmounted: UnwrapRef<typeof import('vue')['onUnmounted']>
     readonly onUpdated: UnwrapRef<typeof import('vue')['onUpdated']>
     readonly post: UnwrapRef<typeof import('./src/utils/request')['post']>
+    readonly postAddCartAPI: UnwrapRef<typeof import('./src/api/cart')['postAddCartAPI']>
     readonly postAddressAPI: UnwrapRef<typeof import('./src/api/address')['postAddressAPI']>
     readonly postLoginAPI: UnwrapRef<typeof import('./src/api/login')['postLoginAPI']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
@@ -342,6 +344,7 @@ declare module '@vue/runtime-core' {
     readonly onUnmounted: UnwrapRef<typeof import('vue')['onUnmounted']>
     readonly onUpdated: UnwrapRef<typeof import('vue')['onUpdated']>
     readonly post: UnwrapRef<typeof import('./src/utils/request')['post']>
+    readonly postAddCartAPI: UnwrapRef<typeof import('./src/api/cart')['postAddCartAPI']>
     readonly postAddressAPI: UnwrapRef<typeof import('./src/api/address')['postAddressAPI']>
     readonly postLoginAPI: UnwrapRef<typeof import('./src/api/login')['postLoginAPI']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>

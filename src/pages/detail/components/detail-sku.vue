@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import type { SkuPopupInstanceType, SkuPopupLocaldata } from '@/components/vk-data-goods-sku-popup/vk-data-goods-sku-popup'
+import { postAddCartAPI } from '@/api/cart'
+import type {
+	SkuPopupEvent,
+	SkuPopupInstanceType,
+	SkuPopupLocaldata,
+	SkuPopupSkuItem
+} from '@/components/vk-data-goods-sku-popup/vk-data-goods-sku-popup'
 import type { IDetailGoodResult } from '@/types/detail'
 import cloneDeep from 'lodash/cloneDeep'
 
@@ -92,16 +98,17 @@ const handleClose = () => {
 }
 
 // 加入购物车前的判断
-function addCartFn(obj: any) {
-	let { selectShop } = obj
-	// 模拟添加到购物车,请替换成你自己的添加到购物车逻辑
-	let res = {} as any
-	let name = selectShop.goods_name
-	if (selectShop.sku_name != '默认') {
-		name += '-' + selectShop.sku_name_arr
-	}
-	res.msg = `${name} 已添加到购物车`
-	if (typeof obj.success == 'function') obj.success(res)
+async function addCartFn(obj: SkuPopupEvent) {
+	const { selectShop } = obj
+	await postAddCartAPI({
+		count: selectShop.buy_num,
+		skuId: selectShop._id
+	})
+	uni.showToast({
+		title: '加入购物车成功',
+		icon: 'none'
+	})
+	skuOpen.value = false
 }
 // 加入购物车按钮
 function addCart(selectShop: any) {
