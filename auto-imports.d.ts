@@ -6,10 +6,10 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
-  const Gender: typeof import('./profile.d')['Gender']
+  const Gender: typeof import('./src/types/profile.d')['Gender']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
-  const appFormItem: typeof import('../components/app-form-item/app-form-item.vue')['default']
-  const appLoadMore: typeof import('../components/app-load-more/app-load-more.vue')['default']
+  const appFormItem: typeof import('./src/components/app-form-item/app-form-item.vue')['default']
+  const appLoadMore: typeof import('./src/components/app-load-more/app-load-more.vue')['default']
   const computed: typeof import('vue')['computed']
   const createApp: typeof import('vue')['createApp']
   const createPinia: typeof import('pinia')['createPinia']
@@ -17,27 +17,27 @@ declare global {
   const defineAsyncComponent: typeof import('vue')['defineAsyncComponent']
   const defineComponent: typeof import('vue')['defineComponent']
   const defineStore: typeof import('pinia')['defineStore']
-  const deleteAddressAPI: typeof import('../api/address')['deleteAddressAPI']
-  const deleteRequest: typeof import('../utils/request')['deleteRequest']
+  const deleteAddressAPI: typeof import('./src/api/address')['deleteAddressAPI']
+  const deleteRequest: typeof import('./src/utils/request')['deleteRequest']
   const effectScope: typeof import('vue')['effectScope']
-  const envD: typeof import('./env.d')['default']
-  const formatDate: typeof import('../utils/date')['formatDate']
-  const get: typeof import('../utils/request')['get']
+  const envD: typeof import('./src/types/env.d')['default']
+  const formatDate: typeof import('./src/utils/date')['formatDate']
+  const get: typeof import('./src/utils/request')['get']
   const getActivePinia: typeof import('pinia')['getActivePinia']
-  const getAddressDetailAPI: typeof import('../api/address')['getAddressDetailAPI']
-  const getAddressListAPI: typeof import('../api/address')['getAddressListAPI']
-  const getCategroyDataAPI: typeof import('../api/category')['getCategroyDataAPI']
+  const getAddressDetailAPI: typeof import('./src/api/address')['getAddressDetailAPI']
+  const getAddressListAPI: typeof import('./src/api/address')['getAddressListAPI']
+  const getCategroyDataAPI: typeof import('./src/api/category')['getCategroyDataAPI']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
-  const getDetailAPI: typeof import('../api/detail')['getDetailAPI']
-  const getGlobalBannersAPI: typeof import('../api/global')['getGlobalBannersAPI']
-  const getGlobalGuessLikeAPI: typeof import('../api/global')['getGlobalGuessLikeAPI']
-  const getHomeCategoryAPI: typeof import('../api/home')['getHomeCategoryAPI']
-  const getHomeHotRecommendAPI: typeof import('../api/home')['getHomeHotRecommendAPI']
-  const getHotDataAPI: typeof import('../api/hot')['getHotDataAPI']
-  const getUserProfileAPI: typeof import('../api/profile')['getUserProfileAPI']
+  const getDetailAPI: typeof import('./src/api/detail')['getDetailAPI']
+  const getGlobalBannersAPI: typeof import('./src/api/global')['getGlobalBannersAPI']
+  const getGlobalGuessLikeAPI: typeof import('./src/api/global')['getGlobalGuessLikeAPI']
+  const getHomeCategoryAPI: typeof import('./src/api/home')['getHomeCategoryAPI']
+  const getHomeHotRecommendAPI: typeof import('./src/api/home')['getHomeHotRecommendAPI']
+  const getHotDataAPI: typeof import('./src/api/hot')['getHotDataAPI']
+  const getUserProfileAPI: typeof import('./src/api/profile')['getUserProfileAPI']
   const h: typeof import('vue')['h']
-  const i18n: typeof import('../components/app-load-more/i18n/index.js')['default']
+  const i18n: typeof import('./src/components/app-load-more/i18n/index.js')['default']
   const inject: typeof import('vue')['inject']
   const isProxy: typeof import('vue')['isProxy']
   const isReactive: typeof import('vue')['isReactive']
@@ -87,13 +87,13 @@ declare global {
   const onUnload: typeof import('@dcloudio/uni-app')['onUnload']
   const onUnmounted: typeof import('vue')['onUnmounted']
   const onUpdated: typeof import('vue')['onUpdated']
-  const post: typeof import('../utils/request')['post']
-  const postAddressAPI: typeof import('../api/address')['postAddressAPI']
-  const postLoginAPI: typeof import('../api/login')['postLoginAPI']
+  const post: typeof import('./src/utils/request')['post']
+  const postAddressAPI: typeof import('./src/api/address')['postAddressAPI']
+  const postLoginAPI: typeof import('./src/api/login')['postLoginAPI']
   const provide: typeof import('vue')['provide']
-  const put: typeof import('../utils/request')['put']
-  const putAddressAPI: typeof import('../api/address')['putAddressAPI']
-  const putUserProfileAPI: typeof import('../api/profile')['putUserProfileAPI']
+  const put: typeof import('./src/utils/request')['put']
+  const putAddressAPI: typeof import('./src/api/address')['putAddressAPI']
+  const putUserProfileAPI: typeof import('./src/api/profile')['putUserProfileAPI']
   const reactive: typeof import('vue')['reactive']
   const readonly: typeof import('vue')['readonly']
   const ref: typeof import('vue')['ref']
@@ -103,7 +103,7 @@ declare global {
   const shallowReactive: typeof import('vue')['shallowReactive']
   const shallowReadonly: typeof import('vue')['shallowReadonly']
   const shallowRef: typeof import('vue')['shallowRef']
-  const store: typeof import('../store/index')['default']
+  const store: typeof import('./src/store/index')['default']
   const storeToRefs: typeof import('pinia')['storeToRefs']
   const toRaw: typeof import('vue')['toRaw']
   const toRef: typeof import('vue')['toRef']
@@ -111,16 +111,16 @@ declare global {
   const toValue: typeof import('vue')['toValue']
   const triggerRef: typeof import('vue')['triggerRef']
   const unref: typeof import('vue')['unref']
-  const uploadSingleImage: typeof import('../utils/upload')['uploadSingleImage']
-  const useAppGuessLike: typeof import('../composables/useAppGuessLike')['default']
+  const uploadSingleImage: typeof import('./src/utils/upload')['uploadSingleImage']
+  const useAppGuessLike: typeof import('./src/composables/useAppGuessLike')['default']
   const useAttrs: typeof import('vue')['useAttrs']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
   const useSlots: typeof import('vue')['useSlots']
-  const useSystem: typeof import('../composables/useSystem')['useSystem']
-  const useUserStore: typeof import('../store/modules/useUser')['useUserStore']
-  const vkDataGoodsSkuPopup: typeof import('../components/vk-data-goods-sku-popup/vk-data-goods-sku-popup.vue')['default']
-  const vkDataInputNumberBox: typeof import('../components/vk-data-input-number-box/vk-data-input-number-box.vue')['default']
+  const useSystem: typeof import('./src/composables/useSystem')['useSystem']
+  const useUserStore: typeof import('./src/store/modules/useUser')['useUserStore']
+  const vkDataGoodsSkuPopup: typeof import('./src/components/vk-data-goods-sku-popup/vk-data-goods-sku-popup.vue')['default']
+  const vkDataInputNumberBox: typeof import('./src/components/vk-data-input-number-box/vk-data-input-number-box.vue')['default']
   const watch: typeof import('vue')['watch']
   const watchEffect: typeof import('vue')['watchEffect']
   const watchPostEffect: typeof import('vue')['watchPostEffect']
@@ -136,10 +136,10 @@ import { UnwrapRef } from 'vue'
 declare module 'vue' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
-    readonly Gender: UnwrapRef<typeof import('./profile.d')['Gender']>
+    readonly Gender: UnwrapRef<typeof import('./src/types/profile.d')['Gender']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
-    readonly appFormItem: UnwrapRef<typeof import('../components/app-form-item/app-form-item.vue')['default']>
-    readonly appLoadMore: UnwrapRef<typeof import('../components/app-load-more/app-load-more.vue')['default']>
+    readonly appFormItem: UnwrapRef<typeof import('./src/components/app-form-item/app-form-item.vue')['default']>
+    readonly appLoadMore: UnwrapRef<typeof import('./src/components/app-load-more/app-load-more.vue')['default']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly createPinia: UnwrapRef<typeof import('pinia')['createPinia']>
@@ -147,27 +147,27 @@ declare module 'vue' {
     readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
     readonly defineStore: UnwrapRef<typeof import('pinia')['defineStore']>
-    readonly deleteAddressAPI: UnwrapRef<typeof import('../api/address')['deleteAddressAPI']>
-    readonly deleteRequest: UnwrapRef<typeof import('../utils/request')['deleteRequest']>
+    readonly deleteAddressAPI: UnwrapRef<typeof import('./src/api/address')['deleteAddressAPI']>
+    readonly deleteRequest: UnwrapRef<typeof import('./src/utils/request')['deleteRequest']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
-    readonly envD: UnwrapRef<typeof import('./env.d')['default']>
-    readonly formatDate: UnwrapRef<typeof import('../utils/date')['formatDate']>
-    readonly get: UnwrapRef<typeof import('../utils/request')['get']>
+    readonly envD: UnwrapRef<typeof import('./src/types/env.d')['default']>
+    readonly formatDate: UnwrapRef<typeof import('./src/utils/date')['formatDate']>
+    readonly get: UnwrapRef<typeof import('./src/utils/request')['get']>
     readonly getActivePinia: UnwrapRef<typeof import('pinia')['getActivePinia']>
-    readonly getAddressDetailAPI: UnwrapRef<typeof import('../api/address')['getAddressDetailAPI']>
-    readonly getAddressListAPI: UnwrapRef<typeof import('../api/address')['getAddressListAPI']>
-    readonly getCategroyDataAPI: UnwrapRef<typeof import('../api/category')['getCategroyDataAPI']>
+    readonly getAddressDetailAPI: UnwrapRef<typeof import('./src/api/address')['getAddressDetailAPI']>
+    readonly getAddressListAPI: UnwrapRef<typeof import('./src/api/address')['getAddressListAPI']>
+    readonly getCategroyDataAPI: UnwrapRef<typeof import('./src/api/category')['getCategroyDataAPI']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
-    readonly getDetailAPI: UnwrapRef<typeof import('../api/detail')['getDetailAPI']>
-    readonly getGlobalBannersAPI: UnwrapRef<typeof import('../api/global')['getGlobalBannersAPI']>
-    readonly getGlobalGuessLikeAPI: UnwrapRef<typeof import('../api/global')['getGlobalGuessLikeAPI']>
-    readonly getHomeCategoryAPI: UnwrapRef<typeof import('../api/home')['getHomeCategoryAPI']>
-    readonly getHomeHotRecommendAPI: UnwrapRef<typeof import('../api/home')['getHomeHotRecommendAPI']>
-    readonly getHotDataAPI: UnwrapRef<typeof import('../api/hot')['getHotDataAPI']>
-    readonly getUserProfileAPI: UnwrapRef<typeof import('../api/profile')['getUserProfileAPI']>
+    readonly getDetailAPI: UnwrapRef<typeof import('./src/api/detail')['getDetailAPI']>
+    readonly getGlobalBannersAPI: UnwrapRef<typeof import('./src/api/global')['getGlobalBannersAPI']>
+    readonly getGlobalGuessLikeAPI: UnwrapRef<typeof import('./src/api/global')['getGlobalGuessLikeAPI']>
+    readonly getHomeCategoryAPI: UnwrapRef<typeof import('./src/api/home')['getHomeCategoryAPI']>
+    readonly getHomeHotRecommendAPI: UnwrapRef<typeof import('./src/api/home')['getHomeHotRecommendAPI']>
+    readonly getHotDataAPI: UnwrapRef<typeof import('./src/api/hot')['getHotDataAPI']>
+    readonly getUserProfileAPI: UnwrapRef<typeof import('./src/api/profile')['getUserProfileAPI']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
-    readonly i18n: UnwrapRef<typeof import('../components/app-load-more/i18n/index.js')['default']>
+    readonly i18n: UnwrapRef<typeof import('./src/components/app-load-more/i18n/index.js')['default']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
     readonly isProxy: UnwrapRef<typeof import('vue')['isProxy']>
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
@@ -217,13 +217,13 @@ declare module 'vue' {
     readonly onUnload: UnwrapRef<typeof import('@dcloudio/uni-app')['onUnload']>
     readonly onUnmounted: UnwrapRef<typeof import('vue')['onUnmounted']>
     readonly onUpdated: UnwrapRef<typeof import('vue')['onUpdated']>
-    readonly post: UnwrapRef<typeof import('../utils/request')['post']>
-    readonly postAddressAPI: UnwrapRef<typeof import('../api/address')['postAddressAPI']>
-    readonly postLoginAPI: UnwrapRef<typeof import('../api/login')['postLoginAPI']>
+    readonly post: UnwrapRef<typeof import('./src/utils/request')['post']>
+    readonly postAddressAPI: UnwrapRef<typeof import('./src/api/address')['postAddressAPI']>
+    readonly postLoginAPI: UnwrapRef<typeof import('./src/api/login')['postLoginAPI']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
-    readonly put: UnwrapRef<typeof import('../utils/request')['put']>
-    readonly putAddressAPI: UnwrapRef<typeof import('../api/address')['putAddressAPI']>
-    readonly putUserProfileAPI: UnwrapRef<typeof import('../api/profile')['putUserProfileAPI']>
+    readonly put: UnwrapRef<typeof import('./src/utils/request')['put']>
+    readonly putAddressAPI: UnwrapRef<typeof import('./src/api/address')['putAddressAPI']>
+    readonly putUserProfileAPI: UnwrapRef<typeof import('./src/api/profile')['putUserProfileAPI']>
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
     readonly readonly: UnwrapRef<typeof import('vue')['readonly']>
     readonly ref: UnwrapRef<typeof import('vue')['ref']>
@@ -233,7 +233,7 @@ declare module 'vue' {
     readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
     readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
     readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
-    readonly store: UnwrapRef<typeof import('../store/index')['default']>
+    readonly store: UnwrapRef<typeof import('./src/store/index')['default']>
     readonly storeToRefs: UnwrapRef<typeof import('pinia')['storeToRefs']>
     readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
     readonly toRef: UnwrapRef<typeof import('vue')['toRef']>
@@ -241,16 +241,16 @@ declare module 'vue' {
     readonly toValue: UnwrapRef<typeof import('vue')['toValue']>
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
     readonly unref: UnwrapRef<typeof import('vue')['unref']>
-    readonly uploadSingleImage: UnwrapRef<typeof import('../utils/upload')['uploadSingleImage']>
-    readonly useAppGuessLike: UnwrapRef<typeof import('../composables/useAppGuessLike')['default']>
+    readonly uploadSingleImage: UnwrapRef<typeof import('./src/utils/upload')['uploadSingleImage']>
+    readonly useAppGuessLike: UnwrapRef<typeof import('./src/composables/useAppGuessLike')['default']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
-    readonly useSystem: UnwrapRef<typeof import('../composables/useSystem')['useSystem']>
-    readonly useUserStore: UnwrapRef<typeof import('../store/modules/useUser')['useUserStore']>
-    readonly vkDataGoodsSkuPopup: UnwrapRef<typeof import('../components/vk-data-goods-sku-popup/vk-data-goods-sku-popup.vue')['default']>
-    readonly vkDataInputNumberBox: UnwrapRef<typeof import('../components/vk-data-input-number-box/vk-data-input-number-box.vue')['default']>
+    readonly useSystem: UnwrapRef<typeof import('./src/composables/useSystem')['useSystem']>
+    readonly useUserStore: UnwrapRef<typeof import('./src/store/modules/useUser')['useUserStore']>
+    readonly vkDataGoodsSkuPopup: UnwrapRef<typeof import('./src/components/vk-data-goods-sku-popup/vk-data-goods-sku-popup.vue')['default']>
+    readonly vkDataInputNumberBox: UnwrapRef<typeof import('./src/components/vk-data-input-number-box/vk-data-input-number-box.vue')['default']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
     readonly watchPostEffect: UnwrapRef<typeof import('vue')['watchPostEffect']>
@@ -260,10 +260,10 @@ declare module 'vue' {
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
-    readonly Gender: UnwrapRef<typeof import('./profile.d')['Gender']>
+    readonly Gender: UnwrapRef<typeof import('./src/types/profile.d')['Gender']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
-    readonly appFormItem: UnwrapRef<typeof import('../components/app-form-item/app-form-item.vue')['default']>
-    readonly appLoadMore: UnwrapRef<typeof import('../components/app-load-more/app-load-more.vue')['default']>
+    readonly appFormItem: UnwrapRef<typeof import('./src/components/app-form-item/app-form-item.vue')['default']>
+    readonly appLoadMore: UnwrapRef<typeof import('./src/components/app-load-more/app-load-more.vue')['default']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly createPinia: UnwrapRef<typeof import('pinia')['createPinia']>
@@ -271,27 +271,27 @@ declare module '@vue/runtime-core' {
     readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
     readonly defineStore: UnwrapRef<typeof import('pinia')['defineStore']>
-    readonly deleteAddressAPI: UnwrapRef<typeof import('../api/address')['deleteAddressAPI']>
-    readonly deleteRequest: UnwrapRef<typeof import('../utils/request')['deleteRequest']>
+    readonly deleteAddressAPI: UnwrapRef<typeof import('./src/api/address')['deleteAddressAPI']>
+    readonly deleteRequest: UnwrapRef<typeof import('./src/utils/request')['deleteRequest']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
-    readonly envD: UnwrapRef<typeof import('./env.d')['default']>
-    readonly formatDate: UnwrapRef<typeof import('../utils/date')['formatDate']>
-    readonly get: UnwrapRef<typeof import('../utils/request')['get']>
+    readonly envD: UnwrapRef<typeof import('./src/types/env.d')['default']>
+    readonly formatDate: UnwrapRef<typeof import('./src/utils/date')['formatDate']>
+    readonly get: UnwrapRef<typeof import('./src/utils/request')['get']>
     readonly getActivePinia: UnwrapRef<typeof import('pinia')['getActivePinia']>
-    readonly getAddressDetailAPI: UnwrapRef<typeof import('../api/address')['getAddressDetailAPI']>
-    readonly getAddressListAPI: UnwrapRef<typeof import('../api/address')['getAddressListAPI']>
-    readonly getCategroyDataAPI: UnwrapRef<typeof import('../api/category')['getCategroyDataAPI']>
+    readonly getAddressDetailAPI: UnwrapRef<typeof import('./src/api/address')['getAddressDetailAPI']>
+    readonly getAddressListAPI: UnwrapRef<typeof import('./src/api/address')['getAddressListAPI']>
+    readonly getCategroyDataAPI: UnwrapRef<typeof import('./src/api/category')['getCategroyDataAPI']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
-    readonly getDetailAPI: UnwrapRef<typeof import('../api/detail')['getDetailAPI']>
-    readonly getGlobalBannersAPI: UnwrapRef<typeof import('../api/global')['getGlobalBannersAPI']>
-    readonly getGlobalGuessLikeAPI: UnwrapRef<typeof import('../api/global')['getGlobalGuessLikeAPI']>
-    readonly getHomeCategoryAPI: UnwrapRef<typeof import('../api/home')['getHomeCategoryAPI']>
-    readonly getHomeHotRecommendAPI: UnwrapRef<typeof import('../api/home')['getHomeHotRecommendAPI']>
-    readonly getHotDataAPI: UnwrapRef<typeof import('../api/hot')['getHotDataAPI']>
-    readonly getUserProfileAPI: UnwrapRef<typeof import('../api/profile')['getUserProfileAPI']>
+    readonly getDetailAPI: UnwrapRef<typeof import('./src/api/detail')['getDetailAPI']>
+    readonly getGlobalBannersAPI: UnwrapRef<typeof import('./src/api/global')['getGlobalBannersAPI']>
+    readonly getGlobalGuessLikeAPI: UnwrapRef<typeof import('./src/api/global')['getGlobalGuessLikeAPI']>
+    readonly getHomeCategoryAPI: UnwrapRef<typeof import('./src/api/home')['getHomeCategoryAPI']>
+    readonly getHomeHotRecommendAPI: UnwrapRef<typeof import('./src/api/home')['getHomeHotRecommendAPI']>
+    readonly getHotDataAPI: UnwrapRef<typeof import('./src/api/hot')['getHotDataAPI']>
+    readonly getUserProfileAPI: UnwrapRef<typeof import('./src/api/profile')['getUserProfileAPI']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
-    readonly i18n: UnwrapRef<typeof import('../components/app-load-more/i18n/index.js')['default']>
+    readonly i18n: UnwrapRef<typeof import('./src/components/app-load-more/i18n/index.js')['default']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
     readonly isProxy: UnwrapRef<typeof import('vue')['isProxy']>
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
@@ -341,13 +341,13 @@ declare module '@vue/runtime-core' {
     readonly onUnload: UnwrapRef<typeof import('@dcloudio/uni-app')['onUnload']>
     readonly onUnmounted: UnwrapRef<typeof import('vue')['onUnmounted']>
     readonly onUpdated: UnwrapRef<typeof import('vue')['onUpdated']>
-    readonly post: UnwrapRef<typeof import('../utils/request')['post']>
-    readonly postAddressAPI: UnwrapRef<typeof import('../api/address')['postAddressAPI']>
-    readonly postLoginAPI: UnwrapRef<typeof import('../api/login')['postLoginAPI']>
+    readonly post: UnwrapRef<typeof import('./src/utils/request')['post']>
+    readonly postAddressAPI: UnwrapRef<typeof import('./src/api/address')['postAddressAPI']>
+    readonly postLoginAPI: UnwrapRef<typeof import('./src/api/login')['postLoginAPI']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
-    readonly put: UnwrapRef<typeof import('../utils/request')['put']>
-    readonly putAddressAPI: UnwrapRef<typeof import('../api/address')['putAddressAPI']>
-    readonly putUserProfileAPI: UnwrapRef<typeof import('../api/profile')['putUserProfileAPI']>
+    readonly put: UnwrapRef<typeof import('./src/utils/request')['put']>
+    readonly putAddressAPI: UnwrapRef<typeof import('./src/api/address')['putAddressAPI']>
+    readonly putUserProfileAPI: UnwrapRef<typeof import('./src/api/profile')['putUserProfileAPI']>
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
     readonly readonly: UnwrapRef<typeof import('vue')['readonly']>
     readonly ref: UnwrapRef<typeof import('vue')['ref']>
@@ -357,7 +357,7 @@ declare module '@vue/runtime-core' {
     readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
     readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
     readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
-    readonly store: UnwrapRef<typeof import('../store/index')['default']>
+    readonly store: UnwrapRef<typeof import('./src/store/index')['default']>
     readonly storeToRefs: UnwrapRef<typeof import('pinia')['storeToRefs']>
     readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
     readonly toRef: UnwrapRef<typeof import('vue')['toRef']>
@@ -365,16 +365,16 @@ declare module '@vue/runtime-core' {
     readonly toValue: UnwrapRef<typeof import('vue')['toValue']>
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
     readonly unref: UnwrapRef<typeof import('vue')['unref']>
-    readonly uploadSingleImage: UnwrapRef<typeof import('../utils/upload')['uploadSingleImage']>
-    readonly useAppGuessLike: UnwrapRef<typeof import('../composables/useAppGuessLike')['default']>
+    readonly uploadSingleImage: UnwrapRef<typeof import('./src/utils/upload')['uploadSingleImage']>
+    readonly useAppGuessLike: UnwrapRef<typeof import('./src/composables/useAppGuessLike')['default']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
-    readonly useSystem: UnwrapRef<typeof import('../composables/useSystem')['useSystem']>
-    readonly useUserStore: UnwrapRef<typeof import('../store/modules/useUser')['useUserStore']>
-    readonly vkDataGoodsSkuPopup: UnwrapRef<typeof import('../components/vk-data-goods-sku-popup/vk-data-goods-sku-popup.vue')['default']>
-    readonly vkDataInputNumberBox: UnwrapRef<typeof import('../components/vk-data-input-number-box/vk-data-input-number-box.vue')['default']>
+    readonly useSystem: UnwrapRef<typeof import('./src/composables/useSystem')['useSystem']>
+    readonly useUserStore: UnwrapRef<typeof import('./src/store/modules/useUser')['useUserStore']>
+    readonly vkDataGoodsSkuPopup: UnwrapRef<typeof import('./src/components/vk-data-goods-sku-popup/vk-data-goods-sku-popup.vue')['default']>
+    readonly vkDataInputNumberBox: UnwrapRef<typeof import('./src/components/vk-data-input-number-box/vk-data-input-number-box.vue')['default']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
     readonly watchPostEffect: UnwrapRef<typeof import('vue')['watchPostEffect']>

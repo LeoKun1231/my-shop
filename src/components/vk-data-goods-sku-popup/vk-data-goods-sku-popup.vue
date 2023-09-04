@@ -1045,7 +1045,8 @@ export default {
 					}
 				}
 			}
-			return str
+			// return str
+			return (parseFloat(str) * this.selectNum).toFixed(2)
 		},
 		// 库存显示
 		stockCom() {

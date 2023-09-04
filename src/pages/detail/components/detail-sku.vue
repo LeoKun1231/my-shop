@@ -1,10 +1,15 @@
 <script setup lang="ts">
+import type { SkuPopupInstanceType, SkuPopupLocaldata } from '@/components/vk-data-goods-sku-popup/vk-data-goods-sku-popup'
 import type { IDetailGoodResult } from '@/types/detail'
-import type { SkuPopupLocaldata, SkuPopupInstanceType } from '@/components/vk-data-goods-sku-popup/vk-data-goods-sku-popup'
 import cloneDeep from 'lodash/cloneDeep'
 
 const props = defineProps<{
 	goods: IDetailGoodResult
+	modelValue: string
+}>()
+
+const emits = defineEmits<{
+	(e: 'update:modelValue', value: string): void
 }>()
 
 enum SkuMode {
@@ -29,6 +34,7 @@ const skuPopupRef = ref<SkuPopupInstanceType>()
 
 const goods = cloneDeep(props.goods)
 
+/**对数据进行操作 */
 watch(
 	() => props.goods,
 	() => {
@@ -57,6 +63,9 @@ watch(
 	}
 )
 
+/**
+ * 打开时的回显操作
+ */
 const openOrClose = (isOpen: boolean) => {
 	skuOpen.value = isOpen
 	nextTick(() => {
@@ -68,6 +77,18 @@ const openOrClose = (isOpen: boolean) => {
 			})
 		}
 	})
+}
+
+/**
+ * 关闭时的回调
+ */
+const handleClose = () => {
+	const selectShop = skuPopupRef.value?.selectArr?.join('/').trim()
+	if (selectShop == '/') {
+		emits('update:modelValue', '')
+	} else {
+		emits('update:modelValue', selectShop!)
+	}
 }
 
 // 加入购物车前的判断
@@ -130,6 +151,7 @@ defineExpose({
 			:localdata="goodInfo"
 			:mode="skuMode"
 			:amount-type="0"
+			@close="handleClose"
 			@add-cart="addCart"
 			@buy-now="buyNow"
 		></vk-data-goods-sku-popup>

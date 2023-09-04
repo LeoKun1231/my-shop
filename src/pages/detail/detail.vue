@@ -92,3 +92,4 @@ page {
 	bottom: 0;
 }
 </style>
+@/a/detail

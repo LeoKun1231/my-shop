@@ -23,3 +23,4 @@ defineProps<{
 </template>
 
 <style scoped lang="scss"></style>
+@/a/detail

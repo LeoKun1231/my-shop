@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-27 11:43:58
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-03 10:30:28
+ * @LastEditTime: 2023-09-04 15:57:52
  * @FilePath: \hello-uniapp\src\pages\detail\components\detail-content.vue
  * @Description: 
 -->
@@ -32,6 +32,8 @@ const handleOpenPopup = (type: PopupType) => {
 	}
 	currentPopupType.value = type
 }
+
+const selectShop = ref('')
 </script>
 
 <template>
@@ -47,7 +49,7 @@ const handleOpenPopup = (type: PopupType) => {
 		<view class="between px-4 py-3 b-bottom" @click="handleOpenPopup('选购')">
 			<view class="flex">
 				<view class="text-gray mr-3 w-10">选择</view>
-				<view class="truncate text-[#666]">请选择商品规格</view>
+				<view class="truncate text-[#666]">{{ selectShop || '请选择商品规格' }}</view>
 			</view>
 			<view class="i-carbon-chevron-right text-gray-300 text-lg"></view>
 		</view>
@@ -70,7 +72,7 @@ const handleOpenPopup = (type: PopupType) => {
 			<detail-address v-if="currentPopupType == '配送至'" />
 			<detail-service v-if="currentPopupType == '服务说明'" />
 		</app-popup>
-		<detail-sku :goods="goods" ref="detailSkuRef" />
+		<detail-sku v-model="selectShop" :goods="goods" ref="detailSkuRef" />
 	</view>
 </template>
 
