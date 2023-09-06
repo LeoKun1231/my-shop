@@ -108,7 +108,7 @@
 					class="sure add-cart"
 					:style="{
 						color: themeColorFn('addCartColor'),
-						backgroundColor: themeColorFn('addCartBackgroundColor')
+						background: themeColorFn('addCartBackgroundColor')
 					}"
 					@click="addCart"
 				>
@@ -120,7 +120,7 @@
 					class="sure"
 					:style="{
 						color: themeColorFn('buyNowColor'),
-						backgroundColor: themeColorFn('buyNowBackgroundColor')
+						background: themeColorFn('buyNowBackgroundColor')
 					}"
 					@click="buyNow"
 				>

@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-27 11:43:58
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-04 15:57:52
+ * @LastEditTime: 2023-09-06 11:28:32
  * @FilePath: \hello-uniapp\src\pages\detail\components\detail-content.vue
  * @Description: 
 -->
@@ -23,9 +23,10 @@ const popupRef = ref<AppPopupType>()
 type PopupType = '选购' | '配送至' | '服务说明'
 const currentPopupType = ref<PopupType>('选购')
 const detailSkuRef = ref<InstanceType<typeof detailSku>>()
-
+const modeStore = useModeStore()
 const handleOpenPopup = (type: PopupType) => {
 	if (type == '选购') {
+		modeStore.setMode(SkuMode.Both)
 		detailSkuRef.value?.openOrClose(true)
 	} else {
 		popupRef.value?.open!()
@@ -33,7 +34,51 @@ const handleOpenPopup = (type: PopupType) => {
 	currentPopupType.value = type
 }
 
+//选中的商品规格回显
 const selectShop = ref('')
+
+const handleButtonClick: UniHelper.UniGoodsNavOnButtonClick = (e) => {
+	detailSkuRef.value?.openOrClose(true)
+	if (e.index == 0) {
+		modeStore.setMode(SkuMode.Cart)
+	} else if (e.index == 1) {
+		modeStore.setMode(SkuMode.Buy)
+	}
+}
+
+/**
+ * 底部购物导航栏配置
+ */
+const options = ref<UniHelper.UniGoodsNavOption[]>([
+	{
+		icon: 'chat',
+		text: '客服'
+	},
+	{
+		icon: 'shop',
+		text: '店铺',
+		info: 2,
+		infoBackgroundColor: '#007aff',
+		infoColor: '#f5f5f5'
+	},
+	{
+		icon: 'cart',
+		text: '购物车',
+		info: 2
+	}
+])
+const buttonGroup = [
+	{
+		text: '加入购物车',
+		backgroundColor: 'linear-gradient(90deg, #FFCD1E, #FF8A18)',
+		color: '#fff'
+	},
+	{
+		text: '立即购买',
+		backgroundColor: 'linear-gradient(90deg, #FE6035, #EF1224)',
+		color: '#fff'
+	}
+]
 </script>
 
 <template>
@@ -47,9 +92,9 @@ const selectShop = ref('')
 			<view class="mt-1 text-[#f00] text-sm truncate">{{ goods.desc }}</view>
 		</view>
 		<view class="between px-4 py-3 b-bottom" @click="handleOpenPopup('选购')">
-			<view class="flex">
+			<view class="flex w-[calc(100%-23px)]">
 				<view class="text-gray mr-3 w-10">选择</view>
-				<view class="truncate text-[#666]">{{ selectShop || '请选择商品规格' }}</view>
+				<view class="truncate text-[#666] w-[calc(100%-40px)]">{{ selectShop || '请选择商品规格' }}</view>
 			</view>
 			<view class="i-carbon-chevron-right text-gray-300 text-lg"></view>
 		</view>
@@ -72,8 +117,27 @@ const selectShop = ref('')
 			<detail-address v-if="currentPopupType == '配送至'" />
 			<detail-service v-if="currentPopupType == '服务说明'" />
 		</app-popup>
-		<detail-sku v-model="selectShop" :goods="goods" ref="detailSkuRef" />
 	</view>
+	<view class="goods-carts">
+		<uni-goods-nav :options="options" :fill="true" :button-group="buttonGroup" @button-click="handleButtonClick" />
+	</view>
+	<detail-sku v-model="selectShop" :goods="goods" ref="detailSkuRef" />
 </template>
 
-<style scoped lang="scss"></style>
+<style lang="scss">
+.goods-carts {
+	/* #ifndef APP-NVUE */
+	display: flex;
+	/* #endif */
+	flex-direction: column;
+	position: fixed;
+	left: 0;
+	right: 0;
+	/* #ifdef H5 */
+	left: var(--window-left);
+	right: var(--window-right);
+	/* #endif */
+	bottom: 0;
+	z-index: 1;
+}
+</style>

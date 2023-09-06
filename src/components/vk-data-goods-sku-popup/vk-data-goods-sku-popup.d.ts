@@ -135,12 +135,9 @@ export type SkuPopupSkuItem = {
 }
 
 /** 当前选择的sku数据 */
-export type SkuPopupEvent = {
-	success: (res: any) => void
-	selectShop: SkuPopupSkuItem & {
-		/** 商品购买数量 */
-		buy_num: number
-	}
+export type SkuPopupEvent = SkuPopupSkuItem & {
+	/** 商品购买数量 */
+	buy_num: number
 }
 
 /** 全局组件类型声明 */

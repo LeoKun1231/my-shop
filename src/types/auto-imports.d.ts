@@ -7,6 +7,7 @@ export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
   const Gender: typeof import('./profile.d')['Gender']
+  const SkuMode: typeof import('../store/modules/useMode')['SkuMode']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
   const appFormItem: typeof import('../components/app-form-item/app-form-item.vue')['default']
   const appLoadMore: typeof import('../components/app-load-more/app-load-more.vue')['default']
@@ -88,6 +89,7 @@ declare global {
   const onUnmounted: typeof import('vue')['onUnmounted']
   const onUpdated: typeof import('vue')['onUpdated']
   const post: typeof import('../utils/request')['post']
+  const postAddCartAPI: typeof import('../api/cart')['postAddCartAPI']
   const postAddressAPI: typeof import('../api/address')['postAddressAPI']
   const postLoginAPI: typeof import('../api/login')['postLoginAPI']
   const provide: typeof import('vue')['provide']
@@ -116,6 +118,7 @@ declare global {
   const useAttrs: typeof import('vue')['useAttrs']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
+  const useModeStore: typeof import('../store/modules/useMode')['useModeStore']
   const useSlots: typeof import('vue')['useSlots']
   const useSystem: typeof import('../composables/useSystem')['useSystem']
   const useUserStore: typeof import('../store/modules/useUser')['useUserStore']
@@ -137,6 +140,7 @@ declare module 'vue' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly Gender: UnwrapRef<typeof import('./profile.d')['Gender']>
+    readonly SkuMode: UnwrapRef<typeof import('../store/modules/useMode')['SkuMode']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
     readonly appFormItem: UnwrapRef<typeof import('../components/app-form-item/app-form-item.vue')['default']>
     readonly appLoadMore: UnwrapRef<typeof import('../components/app-load-more/app-load-more.vue')['default']>
@@ -218,6 +222,7 @@ declare module 'vue' {
     readonly onUnmounted: UnwrapRef<typeof import('vue')['onUnmounted']>
     readonly onUpdated: UnwrapRef<typeof import('vue')['onUpdated']>
     readonly post: UnwrapRef<typeof import('../utils/request')['post']>
+    readonly postAddCartAPI: UnwrapRef<typeof import('../api/cart')['postAddCartAPI']>
     readonly postAddressAPI: UnwrapRef<typeof import('../api/address')['postAddressAPI']>
     readonly postLoginAPI: UnwrapRef<typeof import('../api/login')['postLoginAPI']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
@@ -246,6 +251,7 @@ declare module 'vue' {
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
+    readonly useModeStore: UnwrapRef<typeof import('../store/modules/useMode')['useModeStore']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useSystem: UnwrapRef<typeof import('../composables/useSystem')['useSystem']>
     readonly useUserStore: UnwrapRef<typeof import('../store/modules/useUser')['useUserStore']>
@@ -261,6 +267,7 @@ declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly Gender: UnwrapRef<typeof import('./profile.d')['Gender']>
+    readonly SkuMode: UnwrapRef<typeof import('../store/modules/useMode')['SkuMode']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
     readonly appFormItem: UnwrapRef<typeof import('../components/app-form-item/app-form-item.vue')['default']>
     readonly appLoadMore: UnwrapRef<typeof import('../components/app-load-more/app-load-more.vue')['default']>
@@ -342,6 +349,7 @@ declare module '@vue/runtime-core' {
     readonly onUnmounted: UnwrapRef<typeof import('vue')['onUnmounted']>
     readonly onUpdated: UnwrapRef<typeof import('vue')['onUpdated']>
     readonly post: UnwrapRef<typeof import('../utils/request')['post']>
+    readonly postAddCartAPI: UnwrapRef<typeof import('../api/cart')['postAddCartAPI']>
     readonly postAddressAPI: UnwrapRef<typeof import('../api/address')['postAddressAPI']>
     readonly postLoginAPI: UnwrapRef<typeof import('../api/login')['postLoginAPI']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
@@ -370,6 +378,7 @@ declare module '@vue/runtime-core' {
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
+    readonly useModeStore: UnwrapRef<typeof import('../store/modules/useMode')['useModeStore']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useSystem: UnwrapRef<typeof import('../composables/useSystem')['useSystem']>
     readonly useUserStore: UnwrapRef<typeof import('../store/modules/useUser')['useUserStore']>

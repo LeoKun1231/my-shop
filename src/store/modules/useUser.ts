@@ -13,9 +13,13 @@ export const useUserStore = defineStore(
 	'user',
 	() => {
 		const user = ref<ILoginInfo>()
+		const setUser = (info: ILoginInfo) => {
+			user.value = info
+		}
 
 		return {
-			user
+			user,
+			setUser
 		}
 	},
 	{

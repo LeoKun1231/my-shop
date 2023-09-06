@@ -13,25 +13,12 @@ const emits = defineEmits<{
 	(e: 'update:modelValue', value: string): void
 }>()
 
-enum SkuMode {
-	/**
-	 * 显示加入购物车和立即购买按钮
-	 */
-	Both = 1,
-	/**
-	 * 只显示加入购物车按钮
-	 */
-	Cart = 2,
-	/**
-	 * 只显示立即购买按钮
-	 */
-	Buy = 3
-}
-
 const skuOpen = ref(false)
-const skuMode = ref<SkuMode>(SkuMode.Both)
 const goodInfo = ref<SkuPopupLocaldata>()
 const skuPopupRef = ref<SkuPopupInstanceType>()
+
+const modeStore = useModeStore()
+const { mode } = storeToRefs(modeStore)
 
 const goods = cloneDeep(props.goods)
 
@@ -69,22 +56,22 @@ watch(
  */
 const openOrClose = (isOpen: boolean) => {
 	skuOpen.value = isOpen
-	nextTick(() => {
-		if (skuOpen.value) {
-			console.log(skuPopupRef.value)
-			skuPopupRef.value?.selectSku?.({
-				sku: goodInfo.value?.spec_list.map((item) => item.list[0].name) || [],
-				num: 1
-			})
-		}
-	})
+	// nextTick(() => {
+	// 	if (skuOpen.value) {
+	// 		console.log(skuPopupRef.value)
+	// 		skuPopupRef.value?.selectSku?.({
+	// 			sku: goodInfo.value?.spec_list.map((item) => item.list[0].name) || [],
+	// 			num: 1
+	// 		})
+	// 	}
+	// })
 }
 
 /**
  * 关闭时的回调
  */
 const handleClose = () => {
-	const selectShop = skuPopupRef.value?.selectArr?.join('/').trim()
+	const selectShop = skuPopupRef.value?.selectArr?.join(' ').trim()
 	if (selectShop == '/') {
 		emits('update:modelValue', '')
 	} else {
@@ -93,8 +80,7 @@ const handleClose = () => {
 }
 
 // 加入购物车前的判断
-async function addCartFn(obj: SkuPopupEvent) {
-	const { selectShop } = obj
+async function addCartFn(selectShop: SkuPopupEvent) {
 	await postAddCartAPI({
 		count: selectShop.buy_num,
 		skuId: selectShop._id
@@ -105,36 +91,17 @@ async function addCartFn(obj: SkuPopupEvent) {
 	})
 	skuOpen.value = false
 }
+
 // 加入购物车按钮
-function addCart(selectShop: any) {
-	console.log('监听 - 加入购物车')
-	addCartFn({
-		selectShop: selectShop,
-		success: function (res: any) {
-			// 实际业务时,请替换自己的加入购物车逻辑
-			toast(res.msg)
-			setTimeout(function () {
-				skuOpen.value = false
-			}, 300)
-		}
-	})
+function addCart(selectShop: SkuPopupEvent) {
+	addCartFn(selectShop)
 }
 
 // 立即购买
-function buyNow(selectShop: any) {
-	console.log('监听 - 立即购买')
-	addCartFn({
-		selectShop: selectShop,
-		success: function () {
-			// 实际业务时,请替换自己的立即购买逻辑
-			toast('立即购买')
-		}
-	})
-}
-
-function toast(msg: string) {
+function buyNow(selectShop: SkuPopupEvent) {
+	console.log(selectShop)
 	uni.showToast({
-		title: msg,
+		title: '立即购买',
 		icon: 'none'
 	})
 }
@@ -145,19 +112,19 @@ defineExpose({
 </script>
 
 <template>
-	<view class="app">
-		<vk-data-goods-sku-popup
-			ref="skuPopupRef"
-			v-model="skuOpen"
-			border-radius="20"
-			:localdata="goodInfo"
-			:mode="skuMode"
-			:amount-type="0"
-			@close="handleClose"
-			@add-cart="addCart"
-			@buy-now="buyNow"
-		></vk-data-goods-sku-popup>
-	</view>
+	<vk-data-goods-sku-popup
+		ref="skuPopupRef"
+		v-model="skuOpen"
+		border-radius="20"
+		:localdata="goodInfo"
+		:mode="mode"
+		:amount-type="0"
+		buy-now-background-color="linear-gradient(90deg, #FE6035, #EF1224)"
+		add-cart-background-color="linear-gradient(90deg, #FFCD1E, #FF8A18)"
+		@close="handleClose"
+		@add-cart="addCart"
+		@buy-now="buyNow"
+	></vk-data-goods-sku-popup>
 </template>
 
 <style scoped lang="scss"></style>
