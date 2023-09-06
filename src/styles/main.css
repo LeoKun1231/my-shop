@@ -3,3 +3,10 @@
 	height: 200rpx;
 	background-color: red;
 }
+swiper,
+swiper-item,
+scroll-view,
+text,
+view {
+	box-sizing: border-box;
+}

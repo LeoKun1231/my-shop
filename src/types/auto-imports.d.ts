@@ -19,6 +19,7 @@ declare global {
   const defineComponent: typeof import('vue')['defineComponent']
   const defineStore: typeof import('pinia')['defineStore']
   const deleteAddressAPI: typeof import('../api/address')['deleteAddressAPI']
+  const deleteCartAPI: typeof import('../api/cart')['deleteCartAPI']
   const deleteRequest: typeof import('../utils/request')['deleteRequest']
   const effectScope: typeof import('vue')['effectScope']
   const envD: typeof import('./env.d')['default']
@@ -27,6 +28,7 @@ declare global {
   const getActivePinia: typeof import('pinia')['getActivePinia']
   const getAddressDetailAPI: typeof import('../api/address')['getAddressDetailAPI']
   const getAddressListAPI: typeof import('../api/address')['getAddressListAPI']
+  const getCartListAPI: typeof import('../api/cart')['getCartListAPI']
   const getCategroyDataAPI: typeof import('../api/category')['getCategroyDataAPI']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
@@ -95,6 +97,8 @@ declare global {
   const provide: typeof import('vue')['provide']
   const put: typeof import('../utils/request')['put']
   const putAddressAPI: typeof import('../api/address')['putAddressAPI']
+  const putCartAPI: typeof import('../api/cart')['putCartAPI']
+  const putCartAllSelectedAPI: typeof import('../api/cart')['putCartAllSelectedAPI']
   const putUserProfileAPI: typeof import('../api/profile')['putUserProfileAPI']
   const reactive: typeof import('vue')['reactive']
   const readonly: typeof import('vue')['readonly']
@@ -152,6 +156,7 @@ declare module 'vue' {
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
     readonly defineStore: UnwrapRef<typeof import('pinia')['defineStore']>
     readonly deleteAddressAPI: UnwrapRef<typeof import('../api/address')['deleteAddressAPI']>
+    readonly deleteCartAPI: UnwrapRef<typeof import('../api/cart')['deleteCartAPI']>
     readonly deleteRequest: UnwrapRef<typeof import('../utils/request')['deleteRequest']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly envD: UnwrapRef<typeof import('./env.d')['default']>
@@ -160,6 +165,7 @@ declare module 'vue' {
     readonly getActivePinia: UnwrapRef<typeof import('pinia')['getActivePinia']>
     readonly getAddressDetailAPI: UnwrapRef<typeof import('../api/address')['getAddressDetailAPI']>
     readonly getAddressListAPI: UnwrapRef<typeof import('../api/address')['getAddressListAPI']>
+    readonly getCartListAPI: UnwrapRef<typeof import('../api/cart')['getCartListAPI']>
     readonly getCategroyDataAPI: UnwrapRef<typeof import('../api/category')['getCategroyDataAPI']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
@@ -228,6 +234,8 @@ declare module 'vue' {
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
     readonly put: UnwrapRef<typeof import('../utils/request')['put']>
     readonly putAddressAPI: UnwrapRef<typeof import('../api/address')['putAddressAPI']>
+    readonly putCartAPI: UnwrapRef<typeof import('../api/cart')['putCartAPI']>
+    readonly putCartAllSelectedAPI: UnwrapRef<typeof import('../api/cart')['putCartAllSelectedAPI']>
     readonly putUserProfileAPI: UnwrapRef<typeof import('../api/profile')['putUserProfileAPI']>
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
     readonly readonly: UnwrapRef<typeof import('vue')['readonly']>
@@ -279,6 +287,7 @@ declare module '@vue/runtime-core' {
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
     readonly defineStore: UnwrapRef<typeof import('pinia')['defineStore']>
     readonly deleteAddressAPI: UnwrapRef<typeof import('../api/address')['deleteAddressAPI']>
+    readonly deleteCartAPI: UnwrapRef<typeof import('../api/cart')['deleteCartAPI']>
     readonly deleteRequest: UnwrapRef<typeof import('../utils/request')['deleteRequest']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly envD: UnwrapRef<typeof import('./env.d')['default']>
@@ -287,6 +296,7 @@ declare module '@vue/runtime-core' {
     readonly getActivePinia: UnwrapRef<typeof import('pinia')['getActivePinia']>
     readonly getAddressDetailAPI: UnwrapRef<typeof import('../api/address')['getAddressDetailAPI']>
     readonly getAddressListAPI: UnwrapRef<typeof import('../api/address')['getAddressListAPI']>
+    readonly getCartListAPI: UnwrapRef<typeof import('../api/cart')['getCartListAPI']>
     readonly getCategroyDataAPI: UnwrapRef<typeof import('../api/category')['getCategroyDataAPI']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
@@ -355,6 +365,8 @@ declare module '@vue/runtime-core' {
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
     readonly put: UnwrapRef<typeof import('../utils/request')['put']>
     readonly putAddressAPI: UnwrapRef<typeof import('../api/address')['putAddressAPI']>
+    readonly putCartAPI: UnwrapRef<typeof import('../api/cart')['putCartAPI']>
+    readonly putCartAllSelectedAPI: UnwrapRef<typeof import('../api/cart')['putCartAllSelectedAPI']>
     readonly putUserProfileAPI: UnwrapRef<typeof import('../api/profile')['putUserProfileAPI']>
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
     readonly readonly: UnwrapRef<typeof import('vue')['readonly']>

@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-09-04 16:14:54
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-04 16:15:05
+ * @LastEditTime: 2023-09-06 13:18:55
  * @FilePath: \hello-uniapp\src\types\cart.d.ts
  * @Description:
  */
@@ -74,3 +74,5 @@ export interface ICartAddResult {
 	 */
 	stock: number
 }
+
+export interface ICartListItem extends ICartAddResult {}
