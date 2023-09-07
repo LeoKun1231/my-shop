@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-09-06 20:19:14
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-06 21:01:43
+ * @LastEditTime: 2023-09-07 10:38:19
  * @FilePath: \hello-uniapp\src\pages\cart\components\cart-nav-bar.vue
  * @Description: 
 -->
@@ -55,10 +55,20 @@ const selectedCount = computed(() => {
 const handleSelectAllClick = () => {
 	emits('select-all', !isSelectedAll.value)
 }
+
+/**
+ * 去订单页面
+ */
+const goToOrderPages = () => {
+	if (selectedCount.value == 0) return
+	uni.navigateTo({
+		url: '/sub-pages/order/order'
+	})
+}
 </script>
 
 <template>
-	<view class="fixed b-bottom left-0 right-0 bottom-[var(--window-bottom)] h-[50px] bg-white box-border px-2 between">
+	<view class="fixed shadow-2xl b-bottom left-0 right-0 bottom-[var(--window-bottom)] h-[50px] bg-white box-border px-2 between">
 		<view class="flex items-center">
 			<radio
 				style="transform: scale(0.9)"
@@ -75,7 +85,11 @@ const handleSelectAllClick = () => {
 				<view class="text-[#f00] text-lg">{{ selectedShopTotalMoney.toFixed(2) }}</view>
 			</view>
 		</view>
-		<view class="text-white bg-[#fbb957] px-6 py-1.5 rounded-full text-sm" :class="{ 'opacity-50': cartList.length == 0 }">
+		<view
+			class="text-white bg-[#fbb957] px-6 py-1.5 rounded-full text-sm"
+			:class="{ 'opacity-50': selectedCount == 0 }"
+			@click="goToOrderPages"
+		>
 			去结算 {{ selectedCount > 0 ? `(${selectedCount})` : '' }}
 		</view>
 	</view>

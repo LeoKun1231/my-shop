@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-31 17:48:50
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-02 16:44:40
+ * @LastEditTime: 2023-09-07 14:33:11
  * @FilePath: \hello-uniapp\src\sub-pages\address\address.vue
  * @Description: 
 -->
@@ -70,13 +70,20 @@ async function getAddressListData() {
 }
 
 const { safeAreaInsetsBottom } = useSystem()
+
+//设置默认地址
+const addressStore = useAddressStore()
+const handleAddressClick = (address: IAddress) => {
+	addressStore.setAddress(address)
+	uni.navigateBack()
+}
 </script>
 
 <template>
 	<view class="p-3 h-full box-border" :style="{ paddingBottom: safeAreaInsetsBottom + 12 + 'px' }">
 		<scroll-view class="h-[calc(100%-100rpx)]" scroll-y>
 			<uni-swipe-action class="bg-white rounded-2">
-				<view class="bg-white" v-for="address in addressList" :key="address.id">
+				<view class="bg-white" @tap="handleAddressClick(address)" v-for="address in addressList" :key="address.id">
 					<uni-swipe-action-item :right-options="rightOptions" auto-close @click="handleSwipeDelete">
 						<view class="flex justify-between px-3 py-5 b-bottom">
 							<view class="flex-1">
@@ -94,7 +101,7 @@ const { safeAreaInsetsBottom } = useSystem()
 							<view class="w-10 text-sm flex text-[#999]">
 								<view
 									class="before:(content-[''] inline-block relative top-0.7 right-1 w-0.1 h-4 bg-[#999])"
-									@click="handleGoToAddressForm(address.id)"
+									@click.stop="handleGoToAddressForm(address.id)"
 								>
 									修改
 								</view>

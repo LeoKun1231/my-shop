@@ -124,6 +124,19 @@
 					"style": {
 						"navigationBarTitleText": ""
 					}
+				},
+				{
+					"path": "order/order",
+					"style": {
+						"navigationBarTitleText": "填写订单"
+					}
+				},
+				{
+					"path": "order-detail/order-detail",
+					"style": {
+						"navigationBarTitleText": "",
+						"navigationStyle": "custom"
+					}
 				}
 			]
 		}

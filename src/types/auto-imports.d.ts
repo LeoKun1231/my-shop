@@ -38,6 +38,8 @@ declare global {
   const getHomeCategoryAPI: typeof import('../api/home')['getHomeCategoryAPI']
   const getHomeHotRecommendAPI: typeof import('../api/home')['getHomeHotRecommendAPI']
   const getHotDataAPI: typeof import('../api/hot')['getHotDataAPI']
+  const getOrderDetailAPI: typeof import('../api/order')['getOrderDetailAPI']
+  const getOrderPreAPI: typeof import('../api/order')['getOrderPreAPI']
   const getUserProfileAPI: typeof import('../api/profile')['getUserProfileAPI']
   const h: typeof import('vue')['h']
   const i18n: typeof import('../components/app-load-more/i18n/index.js')['default']
@@ -94,6 +96,7 @@ declare global {
   const postAddCartAPI: typeof import('../api/cart')['postAddCartAPI']
   const postAddressAPI: typeof import('../api/address')['postAddressAPI']
   const postLoginAPI: typeof import('../api/login')['postLoginAPI']
+  const postOrderAPI: typeof import('../api/order')['postOrderAPI']
   const provide: typeof import('vue')['provide']
   const put: typeof import('../utils/request')['put']
   const putAddressAPI: typeof import('../api/address')['putAddressAPI']
@@ -118,6 +121,7 @@ declare global {
   const triggerRef: typeof import('vue')['triggerRef']
   const unref: typeof import('vue')['unref']
   const uploadSingleImage: typeof import('../utils/upload')['uploadSingleImage']
+  const useAddressStore: typeof import('../store/modules/useAddress')['useAddressStore']
   const useAppGuessLike: typeof import('../composables/useAppGuessLike')['default']
   const useAttrs: typeof import('vue')['useAttrs']
   const useCssModule: typeof import('vue')['useCssModule']
@@ -175,6 +179,8 @@ declare module 'vue' {
     readonly getHomeCategoryAPI: UnwrapRef<typeof import('../api/home')['getHomeCategoryAPI']>
     readonly getHomeHotRecommendAPI: UnwrapRef<typeof import('../api/home')['getHomeHotRecommendAPI']>
     readonly getHotDataAPI: UnwrapRef<typeof import('../api/hot')['getHotDataAPI']>
+    readonly getOrderDetailAPI: UnwrapRef<typeof import('../api/order')['getOrderDetailAPI']>
+    readonly getOrderPreAPI: UnwrapRef<typeof import('../api/order')['getOrderPreAPI']>
     readonly getUserProfileAPI: UnwrapRef<typeof import('../api/profile')['getUserProfileAPI']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly i18n: UnwrapRef<typeof import('../components/app-load-more/i18n/index.js')['default']>
@@ -231,6 +237,7 @@ declare module 'vue' {
     readonly postAddCartAPI: UnwrapRef<typeof import('../api/cart')['postAddCartAPI']>
     readonly postAddressAPI: UnwrapRef<typeof import('../api/address')['postAddressAPI']>
     readonly postLoginAPI: UnwrapRef<typeof import('../api/login')['postLoginAPI']>
+    readonly postOrderAPI: UnwrapRef<typeof import('../api/order')['postOrderAPI']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
     readonly put: UnwrapRef<typeof import('../utils/request')['put']>
     readonly putAddressAPI: UnwrapRef<typeof import('../api/address')['putAddressAPI']>
@@ -255,6 +262,7 @@ declare module 'vue' {
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
     readonly unref: UnwrapRef<typeof import('vue')['unref']>
     readonly uploadSingleImage: UnwrapRef<typeof import('../utils/upload')['uploadSingleImage']>
+    readonly useAddressStore: UnwrapRef<typeof import('../store/modules/useAddress')['useAddressStore']>
     readonly useAppGuessLike: UnwrapRef<typeof import('../composables/useAppGuessLike')['default']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
@@ -306,6 +314,8 @@ declare module '@vue/runtime-core' {
     readonly getHomeCategoryAPI: UnwrapRef<typeof import('../api/home')['getHomeCategoryAPI']>
     readonly getHomeHotRecommendAPI: UnwrapRef<typeof import('../api/home')['getHomeHotRecommendAPI']>
     readonly getHotDataAPI: UnwrapRef<typeof import('../api/hot')['getHotDataAPI']>
+    readonly getOrderDetailAPI: UnwrapRef<typeof import('../api/order')['getOrderDetailAPI']>
+    readonly getOrderPreAPI: UnwrapRef<typeof import('../api/order')['getOrderPreAPI']>
     readonly getUserProfileAPI: UnwrapRef<typeof import('../api/profile')['getUserProfileAPI']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly i18n: UnwrapRef<typeof import('../components/app-load-more/i18n/index.js')['default']>
@@ -362,6 +372,7 @@ declare module '@vue/runtime-core' {
     readonly postAddCartAPI: UnwrapRef<typeof import('../api/cart')['postAddCartAPI']>
     readonly postAddressAPI: UnwrapRef<typeof import('../api/address')['postAddressAPI']>
     readonly postLoginAPI: UnwrapRef<typeof import('../api/login')['postLoginAPI']>
+    readonly postOrderAPI: UnwrapRef<typeof import('../api/order')['postOrderAPI']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
     readonly put: UnwrapRef<typeof import('../utils/request')['put']>
     readonly putAddressAPI: UnwrapRef<typeof import('../api/address')['putAddressAPI']>
@@ -386,6 +397,7 @@ declare module '@vue/runtime-core' {
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
     readonly unref: UnwrapRef<typeof import('vue')['unref']>
     readonly uploadSingleImage: UnwrapRef<typeof import('../utils/upload')['uploadSingleImage']>
+    readonly useAddressStore: UnwrapRef<typeof import('../store/modules/useAddress')['useAddressStore']>
     readonly useAppGuessLike: UnwrapRef<typeof import('../composables/useAppGuessLike')['default']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>

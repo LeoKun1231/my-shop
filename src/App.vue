@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-10 12:10:48
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-06 20:54:27
+ * @LastEditTime: 2023-09-07 12:31:30
  * @FilePath: \hello-uniapp\src\App.vue
  * @Description: 
 -->
@@ -21,5 +21,8 @@ onHide(() => {
 @import './styles/main.css';
 image {
 	vertical-align: middle;
+}
+:deep(.uni-picker-action-confirm) {
+	color: #fbb957 !important;
 }
 </style>

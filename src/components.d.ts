@@ -9,6 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppCategory: typeof import('./components/app-category/app-category.vue')['default']
     AppFormItem: typeof import('./components/app-form-item/app-form-item.vue')['default']
+    AppFormItemV2: typeof import('./components/app-form-item-v2/app-form-item-v2.vue')['default']
     AppGuessLike: typeof import('./components/app-guess-like/app-guess-like.vue')['default']
     AppLoadMore: typeof import('./components/app-load-more/app-load-more.vue')['default']
     AppPopup: typeof import('./components/app-popup/app-popup.vue')['default']
