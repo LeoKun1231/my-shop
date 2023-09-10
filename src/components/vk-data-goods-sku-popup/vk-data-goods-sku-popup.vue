@@ -37,7 +37,12 @@
 					</view>
 
 					<view class="specification-content">
-						<view v-show="isManyCom" class="specification-item" v-for="(item, index1) in goodsInfo[specListName]" :key="index1">
+						<view
+							v-show="isManyCom"
+							class="specification-item"
+							v-for="(item, index1) in goodsInfo[specListName]"
+							:key="index1"
+						>
 							<view class="item-title">{{ item.name }}</view>
 							<view class="item-wrapper">
 								<view
@@ -72,7 +77,9 @@
 						</view>
 					</view>
 				</scroll-view>
-				<view class="close" @click="close('close')" v-if="showClose != false"><image class="close-item" :src="closeImage"></image></view>
+				<view class="close" @click="close('close')" v-if="showClose != false"
+					><image class="close-item" :src="closeImage"></image
+				></view>
 			</view>
 
 			<view class="btn-wrapper" v-if="outFoStock || mode == 4">
@@ -138,7 +145,18 @@ var vk // vk依赖
 var goodsCache = {} // 本地商品缓存
 export default {
 	name: 'vk-data-goods-sku-popup',
-	emits: ['update:modelValue', 'input', 'update-goods', 'open', 'close', 'add-cart', 'buy-now', 'cart', 'buy', 'num-change'],
+	emits: [
+		'update:modelValue',
+		'input',
+		'update-goods',
+		'open',
+		'close',
+		'add-cart',
+		'buy-now',
+		'cart',
+		'buy',
+		'num-change'
+	],
 	props: {
 		// true 组件显示 false 组件隐藏
 		value: {
@@ -558,7 +576,11 @@ export default {
 				that.init()
 			}
 			// 更新选中sku的库存信息
-			let select_sku_info = that.getListItem(that.goodsInfo[skuListName], that.skuIdName, that.selectShop[that.skuIdName])
+			let select_sku_info = that.getListItem(
+				that.goodsInfo[skuListName],
+				that.skuIdName,
+				that.selectShop[that.skuIdName]
+			)
 			Object.assign(that.selectShop, select_sku_info)
 			that.defaultSelectSku()
 			that.complete = true

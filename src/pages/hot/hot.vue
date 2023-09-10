@@ -99,7 +99,11 @@ async function handleScrollToLower() {
 				:scrolltolower="handleScrollToLower"
 			>
 				<view class="flex-wrap around">
-					<app-shop-item-v1 v-for="shop in subType?.goodsItems?.items" :guess-like="shop" :key="shop.id + Math.random()" />
+					<app-shop-item-v1
+						v-for="shop in subType?.goodsItems?.items"
+						:guess-like="shop"
+						:key="shop.id + Math.random()"
+					/>
 				</view>
 				<app-load-more class="py-2" :status="loadingStatus" />
 			</app-scroll-view>

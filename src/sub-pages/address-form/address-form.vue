@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-09-01 19:40:23
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-02 20:12:38
+ * @LastEditTime: 2023-09-10 10:44:34
  * @FilePath: \hello-uniapp\src\sub-pages\address-form\address-form.vue
  * @Description: 
 -->
@@ -190,7 +190,9 @@ const uniFormsRules: UniHelper.UniFormsRules = {
 			</app-form-item>
 		</uni-forms>
 	</view>
-	<view class="m-3 bg-[#fbb957] py-2 text-white text-center rounded-full" @click="handleSaveAddressDetail">保存并使用 </view>
+	<view class="m-3 bg-[#fbb957] py-2 text-white text-center rounded-full" @click="handleSaveAddressDetail">
+		保存并使用
+	</view>
 </template>
 
 <style lang="scss">

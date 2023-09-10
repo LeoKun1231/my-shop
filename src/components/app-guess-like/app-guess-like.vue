@@ -61,7 +61,11 @@ defineExpose({
 			<image mode="aspectFill" class="w-3 h-3" src="@/static/images/bubble.png"></image>
 		</view>
 		<view class="container flex-wrap between">
-			<app-shop-item-v1 :guess-like="guessLike" v-for="guessLike in guessLikeLists" :key="guessLike.id + Math.random()" />
+			<app-shop-item-v1
+				:guess-like="guessLike"
+				v-for="guessLike in guessLikeLists"
+				:key="guessLike.id + Math.random()"
+			/>
 		</view>
 		<app-load-more class="py-2" :status="loadingStatus" />
 	</view>

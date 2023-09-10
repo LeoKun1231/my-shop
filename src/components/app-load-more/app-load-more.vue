@@ -13,7 +13,12 @@
 			width="24"
 			height="24"
 			viewBox="25 25 50 50"
-			v-if="!webviewHide && (iconType === 'circle' || (iconType === 'auto' && platform === 'android')) && status === 'loading' && showIcon"
+			v-if="
+				!webviewHide &&
+				(iconType === 'circle' || (iconType === 'auto' && platform === 'android')) &&
+				status === 'loading' &&
+				showIcon
+			"
 			:style="{ width: iconSize + 'px', height: iconSize + 'px' }"
 			class="uni-load-more__img uni-load-more__img--android-H5"
 		>
@@ -22,7 +27,12 @@
 		<!-- #endif -->
 		<!-- #ifndef APP-NVUE || H5 -->
 		<view
-			v-if="!webviewHide && (iconType === 'circle' || (iconType === 'auto' && platform === 'android')) && status === 'loading' && showIcon"
+			v-if="
+				!webviewHide &&
+				(iconType === 'circle' || (iconType === 'auto' && platform === 'android')) &&
+				status === 'loading' &&
+				showIcon
+			"
 			:style="{ width: iconSize + 'px', height: iconSize + 'px' }"
 			class="uni-load-more__img uni-load-more__img--android-MP"
 		>

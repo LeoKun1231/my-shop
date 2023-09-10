@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { postAddCartAPI } from '@/api/cart'
-import type { SkuPopupEvent, SkuPopupInstanceType, SkuPopupLocaldata } from '@/components/vk-data-goods-sku-popup/vk-data-goods-sku-popup'
+import type {
+	SkuPopupEvent,
+	SkuPopupInstanceType,
+	SkuPopupLocaldata
+} from '@/components/vk-data-goods-sku-popup/vk-data-goods-sku-popup'
 import type { IDetailGoodResult } from '@/types/detail'
 import cloneDeep from 'lodash/cloneDeep'
 

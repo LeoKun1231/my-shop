@@ -17,7 +17,7 @@ declare module 'vue' {
     AppShopItemV1: typeof import('./components/app-shop-item-v1/app-shop-item-v1.vue')['default']
     AppSwiper: typeof import('./components/app-swiper/app-swiper.vue')['default']
     AppTab: typeof import('./components/app-tab/app-tab.vue')['default']
-    CartItem: typeof import('./pages/cart/components/cart-item.vue')['default']
+    CartItem: (typeof import('./pages/cart/components/cart-item.vue'))['default']
     CartNavBar: typeof import('./pages/cart/components/cart-nav-bar.vue')['default']
     CategoryGoodsSkeleton: typeof import('./pages/category/components/category-goods-skeleton.vue')['default']
     CategorySkeleton: typeof import('./pages/category/components/category-skeleton.vue')['default']

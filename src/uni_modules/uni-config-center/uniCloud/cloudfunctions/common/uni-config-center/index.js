@@ -392,7 +392,9 @@ var u = (function (t) {
 											: v
 											? ((h = !1),
 											  (d = f),
-											  (y = !0 ? ((g = d.buffer), (b = new g.constructor(g.byteLength)), new E(b).set(new E(g)), b) : d.buffer),
+											  (y = !0
+													? ((g = d.buffer), (b = new g.constructor(g.byteLength)), new E(b).set(new E(g)), b)
+													: d.buffer),
 											  (l = new d.constructor(y, d.byteOffset, d.length)))
 											: (l = [])
 										: (function (t) {
@@ -472,7 +474,11 @@ var u = (function (t) {
 		var e,
 			n,
 			o = t.__data__
-		return ('string' == (n = typeof (e = r)) || 'number' == n || 'symbol' == n || 'boolean' == n ? '__proto__' !== e : null === e)
+		return (
+			'string' == (n = typeof (e = r)) || 'number' == n || 'symbol' == n || 'boolean' == n
+				? '__proto__' !== e
+				: null === e
+		)
 			? o['string' == typeof r ? 'string' : 'hash']
 			: o.map
 	}
@@ -624,7 +630,9 @@ class f {
 					if ('number' == typeof r) return t[r]
 					if ('symbol' == typeof r) return a(t, r) ? t[r] : e
 					const n =
-						'string' != typeof (o = r) ? o : o.split('.').reduce((t, r) => (r.split(/\[([^}]+)\]/g).forEach((r) => r && t.push(r)), t), [])
+						'string' != typeof (o = r)
+							? o
+							: o.split('.').reduce((t, r) => (r.split(/\[([^}]+)\]/g).forEach((r) => r && t.push(r)), t), [])
 					var o
 					let i = t
 					for (let t = 0; t < n.length; t++) {

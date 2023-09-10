@@ -328,3 +328,58 @@ export interface IOrderSkuProperty {
 	 */
 	propertyValueName: string
 }
+
+/**
+ * 查询结果
+ */
+export interface IOrderLogisticsResult {
+	/**
+	 * 快递公司
+	 */
+	company: IOrderCompany
+	/**
+	 * 商品件数
+	 */
+	count: number
+	/**
+	 * 物流日志
+	 */
+	list: IOrderLogisticsList[]
+	/**
+	 * 商品图片
+	 */
+	picture: string
+}
+
+/**
+ * 快递公司
+ */
+export interface IOrderCompany {
+	/**
+	 * 公司名称
+	 */
+	name: string
+	/**
+	 * 快递编号
+	 */
+	number: string
+	/**
+	 * 联系电话
+	 */
+	tel: string
+}
+
+export interface IOrderLogisticsList {
+	/**
+	 * 信息ID
+	 */
+	id: string
+	/**
+	 * 信息文字
+	 */
+	text: string
+	/**
+	 * 时间
+	 */
+	time: string
+}

@@ -30,7 +30,9 @@ const handleBannerClick = (pic: string) => {
 				<image :src="pic" class="w-full h-full" mode="aspectFill" @click="handleBannerClick(pic)"></image>
 			</swiper-item>
 		</swiper>
-		<view class="absolute right-2 bottom-3 center text-sm px-3 py-0.5 w-fit rounded-full bg-[#000] text-white opacity-40">
+		<view
+			class="absolute right-2 bottom-3 center text-sm px-3 py-0.5 w-fit rounded-full bg-[#000] text-white opacity-40"
+		>
 			<view>{{ currentBannerIndex + 1 }}</view>
 			<view class="mx-0.5">/</view>
 			<view>{{ urls?.length }}</view>

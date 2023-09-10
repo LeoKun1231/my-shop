@@ -1,13 +1,22 @@
 <template>
 	<view class="sk-container">
 		<view class="h-_a_calc_a_100_a_-56px_a__a_">
-			<view class="flex category--flex flex-1 category--flex-1 h-full category--h-full data-v-6520f5e8 category--data-v-6520f5e8">
+			<view
+				class="flex category--flex flex-1 category--flex-1 h-full category--h-full data-v-6520f5e8 category--data-v-6520f5e8"
+			>
 				<view class="flex-1 category--flex-1 h-full category--h-full data-v-6520f5e8 category--data-v-6520f5e8">
 					<view class="mx-2 h-full">
 						<view class="rounded-3 overflow-hidden">
 							<view class="uni-swiper__warp dot--uni-swiper__warp">
 								<swiper :autoplay="false" :circular="true" style="height: 8rem" :current="0">
-									<swiper-item style="position: absolute; width: 100%; height: 100%; transform: translate(100%, 0px) translateZ(0px)">
+									<swiper-item
+										style="
+											position: absolute;
+											width: 100%;
+											height: 100%;
+											transform: translate(100%, 0px) translateZ(0px);
+										"
+									>
 										<image class="h-full swiper--h-full w-full swiper--w-full sk-image" mode="aspectFill"></image>
 									</swiper-item>
 								</swiper>
@@ -25,7 +34,8 @@
 								<view class="grid grid-cols-3 gap-4">
 									<view>
 										<image :lazy-load="true" class="w-full sk-image" mode="widthFix" style="height: 79.6562px"></image>
-										<view class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-408 sk-text"
+										<view
+											class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-408 sk-text"
 											>飞天53%vol500ml贵州茅台酒（带杯）</view
 										>
 										<view class="flex items-center text-sm text-_a__a_f00_a_">
@@ -35,7 +45,8 @@
 									</view>
 									<view>
 										<image :lazy-load="true" class="w-full sk-image" mode="widthFix" style="height: 79.6562px"></image>
-										<view class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-439 sk-text"
+										<view
+											class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-439 sk-text"
 											>苏格兰陈年单一麦芽威士忌700毫升</view
 										>
 										<view class="flex items-center text-sm text-_a__a_f00_a_">
@@ -45,7 +56,8 @@
 									</view>
 									<view>
 										<image :lazy-load="true" class="w-full sk-image" mode="widthFix" style="height: 79.6562px"></image>
-										<view class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-445 sk-text"
+										<view
+											class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-445 sk-text"
 											>地道卤香好味道，桂林鲜米粉245克*6盒</view
 										>
 										<view class="flex items-center text-sm text-_a__a_f00_a_">
@@ -55,7 +67,8 @@
 									</view>
 									<view>
 										<image :lazy-load="true" class="w-full sk-image" mode="widthFix" style="height: 79.6562px"></image>
-										<view class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-983 sk-text"
+										<view
+											class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-983 sk-text"
 											>玛歌正牌干红750毫升2017年</view
 										>
 										<view class="flex items-center text-sm text-_a__a_f00_a_">
@@ -65,7 +78,8 @@
 									</view>
 									<view>
 										<image :lazy-load="true" class="w-full sk-image" mode="widthFix" style="height: 79.6562px"></image>
-										<view class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-214 sk-text"
+										<view
+											class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-214 sk-text"
 											>下饭神器酸豆角50克*10袋</view
 										>
 										<view class="flex items-center text-sm text-_a__a_f00_a_">
@@ -75,7 +89,8 @@
 									</view>
 									<view>
 										<image :lazy-load="true" class="w-full sk-image" mode="widthFix" style="height: 79.6562px"></image>
-										<view class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-763 sk-text"
+										<view
+											class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-763 sk-text"
 											>古田糯耳150克</view
 										>
 										<view class="flex items-center text-sm text-_a__a_f00_a_">

@@ -86,7 +86,12 @@ export const useSystem = () => {
 		height: safeAreaHeight,
 		width: safeAreaWidth
 	} = safeArea!
-	const { top: safeAreaInsetsTop, bottom: safeAreaInsetsBottom, left: safeAreaInsetsLeft, right: safeAreaInsetsRight } = safeAreaInsets!
+	const {
+		top: safeAreaInsetsTop,
+		bottom: safeAreaInsetsBottom,
+		left: safeAreaInsetsLeft,
+		right: safeAreaInsetsRight
+	} = safeAreaInsets!
 	return {
 		deviceId,
 		deviceBrand,

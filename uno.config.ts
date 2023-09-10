@@ -7,7 +7,14 @@
  * @Description:
  */
 import type { Preset, SourceCodeTransformer } from 'unocss'
-import { defineConfig, presetAttributify, presetIcons, presetUno, transformerDirectives, transformerVariantGroup } from 'unocss'
+import {
+	defineConfig,
+	presetAttributify,
+	presetIcons,
+	presetUno,
+	transformerDirectives,
+	transformerVariantGroup
+} from 'unocss'
 import { presetApplet, presetRemRpx, transformerApplet, transformerAttributify } from 'unocss-applet'
 
 const isApplet = process.env?.UNI_PLATFORM?.startsWith('mp-') ?? false

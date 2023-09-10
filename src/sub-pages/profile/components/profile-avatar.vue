@@ -1,3 +1,11 @@
+<!--
+ * @Author: Leo l024983409@qq.com
+ * @Date: 2023-08-31 10:50:10
+ * @LastEditors: Leo l024983409@qq.com
+ * @LastEditTime: 2023-09-10 12:00:55
+ * @FilePath: \hello-uniapp\src\sub-pages\profile\components\profile-avatar.vue
+ * @Description: 
+-->
 <script setup lang="ts">
 import type { Data } from '@/types/global'
 import type { IAvatar } from '@/types/profile'

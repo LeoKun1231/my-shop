@@ -22,7 +22,9 @@
 					</view>
 				</view>
 			</view>
-			<view class="flex-1 view--flex-1 h-full view--h-full overflow-hidden view--overflow-hidden data-v-82a606f5 view--data-v-82a606f5">
+			<view
+				class="flex-1 view--flex-1 h-full view--h-full overflow-hidden view--overflow-hidden data-v-82a606f5 view--data-v-82a606f5"
+			>
 				<scroll-view
 					:scroll-with-animation="true"
 					:scroll-y="false"
@@ -30,7 +32,9 @@
 					:scroll-top="0"
 				>
 					<view class="flex flex-wrap items-center justify-around">
-						<view class="w-40vw v1--w-40vw bg-white v1--bg-white p-3 v1--p-3 mb-2 v1--mb-2 rounded-3 v1--rounded-3 shadow-md v1--shadow-md">
+						<view
+							class="w-40vw v1--w-40vw bg-white v1--bg-white p-3 v1--p-3 mb-2 v1--mb-2 rounded-3 v1--rounded-3 shadow-md v1--shadow-md"
+						>
 							<image class="rounded-3 v1--rounded-3 w-full v1--w-full h-42 v1--h-42 sk-image" mode="aspectFill"></image>
 							<view
 								class="line-clamp-1 v1--line-clamp-1 my-1 v1--my-1 text-dark-100 v1--text-dark-100 sk-transparent sk-text-14-2857-109 sk-text"
@@ -44,7 +48,9 @@
 								>
 							</view>
 						</view>
-						<view class="w-40vw v1--w-40vw bg-white v1--bg-white p-3 v1--p-3 mb-2 v1--mb-2 rounded-3 v1--rounded-3 shadow-md v1--shadow-md">
+						<view
+							class="w-40vw v1--w-40vw bg-white v1--bg-white p-3 v1--p-3 mb-2 v1--mb-2 rounded-3 v1--rounded-3 shadow-md v1--shadow-md"
+						>
 							<image class="rounded-3 v1--rounded-3 w-full v1--w-full h-42 v1--h-42 sk-image" mode="aspectFill"></image>
 							<view
 								class="line-clamp-1 v1--line-clamp-1 my-1 v1--my-1 text-dark-100 v1--text-dark-100 sk-transparent sk-text-14-2857-429 sk-text"
@@ -58,7 +64,9 @@
 								>
 							</view>
 						</view>
-						<view class="w-40vw v1--w-40vw bg-white v1--bg-white p-3 v1--p-3 mb-2 v1--mb-2 rounded-3 v1--rounded-3 shadow-md v1--shadow-md">
+						<view
+							class="w-40vw v1--w-40vw bg-white v1--bg-white p-3 v1--p-3 mb-2 v1--mb-2 rounded-3 v1--rounded-3 shadow-md v1--shadow-md"
+						>
 							<image class="rounded-3 v1--rounded-3 w-full v1--w-full h-42 v1--h-42 sk-image" mode="aspectFill"></image>
 							<view
 								class="line-clamp-1 v1--line-clamp-1 my-1 v1--my-1 text-dark-100 v1--text-dark-100 sk-transparent sk-text-14-2857-669 sk-text"
@@ -72,7 +80,9 @@
 								>
 							</view>
 						</view>
-						<view class="w-40vw v1--w-40vw bg-white v1--bg-white p-3 v1--p-3 mb-2 v1--mb-2 rounded-3 v1--rounded-3 shadow-md v1--shadow-md">
+						<view
+							class="w-40vw v1--w-40vw bg-white v1--bg-white p-3 v1--p-3 mb-2 v1--mb-2 rounded-3 v1--rounded-3 shadow-md v1--shadow-md"
+						>
 							<image class="rounded-3 v1--rounded-3 w-full v1--w-full h-42 v1--h-42 sk-image" mode="aspectFill"></image>
 							<view
 								class="line-clamp-1 v1--line-clamp-1 my-1 v1--my-1 text-dark-100 v1--text-dark-100 sk-transparent sk-text-14-2857-836 sk-text"
@@ -86,7 +96,9 @@
 								>
 							</view>
 						</view>
-						<view class="w-40vw v1--w-40vw bg-white v1--bg-white p-3 v1--p-3 mb-2 v1--mb-2 rounded-3 v1--rounded-3 shadow-md v1--shadow-md">
+						<view
+							class="w-40vw v1--w-40vw bg-white v1--bg-white p-3 v1--p-3 mb-2 v1--mb-2 rounded-3 v1--rounded-3 shadow-md v1--shadow-md"
+						>
 							<image class="rounded-3 v1--rounded-3 w-full v1--w-full h-42 v1--h-42 sk-image" mode="aspectFill"></image>
 							<view
 								class="line-clamp-1 v1--line-clamp-1 my-1 v1--my-1 text-dark-100 v1--text-dark-100 sk-transparent sk-text-14-2857-669 sk-text"
@@ -100,7 +112,9 @@
 								>
 							</view>
 						</view>
-						<view class="w-40vw v1--w-40vw bg-white v1--bg-white p-3 v1--p-3 mb-2 v1--mb-2 rounded-3 v1--rounded-3 shadow-md v1--shadow-md">
+						<view
+							class="w-40vw v1--w-40vw bg-white v1--bg-white p-3 v1--p-3 mb-2 v1--mb-2 rounded-3 v1--rounded-3 shadow-md v1--shadow-md"
+						>
 							<image class="rounded-3 v1--rounded-3 w-full v1--w-full h-42 v1--h-42 sk-image" mode="aspectFill"></image>
 							<view
 								class="line-clamp-1 v1--line-clamp-1 my-1 v1--my-1 text-dark-100 v1--text-dark-100 sk-transparent sk-text-14-2857-836 sk-text"

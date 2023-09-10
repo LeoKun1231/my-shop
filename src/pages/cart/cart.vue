@@ -123,14 +123,21 @@ const handleSelectedAll = (isSelectedAll: boolean) => {
 							<view>
 								<view class="bg-white py-2 w-full flex items-center rounded-2">
 									<view class="w-10 center">
-										<radio @click="handleRadioChange(cart)" style="transform: scale(0.8)" color="#fbb957" :checked="cart.selected" />
+										<radio
+											@click="handleRadioChange(cart)"
+											style="transform: scale(0.8)"
+											color="#fbb957"
+											:checked="cart.selected"
+										/>
 									</view>
 									<view class="between flex-1 box-border">
 										<image class="w-24 h-24" mode="aspectFill" :src="cart.picture" />
 										<view class="flex-1 text-sm flex-col between items-start h-24 w-full box-border px-4">
 											<view class="line-clamp-2">{{ cart.name }}</view>
 											<view class="w-full">
-												<view class="bg-[#f7f7f8] px-2 py-0.25 text-[#999] mb-1 w-fit max-w-200px truncate">{{ cart.attrsText }}</view>
+												<view class="bg-[#f7f7f8] px-2 py-0.25 text-[#999] mb-1 w-fit max-w-200px truncate">{{
+													cart.attrsText
+												}}</view>
 												<view class="between w-full">
 													<view class="text-[#f00] flex items-center">
 														<view class="mr-0.5 text-xs"> ¥ </view>
@@ -161,7 +168,9 @@ const handleSelectedAll = (isSelectedAll: boolean) => {
 			<template v-else>
 				<view class="h-50vh center flex-col">
 					<view class="mb-4 text-sm">购物车还是空的，快来挑选好货吧</view>
-					<view class="bg-[#fbb957] text-center px-12 py-1.5 w-fit rounded-full text-white" @click="goToHomePage">去首页看看</view>
+					<view class="bg-[#fbb957] text-center px-12 py-1.5 w-fit rounded-full text-white" @click="goToHomePage"
+						>去首页看看</view
+					>
 				</view>
 			</template>
 		</view>

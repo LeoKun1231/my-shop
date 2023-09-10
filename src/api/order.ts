@@ -2,11 +2,11 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-09-07 10:42:29
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-07 16:55:44
+ * @LastEditTime: 2023-09-09 19:22:53
  * @FilePath: \hello-uniapp\src\api\order.ts
  * @Description:
  */
-import type { IOrderDetailResult, IOrderPostParams, IOrderPreResult } from '@/types/order'
+import type { IOrderDetailResult, IOrderLogisticsResult, IOrderPostParams, IOrderPreResult } from '@/types/order'
 
 /**
  * 获取订单预付信息
@@ -36,5 +36,103 @@ export const postOrderAPI = (data: IOrderPostParams) => {
 export const getOrderDetailAPI = (id: string) => {
 	return get<IOrderDetailResult>({
 		url: `/member/order/${id}`
+	})
+}
+
+/**
+ * @description: 取消订单
+ * @param id 订单id
+ * @param cancelReason 订单原因
+ * @returns
+ */
+export const putCancelOrderAPI = (id: string, cancelReason: string) => {
+	return put({
+		url: `/member/order/${id}/cancel`,
+		data: {
+			cancelReason
+		}
+	})
+}
+
+/**
+ * @description: 删除订单
+ * @param ids 订单id数组
+ */
+export const deleteOrderAPI = (ids: string[]) => {
+	return deleteRequest({
+		url: '/member/order',
+		data: {
+			ids
+		}
+	})
+}
+
+/**
+ * 获取再次购买订单信息
+ */
+export const getOrderAgainAPI = (id: string) => {
+	return get<IOrderPreResult>({
+		url: `/member/order/repurchase/${id}`
+	})
+}
+
+/**
+ * 获取微信支付参数
+ * @param orderId 订单id
+ * @returns
+ */
+export const getWeiXinPayParamsAPI = (orderId: string) => {
+	return get({
+		url: '/pay/wxPay/miniPay',
+		data: {
+			orderId
+		}
+	})
+}
+
+/**
+ * 模拟微信支付
+ * @param orderId 订单id
+ * @returns
+ */
+export const getOrderMockPayAPI = (orderId: string) => {
+	return get({
+		url: '/pay/mock',
+		data: {
+			orderId
+		}
+	})
+}
+
+/**
+ * 确认收货
+ * @param id
+ * @returns
+ */
+export const putOrderConfirmOrderDeliveryAPI = (id: string) => {
+	return put({
+		url: `/member/order/${id}/receipt`
+	})
+}
+
+/**
+ * 模拟发货
+ * @param id
+ * @returns
+ */
+export const getOrderMockShipmentAPI = (id: string) => {
+	return get({
+		url: `/member/order/consignment/${id}`
+	})
+}
+
+/**
+ * 获取订单物流
+ * @param id
+ * @returns
+ */
+export const getOrderLogisticsAPI = (id: string) => {
+	return get<IOrderLogisticsResult>({
+		url: `/member/order/${id}/logistics`
 	})
 }

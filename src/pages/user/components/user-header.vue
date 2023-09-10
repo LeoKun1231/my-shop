@@ -65,7 +65,10 @@ const handleGoToSetting = () => {
 					/>
 					<view class="flex-col around items-start h-14 ml-2 text-white">
 						<view>{{ user?.nickname || user?.account || '未登录' }}</view>
-						<view class="text-center border-1 border-white border-solid px-1 py-0.5 rounded-full text-xs" @click="goToProfile">
+						<view
+							class="text-center border-1 border-white border-solid px-1 py-0.5 rounded-full text-xs"
+							@click="goToProfile"
+						>
 							{{ user ? '更新头像昵称' : '点击登录账号' }}
 						</view>
 					</view>

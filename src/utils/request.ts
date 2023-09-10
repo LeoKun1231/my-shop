@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-11 13:23:01
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-08-31 10:17:11
+ * @LastEditTime: 2023-09-08 10:57:51
  * @FilePath: \hello-uniapp\src\utils\request.ts
  * @Description:网络请求封装
  */
@@ -54,12 +54,18 @@ const request = <T>(options: UniApp.RequestOptions) => {
 					reject(res)
 				} else {
 					uni.showToast({
-						// icon: 'error',
 						icon: 'none',
-						title: '网络错误，请重试'
+						title: (res.data as Data<T>).msg || '网络错误，请重试'
 					})
 					reject(res)
 				}
+			},
+			fail(err) {
+				uni.showToast({
+					icon: 'none',
+					title: '网络错误，请重试'
+				})
+				reject(err)
 			}
 		})
 	})

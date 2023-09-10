@@ -346,12 +346,16 @@ class x {
 	}
 	_getAppConfig() {
 		const e = this._getOriginConfig()
-		return Array.isArray(e) ? e.find((e) => e.dcloudAppid === this._clientInfo.appId) || e.find((e) => e.isDefaultConfig) : e
+		return Array.isArray(e)
+			? e.find((e) => e.dcloudAppid === this._clientInfo.appId) || e.find((e) => e.isDefaultConfig)
+			: e
 	}
 	_getPlatformConfig() {
 		const e = this._getAppConfig()
 		if (!e)
-			throw new Error(`Config for current app (${this._clientInfo.appId}) was not found, please check your config file or client appId`)
+			throw new Error(
+				`Config for current app (${this._clientInfo.appId}) was not found, please check your config file or client appId`
+			)
 		let t
 		switch (
 			('app-plus' === this._clientInfo.platform && (this._clientInfo.platform = 'app'),
@@ -364,7 +368,10 @@ class x {
 			case 'app':
 				t = 'app-plus'
 		}
-		const n = [{ tokenExpiresIn: 7200, tokenExpiresThreshold: 1200, passwordErrorLimit: 6, passwordErrorRetryTime: 3600 }, e]
+		const n = [
+			{ tokenExpiresIn: 7200, tokenExpiresThreshold: 1200, passwordErrorLimit: 6, passwordErrorRetryTime: 3600 },
+			e
+		]
 		t && e[t] && n.push(e[t]), n.push(e[this._clientInfo.platform])
 		const i = Object.assign(...n)
 		return (

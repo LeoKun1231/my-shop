@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import throttle from 'lodash/throttle'
-withDefaults(
+const props = withDefaults(
 	defineProps<{
 		paddingBottom?: number
 		showTop?: boolean
@@ -8,6 +8,7 @@ withDefaults(
 		refresherTriggered?: boolean
 		refresherrefresh?: () => void
 		scrolltolower?: () => void
+		scroll?: UniHelper.ScrollViewOnScroll
 	}>(),
 	{
 		showTop: true,
@@ -28,6 +29,7 @@ const { windowBottom } = useSystem()
 const handleScroll = throttle<UniHelper.ScrollViewOnScroll>((e) => {
 	isShowFab.value = isShowFab.value || e.detail.scrollTop >= 1200
 	isShowFabWithAnimation.value = e.detail.scrollTop >= 1200
+	props.scroll?.(e)
 }, 100)
 
 /**
@@ -65,7 +67,6 @@ defineExpose({
 	<view class="flex h-full overflow-hidden">
 		<scroll-view
 			scroll-y
-			scroll-with-animation
 			class="flex-1 h-full overflow-hidden"
 			:refresher-enabled="refresherEnabled"
 			:scroll-top="scrollTop"

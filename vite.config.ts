@@ -26,7 +26,15 @@ export default defineConfig({
 			imports: ['vue', 'uni-app', 'pinia'],
 			dts: 'src/types/auto-imports.d.ts',
 			// dts: true,
-			dirs: ['src/composables/**', 'src/store/**', 'src/api/**', 'src/utils/**', 'src/components/**', 'src/constants/**', 'src/types/**'],
+			dirs: [
+				'src/composables/**',
+				'src/store/**',
+				'src/api/**',
+				'src/utils/**',
+				'src/components/**',
+				'src/constants/**',
+				'src/types/**'
+			],
 			vueTemplate: true
 		}),
 		/**

@@ -107,7 +107,11 @@ const handleSaveProfile = async () => {
 			<input v-model="componentProfile.nickname" placeholder="请填写昵称" />
 		</app-form-item>
 		<app-form-item label="性别">
-			<uni-data-checkbox v-model="componentProfile.gender" selectedColor="#fbb957" :localdata="sexRange"></uni-data-checkbox>
+			<uni-data-checkbox
+				v-model="componentProfile.gender"
+				selectedColor="#fbb957"
+				:localdata="sexRange"
+			></uni-data-checkbox>
 		</app-form-item>
 		<app-form-item label="生日">
 			<picker
@@ -150,7 +154,9 @@ const handleSaveProfile = async () => {
 			<input v-model="componentProfile.profession" placeholder="请填写职业" />
 		</app-form-item>
 	</view>
-	<view class="bg-[#fbb957] text-white py-3 center w-94% rounded-full text-center m-auto" @click="handleSaveProfile">保&nbsp;存</view>
+	<view class="bg-[#fbb957] text-white py-3 center w-94% rounded-full text-center m-auto" @click="handleSaveProfile"
+		>保&nbsp;存</view
+	>
 </template>
 
 <style scoped lang="scss">

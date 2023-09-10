@@ -2,12 +2,16 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-09-07 10:28:10
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-07 20:31:12
+ * @LastEditTime: 2023-09-09 18:24:38
  * @FilePath: \hello-uniapp\src\sub-pages\order\order.vue
  * @Description: 
 -->
 <script setup lang="ts">
 import type { IOrderPreResult } from '@/types/order'
+
+const query = defineProps<{
+	id?: string
+}>()
 
 getOrderPreData()
 
@@ -20,15 +24,26 @@ const deliveryList = [
 
 const orderPreData = ref<IOrderPreResult>()
 async function getOrderPreData() {
-	const { result } = await getOrderPreAPI()
-	orderPreData.value = result
+	if (query.id) {
+		const { result } = await getOrderAgainAPI(query.id)
+		orderPreData.value = result
+	} else {
+		const { result } = await getOrderPreAPI()
+		orderPreData.value = result
+	}
 }
 
 // 默认地址
 const addressStore = useAddressStore()
 const { address } = storeToRefs(addressStore)
 const selectedAddress = computed(() => {
-	return Object.keys(address.value || {}).length > 0 ? address.value : orderPreData.value?.userAddresses.find((item) => item.isDefault)
+	return Object.keys(address.value || {}).length > 0
+		? address.value
+		: orderPreData.value?.userAddresses.find((item) => item.isDefault)
+})
+//判断是否有地址
+const isAddress = computed(() => {
+	return Object.keys(selectedAddress.value || {}).length > 0
 })
 
 // 配送时间
@@ -51,6 +66,13 @@ const handleGoToAddress = () => {
  * 提交订单
  */
 const postOrder = async () => {
+	if (!isAddress.value) {
+		uni.showToast({
+			title: '请选择收货地址',
+			icon: 'none'
+		})
+		return
+	}
 	const { result } = await postOrderAPI({
 		addressId: selectedAddress.value!.id!,
 		buyerMessage: orderRemark.value,
@@ -90,7 +112,9 @@ const postOrder = async () => {
 				<view class="flex-1 between h-20 flex-col items-start">
 					<view class="text-sm">{{ good.name }}</view>
 					<view class="w-full">
-						<view class="bg-[#f7f7f8] text-xs px-2 py-0.25 text-[#999] mb-1 w-fit max-w-200px truncate">{{ good.attrsText }}</view>
+						<view class="bg-[#f7f7f8] text-xs px-2 py-0.25 text-[#999] mb-1 w-fit max-w-200px truncate">{{
+							good.attrsText
+						}}</view>
 						<view class="between w-full">
 							<view class="flex items-end">
 								<view class="mr-0.5 text-xs text-[#f00]"> ¥ </view>
@@ -114,7 +138,12 @@ const postOrder = async () => {
 				</picker>
 			</app-form-item-v2>
 			<app-form-item-v2 label="订单备注">
-				<input v-model="orderRemark" class="text-sm" :cursor-spacing="30" placeholder="选题，建议留言前先与商家沟通确认" />
+				<input
+					v-model="orderRemark"
+					class="text-sm"
+					:cursor-spacing="30"
+					placeholder="选题，建议留言前先与商家沟通确认"
+				/>
 			</app-form-item-v2>
 		</view>
 
@@ -132,7 +161,12 @@ const postOrder = async () => {
 				<view>¥</view>
 				<view class="text-lg ml-0.25">{{ orderPreData?.summary.totalPayPrice.toFixed(2) }}</view>
 			</view>
-			<view class="bg-[#fbb957] text-white px-7 py-1.5 rounded-full text-sm" @click="postOrder">提交订单</view>
+			<view
+				class="bg-[#fbb957] text-white px-7 py-1.5 rounded-full text-sm"
+				:class="{ 'opacity-50': !isAddress }"
+				@click="postOrder"
+				>提交订单</view
+			>
 		</view>
 	</view>
 </template>

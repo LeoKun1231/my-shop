@@ -7,11 +7,16 @@ export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
   const Gender: typeof import('./profile.d')['Gender']
+  const GetClipboardData: typeof import('../utils/board')['GetClipboardData']
+  const SetClipboardData: typeof import('../utils/board')['SetClipboardData']
   const SkuMode: typeof import('../store/modules/useMode')['SkuMode']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
   const appFormItem: typeof import('../components/app-form-item/app-form-item.vue')['default']
   const appLoadMore: typeof import('../components/app-load-more/app-load-more.vue')['default']
   const computed: typeof import('vue')['computed']
+  const confirmOrderDelivery: (typeof import('../api/order'))['confirmOrderDelivery']
+  const confirmOrderDeliveryAPI: (typeof import('../api/order'))['confirmOrderDeliveryAPI']
+  const confirmOrderReve: (typeof import('../api/order'))['confirmOrderReve']
   const createApp: typeof import('vue')['createApp']
   const createPinia: typeof import('pinia')['createPinia']
   const customRef: typeof import('vue')['customRef']
@@ -20,6 +25,7 @@ declare global {
   const defineStore: typeof import('pinia')['defineStore']
   const deleteAddressAPI: typeof import('../api/address')['deleteAddressAPI']
   const deleteCartAPI: typeof import('../api/cart')['deleteCartAPI']
+  const deleteOrderAPI: typeof import('../api/order')['deleteOrderAPI']
   const deleteRequest: typeof import('../utils/request')['deleteRequest']
   const effectScope: typeof import('vue')['effectScope']
   const envD: typeof import('./env.d')['default']
@@ -38,9 +44,19 @@ declare global {
   const getHomeCategoryAPI: typeof import('../api/home')['getHomeCategoryAPI']
   const getHomeHotRecommendAPI: typeof import('../api/home')['getHomeHotRecommendAPI']
   const getHotDataAPI: typeof import('../api/hot')['getHotDataAPI']
+  const getLogisticsAPI: (typeof import('../api/order'))['getLogisticsAPI']
+  const getMockPayAPI: (typeof import('../api/order'))['getMockPayAPI']
+  const getMockShipmentAPI: (typeof import('../api/order'))['getMockShipmentAPI']
+  const getOrderAgaa: (typeof import('../api/order'))['getOrderAgaa']
+  const getOrderAgainAPI: typeof import('../api/order')['getOrderAgainAPI']
   const getOrderDetailAPI: typeof import('../api/order')['getOrderDetailAPI']
+  const getOrderLogisticsAPI: typeof import('../api/order')['getOrderLogisticsAPI']
+  const getOrderMockPayAPI: typeof import('../api/order')['getOrderMockPayAPI']
+  const getOrderMockShipmentAPI: typeof import('../api/order')['getOrderMockShipmentAPI']
   const getOrderPreAPI: typeof import('../api/order')['getOrderPreAPI']
   const getUserProfileAPI: typeof import('../api/profile')['getUserProfileAPI']
+  const getWeiXinPayParams: (typeof import('../api/order'))['getWeiXinPayParams']
+  const getWeiXinPayParamsAPI: typeof import('../api/order')['getWeiXinPayParamsAPI']
   const h: typeof import('vue')['h']
   const i18n: typeof import('../components/app-load-more/i18n/index.js')['default']
   const inject: typeof import('vue')['inject']
@@ -100,8 +116,11 @@ declare global {
   const provide: typeof import('vue')['provide']
   const put: typeof import('../utils/request')['put']
   const putAddressAPI: typeof import('../api/address')['putAddressAPI']
+  const putCancelOrderAPI: typeof import('../api/order')['putCancelOrderAPI']
   const putCartAPI: typeof import('../api/cart')['putCartAPI']
   const putCartAllSelectedAPI: typeof import('../api/cart')['putCartAllSelectedAPI']
+  const putConfirmOrderDeliveryAPI: (typeof import('../api/order'))['putConfirmOrderDeliveryAPI']
+  const putOrderConfirmOrderDeliveryAPI: typeof import('../api/order')['putOrderConfirmOrderDeliveryAPI']
   const putUserProfileAPI: typeof import('../api/profile')['putUserProfileAPI']
   const reactive: typeof import('vue')['reactive']
   const readonly: typeof import('vue')['readonly']
@@ -124,6 +143,7 @@ declare global {
   const useAddressStore: typeof import('../store/modules/useAddress')['useAddressStore']
   const useAppGuessLike: typeof import('../composables/useAppGuessLike')['default']
   const useAttrs: typeof import('vue')['useAttrs']
+  const useBack: typeof import('../composables/useBack')['useBack']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
   const useModeStore: typeof import('../store/modules/useMode')['useModeStore']
@@ -148,6 +168,8 @@ declare module 'vue' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly Gender: UnwrapRef<typeof import('./profile.d')['Gender']>
+    readonly GetClipboardData: UnwrapRef<typeof import('../utils/board')['GetClipboardData']>
+    readonly SetClipboardData: UnwrapRef<typeof import('../utils/board')['SetClipboardData']>
     readonly SkuMode: UnwrapRef<typeof import('../store/modules/useMode')['SkuMode']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
     readonly appFormItem: UnwrapRef<typeof import('../components/app-form-item/app-form-item.vue')['default']>
@@ -161,6 +183,7 @@ declare module 'vue' {
     readonly defineStore: UnwrapRef<typeof import('pinia')['defineStore']>
     readonly deleteAddressAPI: UnwrapRef<typeof import('../api/address')['deleteAddressAPI']>
     readonly deleteCartAPI: UnwrapRef<typeof import('../api/cart')['deleteCartAPI']>
+    readonly deleteOrderAPI: UnwrapRef<typeof import('../api/order')['deleteOrderAPI']>
     readonly deleteRequest: UnwrapRef<typeof import('../utils/request')['deleteRequest']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly envD: UnwrapRef<typeof import('./env.d')['default']>
@@ -179,9 +202,14 @@ declare module 'vue' {
     readonly getHomeCategoryAPI: UnwrapRef<typeof import('../api/home')['getHomeCategoryAPI']>
     readonly getHomeHotRecommendAPI: UnwrapRef<typeof import('../api/home')['getHomeHotRecommendAPI']>
     readonly getHotDataAPI: UnwrapRef<typeof import('../api/hot')['getHotDataAPI']>
+    readonly getOrderAgainAPI: UnwrapRef<typeof import('../api/order')['getOrderAgainAPI']>
     readonly getOrderDetailAPI: UnwrapRef<typeof import('../api/order')['getOrderDetailAPI']>
+    readonly getOrderLogisticsAPI: UnwrapRef<typeof import('../api/order')['getOrderLogisticsAPI']>
+    readonly getOrderMockPayAPI: UnwrapRef<typeof import('../api/order')['getOrderMockPayAPI']>
+    readonly getOrderMockShipmentAPI: UnwrapRef<typeof import('../api/order')['getOrderMockShipmentAPI']>
     readonly getOrderPreAPI: UnwrapRef<typeof import('../api/order')['getOrderPreAPI']>
     readonly getUserProfileAPI: UnwrapRef<typeof import('../api/profile')['getUserProfileAPI']>
+    readonly getWeiXinPayParamsAPI: UnwrapRef<typeof import('../api/order')['getWeiXinPayParamsAPI']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly i18n: UnwrapRef<typeof import('../components/app-load-more/i18n/index.js')['default']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
@@ -241,8 +269,10 @@ declare module 'vue' {
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
     readonly put: UnwrapRef<typeof import('../utils/request')['put']>
     readonly putAddressAPI: UnwrapRef<typeof import('../api/address')['putAddressAPI']>
+    readonly putCancelOrderAPI: UnwrapRef<typeof import('../api/order')['putCancelOrderAPI']>
     readonly putCartAPI: UnwrapRef<typeof import('../api/cart')['putCartAPI']>
     readonly putCartAllSelectedAPI: UnwrapRef<typeof import('../api/cart')['putCartAllSelectedAPI']>
+    readonly putOrderConfirmOrderDeliveryAPI: UnwrapRef<typeof import('../api/order')['putOrderConfirmOrderDeliveryAPI']>
     readonly putUserProfileAPI: UnwrapRef<typeof import('../api/profile')['putUserProfileAPI']>
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
     readonly readonly: UnwrapRef<typeof import('vue')['readonly']>
@@ -265,6 +295,7 @@ declare module 'vue' {
     readonly useAddressStore: UnwrapRef<typeof import('../store/modules/useAddress')['useAddressStore']>
     readonly useAppGuessLike: UnwrapRef<typeof import('../composables/useAppGuessLike')['default']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
+    readonly useBack: UnwrapRef<typeof import('../composables/useBack')['useBack']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useModeStore: UnwrapRef<typeof import('../store/modules/useMode')['useModeStore']>
@@ -283,6 +314,8 @@ declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly Gender: UnwrapRef<typeof import('./profile.d')['Gender']>
+    readonly GetClipboardData: UnwrapRef<typeof import('../utils/board')['GetClipboardData']>
+    readonly SetClipboardData: UnwrapRef<typeof import('../utils/board')['SetClipboardData']>
     readonly SkuMode: UnwrapRef<typeof import('../store/modules/useMode')['SkuMode']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
     readonly appFormItem: UnwrapRef<typeof import('../components/app-form-item/app-form-item.vue')['default']>
@@ -296,6 +329,7 @@ declare module '@vue/runtime-core' {
     readonly defineStore: UnwrapRef<typeof import('pinia')['defineStore']>
     readonly deleteAddressAPI: UnwrapRef<typeof import('../api/address')['deleteAddressAPI']>
     readonly deleteCartAPI: UnwrapRef<typeof import('../api/cart')['deleteCartAPI']>
+    readonly deleteOrderAPI: UnwrapRef<typeof import('../api/order')['deleteOrderAPI']>
     readonly deleteRequest: UnwrapRef<typeof import('../utils/request')['deleteRequest']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly envD: UnwrapRef<typeof import('./env.d')['default']>
@@ -314,9 +348,14 @@ declare module '@vue/runtime-core' {
     readonly getHomeCategoryAPI: UnwrapRef<typeof import('../api/home')['getHomeCategoryAPI']>
     readonly getHomeHotRecommendAPI: UnwrapRef<typeof import('../api/home')['getHomeHotRecommendAPI']>
     readonly getHotDataAPI: UnwrapRef<typeof import('../api/hot')['getHotDataAPI']>
+    readonly getOrderAgainAPI: UnwrapRef<typeof import('../api/order')['getOrderAgainAPI']>
     readonly getOrderDetailAPI: UnwrapRef<typeof import('../api/order')['getOrderDetailAPI']>
+    readonly getOrderLogisticsAPI: UnwrapRef<typeof import('../api/order')['getOrderLogisticsAPI']>
+    readonly getOrderMockPayAPI: UnwrapRef<typeof import('../api/order')['getOrderMockPayAPI']>
+    readonly getOrderMockShipmentAPI: UnwrapRef<typeof import('../api/order')['getOrderMockShipmentAPI']>
     readonly getOrderPreAPI: UnwrapRef<typeof import('../api/order')['getOrderPreAPI']>
     readonly getUserProfileAPI: UnwrapRef<typeof import('../api/profile')['getUserProfileAPI']>
+    readonly getWeiXinPayParamsAPI: UnwrapRef<typeof import('../api/order')['getWeiXinPayParamsAPI']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly i18n: UnwrapRef<typeof import('../components/app-load-more/i18n/index.js')['default']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
@@ -376,8 +415,10 @@ declare module '@vue/runtime-core' {
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
     readonly put: UnwrapRef<typeof import('../utils/request')['put']>
     readonly putAddressAPI: UnwrapRef<typeof import('../api/address')['putAddressAPI']>
+    readonly putCancelOrderAPI: UnwrapRef<typeof import('../api/order')['putCancelOrderAPI']>
     readonly putCartAPI: UnwrapRef<typeof import('../api/cart')['putCartAPI']>
     readonly putCartAllSelectedAPI: UnwrapRef<typeof import('../api/cart')['putCartAllSelectedAPI']>
+    readonly putOrderConfirmOrderDeliveryAPI: UnwrapRef<typeof import('../api/order')['putOrderConfirmOrderDeliveryAPI']>
     readonly putUserProfileAPI: UnwrapRef<typeof import('../api/profile')['putUserProfileAPI']>
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
     readonly readonly: UnwrapRef<typeof import('vue')['readonly']>
@@ -400,6 +441,7 @@ declare module '@vue/runtime-core' {
     readonly useAddressStore: UnwrapRef<typeof import('../store/modules/useAddress')['useAddressStore']>
     readonly useAppGuessLike: UnwrapRef<typeof import('../composables/useAppGuessLike')['default']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
+    readonly useBack: UnwrapRef<typeof import('../composables/useBack')['useBack']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useModeStore: UnwrapRef<typeof import('../store/modules/useMode')['useModeStore']>

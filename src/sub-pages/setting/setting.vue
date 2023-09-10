@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-30 17:42:49
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-02 12:04:42
+ * @LastEditTime: 2023-09-10 12:01:21
  * @FilePath: \hello-uniapp\src\sub-pages\setting\setting.vue
  * @Description: 设置页
 -->
@@ -22,6 +22,7 @@ const goToLogin = () => {
 /**
  * 退出登录
  */
+
 const handleLogout = () => {
 	uni.showModal({
 		content: '确定退出登录吗？',

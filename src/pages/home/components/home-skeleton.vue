@@ -39,7 +39,9 @@
 					<view>
 						<view class="uni-swiper__warp dot--uni-swiper__warp">
 							<swiper :autoplay="false" :circular="true" class="h-40 swiper--h-40" :current="0">
-								<swiper-item style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px)">
+								<swiper-item
+									style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px)"
+								>
 									<image class="h-full swiper--h-full w-full swiper--w-full sk-image" mode="aspectFill"></image>
 								</swiper-item>
 							</swiper>
@@ -123,9 +125,13 @@
 										class="text-lg recommend--text-lg font-bold recommend--font-bold ml-2 recommend--ml-2 mr-3 recommend--mr-3 sk-transparent sk-text-17-8571-645 sk-text"
 										>特惠推荐</text
 									>
-									<text class="text-gray-400 recommend--text-gray-400 sk-transparent sk-text-14-2857-127 sk-text">精选全攻略</text>
+									<text class="text-gray-400 recommend--text-gray-400 sk-transparent sk-text-14-2857-127 sk-text"
+										>精选全攻略</text
+									>
 								</view>
-								<view class="flex recommend--flex items-center recommend--items-center justify-around recommend--justify-around">
+								<view
+									class="flex recommend--flex items-center recommend--items-center justify-around recommend--justify-around"
+								>
 									<image class="h-20 recommend--h-20 w-20 recommend--w-20 sk-image"></image>
 									<image class="h-20 recommend--h-20 w-20 recommend--w-20 sk-image"></image>
 								</view>
@@ -136,9 +142,13 @@
 										class="text-lg recommend--text-lg font-bold recommend--font-bold ml-2 recommend--ml-2 mr-3 recommend--mr-3 sk-transparent sk-text-17-8571-662 sk-text"
 										>爆款推荐</text
 									>
-									<text class="text-gray-400 recommend--text-gray-400 sk-transparent sk-text-14-2857-562 sk-text">最受欢迎</text>
+									<text class="text-gray-400 recommend--text-gray-400 sk-transparent sk-text-14-2857-562 sk-text"
+										>最受欢迎</text
+									>
 								</view>
-								<view class="flex recommend--flex items-center recommend--items-center justify-around recommend--justify-around">
+								<view
+									class="flex recommend--flex items-center recommend--items-center justify-around recommend--justify-around"
+								>
 									<image class="h-20 recommend--h-20 w-20 recommend--w-20 sk-image"></image>
 									<image class="h-20 recommend--h-20 w-20 recommend--w-20 sk-image"></image>
 								</view>
@@ -149,9 +159,13 @@
 										class="text-lg recommend--text-lg font-bold recommend--font-bold ml-2 recommend--ml-2 mr-3 recommend--mr-3 sk-transparent sk-text-17-8571-469 sk-text"
 										>一站买全</text
 									>
-									<text class="text-gray-400 recommend--text-gray-400 sk-transparent sk-text-14-2857-34 sk-text">精心优选</text>
+									<text class="text-gray-400 recommend--text-gray-400 sk-transparent sk-text-14-2857-34 sk-text"
+										>精心优选</text
+									>
 								</view>
-								<view class="flex recommend--flex items-center recommend--items-center justify-around recommend--justify-around">
+								<view
+									class="flex recommend--flex items-center recommend--items-center justify-around recommend--justify-around"
+								>
 									<image class="h-20 recommend--h-20 w-20 recommend--w-20 sk-image"></image>
 									<image class="h-20 recommend--h-20 w-20 recommend--w-20 sk-image"></image>
 								</view>
@@ -162,9 +176,13 @@
 										class="text-lg recommend--text-lg font-bold recommend--font-bold ml-2 recommend--ml-2 mr-3 recommend--mr-3 sk-transparent sk-text-17-8571-496 sk-text"
 										>新鲜好物</text
 									>
-									<text class="text-gray-400 recommend--text-gray-400 sk-transparent sk-text-14-2857-738 sk-text">生活加分项</text>
+									<text class="text-gray-400 recommend--text-gray-400 sk-transparent sk-text-14-2857-738 sk-text"
+										>生活加分项</text
+									>
 								</view>
-								<view class="flex recommend--flex items-center recommend--items-center justify-around recommend--justify-around">
+								<view
+									class="flex recommend--flex items-center recommend--items-center justify-around recommend--justify-around"
+								>
 									<image class="h-20 recommend--h-20 w-20 recommend--w-20 sk-image"></image>
 									<image class="h-20 recommend--h-20 w-20 recommend--w-20 sk-image"></image>
 								</view>

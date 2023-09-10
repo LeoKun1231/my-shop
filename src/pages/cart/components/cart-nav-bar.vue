@@ -68,7 +68,9 @@ const goToOrderPages = () => {
 </script>
 
 <template>
-	<view class="fixed shadow-2xl b-bottom left-0 right-0 bottom-[var(--window-bottom)] h-[50px] bg-white box-border px-2 between">
+	<view
+		class="fixed shadow-2xl b-bottom left-0 right-0 bottom-[var(--window-bottom)] h-[50px] bg-white box-border px-2 between"
+	>
 		<view class="flex items-center">
 			<radio
 				style="transform: scale(0.9)"

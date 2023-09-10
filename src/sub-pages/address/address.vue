@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-31 17:48:50
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-07 14:33:11
+ * @LastEditTime: 2023-09-09 18:23:00
  * @FilePath: \hello-uniapp\src\sub-pages\address\address.vue
  * @Description: 
 -->
@@ -77,6 +77,12 @@ const handleAddressClick = (address: IAddress) => {
 	addressStore.setAddress(address)
 	uni.navigateBack()
 }
+
+watch(addressList, () => {
+	if (addressList.value.length == 0) {
+		addressStore.setAddress(undefined)
+	}
+})
 </script>
 
 <template>
