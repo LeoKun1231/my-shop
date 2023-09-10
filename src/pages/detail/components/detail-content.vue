@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-27 11:43:58
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-06 11:28:32
+ * @LastEditTime: 2023-09-10 19:10:00
  * @FilePath: \hello-uniapp\src\pages\detail\components\detail-content.vue
  * @Description: 
 -->
@@ -79,6 +79,15 @@ const buttonGroup = [
 		color: '#fff'
 	}
 ]
+
+const addressStore = useAddressStore()
+const { addressList } = storeToRefs(addressStore)
+const currentAddress = ref('')
+const addressId = ref('')
+const handleAddressChange = (value: string) => {
+	addressId.value = value
+	currentAddress.value = addressList.value?.find((c) => c.id == value)!.fullLocation || ''
+}
 </script>
 
 <template>
@@ -101,7 +110,7 @@ const buttonGroup = [
 		<view class="between px-4 py-3 b-bottom" @click="handleOpenPopup('配送至')">
 			<view class="flex">
 				<view class="text-gray mr-3 w-10">送至</view>
-				<view class="truncate text-[#666]">请选择收获地址</view>
+				<view class="truncate text-[#666]">{{ currentAddress == '' ? '请选择收获地址' : currentAddress }}</view>
 			</view>
 			<view class="i-carbon-chevron-right text-gray-300 text-lg"></view>
 		</view>
@@ -114,14 +123,14 @@ const buttonGroup = [
 		</view>
 		<app-popup ref="popupRef" :title="currentPopupType">
 			<view v-if="currentPopupType == '选购'" class="h-20 bg-blue"></view>
-			<detail-address v-if="currentPopupType == '配送至'" />
+			<detail-address v-if="currentPopupType == '配送至'" @change="handleAddressChange" />
 			<detail-service v-if="currentPopupType == '服务说明'" />
 		</app-popup>
 	</view>
 	<view class="goods-carts">
 		<uni-goods-nav :options="options" :fill="true" :button-group="buttonGroup" @button-click="handleButtonClick" />
 	</view>
-	<detail-sku v-model="selectShop" :goods="goods" ref="detailSkuRef" />
+	<detail-sku v-model="selectShop" :goods="goods" ref="detailSkuRef" :addressId="addressId" />
 </template>
 
 <style lang="scss">

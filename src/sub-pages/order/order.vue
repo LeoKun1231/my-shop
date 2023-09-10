@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-09-07 10:28:10
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-10 18:34:05
+ * @LastEditTime: 2023-09-10 19:18:27
  * @FilePath: \hello-uniapp\src\sub-pages\order\order.vue
  * @Description: 
 -->
@@ -17,7 +17,7 @@ const query = defineProps<{
 
 getOrderPreData()
 const addressStore = useAddressStore()
-const { address } = storeToRefs(addressStore)
+const { address, addressList } = storeToRefs(addressStore)
 // 配送时间
 const deliveryList = [
 	{ type: 1, text: '时间不限 (周一至周日)' },
@@ -49,9 +49,13 @@ addressStore.getAddressListData()
 
 // 默认地址
 const selectedAddress = computed(() => {
-	return Object.keys(address.value || {}).length > 0
-		? address.value
-		: orderPreData.value?.userAddresses.find((item) => item.isDefault)
+	if (query.addressId) {
+		return addressList.value?.find((item) => item.id == query.addressId)
+	} else {
+		return Object.keys(address.value || {}).length > 0
+			? address.value
+			: orderPreData.value?.userAddresses.find((item) => item.isDefault)
+	}
 })
 //判断是否有地址
 const isAddress = computed(() => {

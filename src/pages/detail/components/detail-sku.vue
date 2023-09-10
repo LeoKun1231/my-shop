@@ -11,6 +11,7 @@ import cloneDeep from 'lodash/cloneDeep'
 const props = defineProps<{
 	goods: IDetailGoodResult
 	modelValue: string
+	addressId: string
 }>()
 
 const emits = defineEmits<{
@@ -103,9 +104,16 @@ function addCart(selectShop: SkuPopupEvent) {
 
 // 立即购买
 async function buyNow(selectShop: SkuPopupEvent) {
-	uni.navigateTo({
-		url: `/sub-pages/order/order?id=${selectShop._id}&count=${selectShop.buy_num}`
-	})
+	if (props.addressId) {
+		uni.navigateTo({
+			url: `/sub-pages/order/order?id=${selectShop._id}&count=${selectShop.buy_num}&addressId=${props.addressId}`
+		})
+	} else {
+		uni.navigateTo({
+			url: `/sub-pages/order/order?id=${selectShop._id}&count=${selectShop.buy_num}`
+		})
+	}
+
 	skuOpen.value = false
 }
 

@@ -1,34 +1,48 @@
 <script setup lang="ts">
+const emits = defineEmits<{
+	(e: 'change', value: string): void
+}>()
+
+const addressStore = useAddressStore()
+addressStore.getAddressListData()
+const { addressList } = storeToRefs(addressStore)
+
+const handleGoToNewAddress = () => {
+	uni.navigateTo({
+		url: `/sub-pages/address-form/address-form`
+	})
+}
+
 const currentIndex = ref(0)
-
-const addresses = [
-	{ name: '李明', phone: '13824686868', address: '北京市顺义区后沙峪地区安平北街6号院' },
-	{ name: '张三', phone: '13824686868', address: '北京市顺义区后沙峪地区安平北街6号院' },
-	{ name: '王五', phone: '13824686868', address: '北京市顺义区后沙峪地区安平北街6号院' }
-]
-
-const handleSelect = (index: number) => {
-	currentIndex.value = index
+const radioChange: UniHelper.RadioGroupOnChange = (e) => {
+	emits('change', e.detail.value)
 }
 </script>
 
 <template>
 	<view class="address">
-		<view class="flex items-center py-2" v-for="(address, index) in addresses" :key="address.name">
-			<view class="w-10 center">
-				<image src="@/static/images/location.png" class="h-5 w-5" />
-			</view>
-			<view class="flex-1 text-[#666]">
-				<view class="user">{{ address.name }} {{ address.phone }}</view>
-				<view class="text-xs">{{ address.address }}</view>
-			</view>
-			<view class="w-10 center" @click="handleSelect(index)">
-				<image v-if="currentIndex == index" src="@/static/images/select.png" class="h-5 w-5" />
-				<image v-else src="@/static/images/unselect.png" class="h-5 w-5" />
-			</view>
+		<scroll-view scroll-y class="cart-address">
+			<radio-group @change="radioChange">
+				<view class="flex items-center py-2" v-for="(address, index) in addressList" :key="address.id">
+					<view class="w-10 center">
+						<image src="@/static/images/location.png" class="h-5 w-5" />
+					</view>
+					<view class="flex-1 text-[#666]">
+						<view class="user">{{ address.receiver }} {{ address.contact }}</view>
+						<view class="text-xs">{{ address.fullLocation }}</view>
+					</view>
+					<radio color="#fbb957" style="transform: scale(0.8)" :value="address.id" :checked="index === currentIndex" />
+				</view>
+			</radio-group>
+		</scroll-view>
+		<view class="mt-5 bg-[#fbb957] rounded-full py-2 text-white text-center" @click="handleGoToNewAddress">
+			新建地址
 		</view>
-		<view class="mt-5 bg-[#fbb957] rounded-full py-2 text-white text-center"> 新建地址 </view>
 	</view>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.cart-address {
+	max-height: 400rpx;
+}
+</style>
