@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-09-07 16:12:32
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-10 12:00:25
+ * @LastEditTime: 2023-09-10 18:38:52
  * @FilePath: \hello-uniapp\src\sub-pages\order-detail\order-detail.vue
  * @Description: 
 -->
@@ -249,7 +249,7 @@ const copyOrderID = () => {
 					</view>
 					<view class="around mt-3 px-7">
 						<view class="bg-white py-1.5 px-10 text-[#fbb957] rounded-full" @click="handleBuyAgain">再次购买</view>
-						<view class="bg-white py-1.5 px-10 text-[#fbb957] rounded-full" @click="handleConfirmDelivery">去评价</view>
+						<view class="bg-white py-1.5 px-10 text-[#fbb957] rounded-full">去评价</view>
 					</view>
 				</template>
 			</view>
@@ -381,7 +381,7 @@ const copyOrderID = () => {
 						再次购买
 					</view>
 				</template>
-				<template v-else-if="isAlreadyShipment">
+				<template v-else-if="isAlreadyShipment || OrderState.PendingShipment == orderDetail?.orderState">
 					<view
 						class="text-[#fbb957] border-1 border-solid border-[#fbb957] w-fit py-2 px-6 rounded-full"
 						@click="handleBuyAgain"

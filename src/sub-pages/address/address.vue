@@ -2,17 +2,18 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-31 17:48:50
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-09 18:23:00
+ * @LastEditTime: 2023-09-10 18:15:53
  * @FilePath: \hello-uniapp\src\sub-pages\address\address.vue
  * @Description: 
 -->
 <script setup lang="ts">
 import type { IAddress } from '@/types/address'
 
-const addressList = ref<IAddress[]>([])
+const addressStore = useAddressStore()
+const { addressList } = storeToRefs(addressStore)
 
 onShow(() => {
-	getAddressListData()
+	addressStore.getAddressListData()
 })
 
 /**
@@ -49,8 +50,8 @@ const handleSwipeDelete: UniHelper.UniSwipeActionItemOnClick = (e) => {
 			confirmColor: '#fbb957',
 			success: async (res) => {
 				if (res.confirm) {
-					await deleteAddressAPI(addressList.value[e.index].id)
-					await getAddressListData()
+					await deleteAddressAPI(addressList.value![e.index].id)
+					await addressStore.getAddressListData()
 					uni.showToast({
 						title: '删除成功',
 						icon: 'none'
@@ -61,25 +62,16 @@ const handleSwipeDelete: UniHelper.UniSwipeActionItemOnClick = (e) => {
 	}
 }
 
-/**
- * @description: 获取地址列表
- */
-async function getAddressListData() {
-	const res = await getAddressListAPI()
-	addressList.value = res.result
-}
-
 const { safeAreaInsetsBottom } = useSystem()
 
 //设置默认地址
-const addressStore = useAddressStore()
 const handleAddressClick = (address: IAddress) => {
 	addressStore.setAddress(address)
 	uni.navigateBack()
 }
 
 watch(addressList, () => {
-	if (addressList.value.length == 0) {
+	if (addressList.value!.length == 0) {
 		addressStore.setAddress(undefined)
 	}
 })

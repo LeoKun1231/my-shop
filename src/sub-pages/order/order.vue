@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-09-07 10:28:10
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-09 18:24:38
+ * @LastEditTime: 2023-09-10 18:34:05
  * @FilePath: \hello-uniapp\src\sub-pages\order\order.vue
  * @Description: 
 -->
@@ -11,10 +11,13 @@ import type { IOrderPreResult } from '@/types/order'
 
 const query = defineProps<{
 	id?: string
+	count?: string
+	addressId?: string
 }>()
 
 getOrderPreData()
-
+const addressStore = useAddressStore()
+const { address } = storeToRefs(addressStore)
 // 配送时间
 const deliveryList = [
 	{ type: 1, text: '时间不限 (周一至周日)' },
@@ -24,18 +27,27 @@ const deliveryList = [
 
 const orderPreData = ref<IOrderPreResult>()
 async function getOrderPreData() {
-	if (query.id) {
+	if (query.id && !query.count) {
+		//再次购买
 		const { result } = await getOrderAgainAPI(query.id)
 		orderPreData.value = result
+	} else if (query.id && query.count) {
+		//立即购买
+		const { result } = await getOrderPreNowAPI({
+			skuId: query.id,
+			count: query.count
+		})
+		orderPreData.value = result
 	} else {
+		//购物车结算
 		const { result } = await getOrderPreAPI()
 		orderPreData.value = result
 	}
 }
+//获取地址
+addressStore.getAddressListData()
 
 // 默认地址
-const addressStore = useAddressStore()
-const { address } = storeToRefs(addressStore)
 const selectedAddress = computed(() => {
 	return Object.keys(address.value || {}).length > 0
 		? address.value

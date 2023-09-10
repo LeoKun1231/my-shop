@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-09-07 10:42:29
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-09 19:22:53
+ * @LastEditTime: 2023-09-10 17:54:26
  * @FilePath: \hello-uniapp\src\api\order.ts
  * @Description:
  */
@@ -15,6 +15,18 @@ import type { IOrderDetailResult, IOrderLogisticsResult, IOrderPostParams, IOrde
 export const getOrderPreAPI = () => {
 	return get<IOrderPreResult>({
 		url: '/member/order/pre'
+	})
+}
+
+/**
+ * 获取立即购买订单
+ * @param data
+ * @returns
+ */
+export const getOrderPreNowAPI = (data: { skuId: string; count: string; addressId?: string }) => {
+	return get<IOrderPreResult>({
+		url: '/member/order/pre/now',
+		data
 	})
 }
 

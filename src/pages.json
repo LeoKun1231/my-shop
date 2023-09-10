@@ -137,6 +137,12 @@
 						"navigationBarTitleText": "",
 						"navigationStyle": "custom"
 					}
+				},
+				{
+					"path": "order-list/order-list",
+					"style": {
+						"navigationBarTitleText": "订单列表"
+					}
 				}
 			]
 		}

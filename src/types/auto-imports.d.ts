@@ -54,6 +54,7 @@ declare global {
   const getOrderMockPayAPI: typeof import('../api/order')['getOrderMockPayAPI']
   const getOrderMockShipmentAPI: typeof import('../api/order')['getOrderMockShipmentAPI']
   const getOrderPreAPI: typeof import('../api/order')['getOrderPreAPI']
+  const getOrderPreNowAPI: typeof import('../api/order')['getOrderPreNowAPI']
   const getUserProfileAPI: typeof import('../api/profile')['getUserProfileAPI']
   const getWeiXinPayParams: (typeof import('../api/order'))['getWeiXinPayParams']
   const getWeiXinPayParamsAPI: typeof import('../api/order')['getWeiXinPayParamsAPI']
@@ -116,6 +117,7 @@ declare global {
   const provide: typeof import('vue')['provide']
   const put: typeof import('../utils/request')['put']
   const putAddressAPI: typeof import('../api/address')['putAddressAPI']
+  const putBuyCartAPI: typeof import('../api/cart')['putBuyCartAPI']
   const putCancelOrderAPI: typeof import('../api/order')['putCancelOrderAPI']
   const putCartAPI: typeof import('../api/cart')['putCartAPI']
   const putCartAllSelectedAPI: typeof import('../api/cart')['putCartAllSelectedAPI']
@@ -208,6 +210,7 @@ declare module 'vue' {
     readonly getOrderMockPayAPI: UnwrapRef<typeof import('../api/order')['getOrderMockPayAPI']>
     readonly getOrderMockShipmentAPI: UnwrapRef<typeof import('../api/order')['getOrderMockShipmentAPI']>
     readonly getOrderPreAPI: UnwrapRef<typeof import('../api/order')['getOrderPreAPI']>
+    readonly getOrderPreNowAPI: UnwrapRef<typeof import('../api/order')['getOrderPreNowAPI']>
     readonly getUserProfileAPI: UnwrapRef<typeof import('../api/profile')['getUserProfileAPI']>
     readonly getWeiXinPayParamsAPI: UnwrapRef<typeof import('../api/order')['getWeiXinPayParamsAPI']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
@@ -295,7 +298,6 @@ declare module 'vue' {
     readonly useAddressStore: UnwrapRef<typeof import('../store/modules/useAddress')['useAddressStore']>
     readonly useAppGuessLike: UnwrapRef<typeof import('../composables/useAppGuessLike')['default']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
-    readonly useBack: UnwrapRef<typeof import('../composables/useBack')['useBack']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useModeStore: UnwrapRef<typeof import('../store/modules/useMode')['useModeStore']>
@@ -354,6 +356,7 @@ declare module '@vue/runtime-core' {
     readonly getOrderMockPayAPI: UnwrapRef<typeof import('../api/order')['getOrderMockPayAPI']>
     readonly getOrderMockShipmentAPI: UnwrapRef<typeof import('../api/order')['getOrderMockShipmentAPI']>
     readonly getOrderPreAPI: UnwrapRef<typeof import('../api/order')['getOrderPreAPI']>
+    readonly getOrderPreNowAPI: UnwrapRef<typeof import('../api/order')['getOrderPreNowAPI']>
     readonly getUserProfileAPI: UnwrapRef<typeof import('../api/profile')['getUserProfileAPI']>
     readonly getWeiXinPayParamsAPI: UnwrapRef<typeof import('../api/order')['getWeiXinPayParamsAPI']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
@@ -441,7 +444,6 @@ declare module '@vue/runtime-core' {
     readonly useAddressStore: UnwrapRef<typeof import('../store/modules/useAddress')['useAddressStore']>
     readonly useAppGuessLike: UnwrapRef<typeof import('../composables/useAppGuessLike')['default']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
-    readonly useBack: UnwrapRef<typeof import('../composables/useBack')['useBack']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useModeStore: UnwrapRef<typeof import('../store/modules/useMode')['useModeStore']>

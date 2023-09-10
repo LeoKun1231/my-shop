@@ -102,12 +102,11 @@ function addCart(selectShop: SkuPopupEvent) {
 }
 
 // 立即购买
-function buyNow(selectShop: SkuPopupEvent) {
-	console.log(selectShop)
-	uni.showToast({
-		title: '立即购买',
-		icon: 'none'
+async function buyNow(selectShop: SkuPopupEvent) {
+	uni.navigateTo({
+		url: `/sub-pages/order/order?id=${selectShop._id}&count=${selectShop.buy_num}`
 	})
+	skuOpen.value = false
 }
 
 defineExpose({
