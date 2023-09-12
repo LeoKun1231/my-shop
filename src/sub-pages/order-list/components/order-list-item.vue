@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-09-10 20:16:23
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-12 19:30:09
+ * @LastEditTime: 2023-09-12 20:03:30
  * @FilePath: \hello-uniapp\src\sub-pages\order-list\components\order-list-item.vue
  * @Description: 
 -->
@@ -152,7 +152,7 @@ const goToOrderDetail = (id: string) => {
 							class="ml-1 center-y before:(content-['|'] inline-block mr-1 text-[#ddd])"
 							v-if="order.orderState == OrderState.Cancelled || order.orderState == OrderState.PendingReview"
 						>
-							<view class="i-carbon-delete" @click="handleRemoveOrder(order.id)"></view>
+							<view class="i-carbon-delete" @click.stop="handleRemoveOrder(order.id)"></view>
 						</view>
 					</view>
 				</view>
