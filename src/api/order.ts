@@ -2,11 +2,18 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-09-07 10:42:29
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-10 17:54:26
+ * @LastEditTime: 2023-09-11 20:12:44
  * @FilePath: \hello-uniapp\src\api\order.ts
  * @Description:
  */
-import type { IOrderDetailResult, IOrderLogisticsResult, IOrderPostParams, IOrderPreResult } from '@/types/order'
+import type { IGlobalPageParams, IGlobalPageResult } from '@/types/global'
+import type {
+	IOrderDetailResult,
+	IOrderList,
+	IOrderLogisticsResult,
+	IOrderPostParams,
+	IOrderPreResult
+} from '@/types/order'
 
 /**
  * 获取订单预付信息
@@ -146,5 +153,17 @@ export const getOrderMockShipmentAPI = (id: string) => {
 export const getOrderLogisticsAPI = (id: string) => {
 	return get<IOrderLogisticsResult>({
 		url: `/member/order/${id}/logistics`
+	})
+}
+
+/**
+ * 获取订单列表
+ * @param data
+ * @returns
+ */
+export const getOrderListAPI = (data: IGlobalPageParams & { orderState?: number }) => {
+	return get<IGlobalPageResult<IOrderList>>({
+		url: '/member/order',
+		data
 	})
 }

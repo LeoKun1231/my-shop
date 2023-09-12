@@ -383,3 +383,94 @@ export interface IOrderLogisticsList {
 	 */
 	time: string
 }
+
+/**
+ * 返回信息
+ */
+export interface IOrderListResult {
+	/**
+	 * 总记录数
+	 */
+	counts: number
+	/**
+	 * 数据集合
+	 */
+	items: IOrderList[]
+	/**
+	 * 当前页码
+	 */
+	page: string
+	/**
+	 * 总页数
+	 */
+	pages: string
+	/**
+	 * 页尺寸
+	 */
+	pageSize: string
+}
+
+/**
+ * 订单信息
+ */
+export interface IOrderList {
+	/**
+	 * 倒计时--剩余的秒数 -1 表示已经超时，正数表示倒计时未结束
+	 */
+	countdown: number
+	/**
+	 * 下单时间
+	 */
+	createTime: string
+	/**
+	 * 订单编号
+	 */
+	id: string
+	/**
+	 * 订单状态，1为待付款、2为待发货、3为待收货、4为待评价、5为已完成、6为已取消
+	 */
+	orderState: OrderState
+	/**
+	 * 付款截止时间
+	 */
+	payLatestTime: string
+	/**
+	 * 实付金额
+	 */
+	payMoney: number
+	/**
+	 * 支付方式，1为在线支付，2为货到付款
+	 */
+	payType: number
+	/**
+	 * 邮费
+	 */
+	postFee: number
+	/**
+	 * 商品集合
+	 */
+	skus: IOrderSku[]
+	/**
+	 * 金额合计
+	 */
+	totalMoney: number
+	/**
+	 * 数量合计
+	 */
+	totalNum: string
+}
+/** 订单状态枚举 */
+enum OrderState {
+	/** 待付款 */
+	PendingPayment = 1,
+	/** 待发货 */
+	PendingShipment = 2,
+	/** 待收货 */
+	PendingDelivery = 3,
+	/** 待评价 */
+	PendingReview = 4,
+	/** 已完成 */
+	Completed = 5,
+	/** 已取消 */
+	Cancelled = 6
+}

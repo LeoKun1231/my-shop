@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-11 19:02:23
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-06 21:18:22
+ * @LastEditTime: 2023-09-12 19:41:48
  * @FilePath: \hello-uniapp\src\pages\cart\cart.vue
  * @Description: 
 -->
@@ -124,9 +124,11 @@ const handleSelectedAll = (isSelectedAll: boolean) => {
 								<view class="bg-white py-2 w-full flex items-center rounded-2">
 									<view class="w-10 center">
 										<radio
+											class="!w-10 center"
 											@click="handleRadioChange(cart)"
 											style="transform: scale(0.8)"
 											color="#fbb957"
+											:value="cart.id"
 											:checked="cart.selected"
 										/>
 									</view>

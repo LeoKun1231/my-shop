@@ -50,6 +50,7 @@ declare global {
   const getOrderAgaa: (typeof import('../api/order'))['getOrderAgaa']
   const getOrderAgainAPI: typeof import('../api/order')['getOrderAgainAPI']
   const getOrderDetailAPI: typeof import('../api/order')['getOrderDetailAPI']
+  const getOrderListAPI: typeof import('../api/order')['getOrderListAPI']
   const getOrderLogisticsAPI: typeof import('../api/order')['getOrderLogisticsAPI']
   const getOrderMockPayAPI: typeof import('../api/order')['getOrderMockPayAPI']
   const getOrderMockShipmentAPI: typeof import('../api/order')['getOrderMockShipmentAPI']
@@ -149,6 +150,7 @@ declare global {
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
   const useModeStore: typeof import('../store/modules/useMode')['useModeStore']
+  const useOrderStore: typeof import('../store/modules/useOrder')['useOrderStore']
   const useSlots: typeof import('vue')['useSlots']
   const useSystem: typeof import('../composables/useSystem')['useSystem']
   const useUserStore: typeof import('../store/modules/useUser')['useUserStore']
@@ -206,6 +208,7 @@ declare module 'vue' {
     readonly getHotDataAPI: UnwrapRef<typeof import('../api/hot')['getHotDataAPI']>
     readonly getOrderAgainAPI: UnwrapRef<typeof import('../api/order')['getOrderAgainAPI']>
     readonly getOrderDetailAPI: UnwrapRef<typeof import('../api/order')['getOrderDetailAPI']>
+    readonly getOrderListAPI: UnwrapRef<typeof import('../api/order')['getOrderListAPI']>
     readonly getOrderLogisticsAPI: UnwrapRef<typeof import('../api/order')['getOrderLogisticsAPI']>
     readonly getOrderMockPayAPI: UnwrapRef<typeof import('../api/order')['getOrderMockPayAPI']>
     readonly getOrderMockShipmentAPI: UnwrapRef<typeof import('../api/order')['getOrderMockShipmentAPI']>
@@ -301,6 +304,7 @@ declare module 'vue' {
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useModeStore: UnwrapRef<typeof import('../store/modules/useMode')['useModeStore']>
+    readonly useOrderStore: UnwrapRef<typeof import('../store/modules/useOrder')['useOrderStore']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useSystem: UnwrapRef<typeof import('../composables/useSystem')['useSystem']>
     readonly useUserStore: UnwrapRef<typeof import('../store/modules/useUser')['useUserStore']>
@@ -352,6 +356,7 @@ declare module '@vue/runtime-core' {
     readonly getHotDataAPI: UnwrapRef<typeof import('../api/hot')['getHotDataAPI']>
     readonly getOrderAgainAPI: UnwrapRef<typeof import('../api/order')['getOrderAgainAPI']>
     readonly getOrderDetailAPI: UnwrapRef<typeof import('../api/order')['getOrderDetailAPI']>
+    readonly getOrderListAPI: UnwrapRef<typeof import('../api/order')['getOrderListAPI']>
     readonly getOrderLogisticsAPI: UnwrapRef<typeof import('../api/order')['getOrderLogisticsAPI']>
     readonly getOrderMockPayAPI: UnwrapRef<typeof import('../api/order')['getOrderMockPayAPI']>
     readonly getOrderMockShipmentAPI: UnwrapRef<typeof import('../api/order')['getOrderMockShipmentAPI']>
@@ -447,6 +452,7 @@ declare module '@vue/runtime-core' {
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useModeStore: UnwrapRef<typeof import('../store/modules/useMode')['useModeStore']>
+    readonly useOrderStore: UnwrapRef<typeof import('../store/modules/useOrder')['useOrderStore']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useSystem: UnwrapRef<typeof import('../composables/useSystem')['useSystem']>
     readonly useUserStore: UnwrapRef<typeof import('../store/modules/useUser')['useUserStore']>

@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-27 11:43:58
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-10 19:10:00
+ * @LastEditTime: 2023-09-12 19:37:17
  * @FilePath: \hello-uniapp\src\pages\detail\components\detail-content.vue
  * @Description: 
 -->
@@ -46,6 +46,20 @@ const handleButtonClick: UniHelper.UniGoodsNavOnButtonClick = (e) => {
 	}
 }
 
+const handleUniGoodsNavClick: UniHelper.UniGoodsNavOnClick = (e) => {
+	if (e.index != 2) {
+		uni.showToast({
+			title: '暂未开发',
+			icon: 'none'
+		})
+		return
+	} else {
+		uni.switchTab({
+			url: '/pages/cart/cart'
+		})
+	}
+}
+
 /**
  * 底部购物导航栏配置
  */
@@ -57,14 +71,12 @@ const options = ref<UniHelper.UniGoodsNavOption[]>([
 	{
 		icon: 'shop',
 		text: '店铺',
-		info: 2,
 		infoBackgroundColor: '#007aff',
 		infoColor: '#f5f5f5'
 	},
 	{
 		icon: 'cart',
-		text: '购物车',
-		info: 2
+		text: '购物车'
 	}
 ])
 const buttonGroup = [
@@ -128,7 +140,13 @@ const handleAddressChange = (value: string) => {
 		</app-popup>
 	</view>
 	<view class="goods-carts">
-		<uni-goods-nav :options="options" :fill="true" :button-group="buttonGroup" @button-click="handleButtonClick" />
+		<uni-goods-nav
+			@click="handleUniGoodsNavClick"
+			:options="options"
+			:fill="true"
+			:button-group="buttonGroup"
+			@button-click="handleButtonClick"
+		/>
 	</view>
 	<detail-sku v-model="selectShop" :goods="goods" ref="detailSkuRef" :addressId="addressId" />
 </template>

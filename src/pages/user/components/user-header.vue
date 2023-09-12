@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-30 10:25:42
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-02 12:12:52
+ * @LastEditTime: 2023-09-10 19:22:41
  * @FilePath: \hello-uniapp\src\pages\user\components\user-header.vue
  * @Description: 
 -->
@@ -12,11 +12,11 @@ const userStore = useUserStore()
 const { user } = storeToRefs(userStore)
 
 const icons = [
-	{ title: '待付款', src: '/static/images/payment.png' },
-	{ title: '待发货', src: '/static/images/delivery.png' },
-	{ title: '待收货', src: '/static/images/receiving.png' },
-	{ title: '待评价', src: '/static/images/payment.png' },
-	{ title: '售后', src: '/static/images/chat.png' }
+	{ title: '待付款', src: '/static/images/payment.png', type: 1 },
+	{ title: '待发货', src: '/static/images/delivery.png', type: 2 },
+	{ title: '待收货', src: '/static/images/receiving.png', type: 3 },
+	{ title: '待评价', src: '/static/images/payment.png', type: 4 },
+	{ title: '售后', src: '/static/images/chat.png', type: 5 }
 ]
 
 const { safeAreaTop } = useSystem()
@@ -46,6 +46,19 @@ const lookAvatar = () => {
 const handleGoToSetting = () => {
 	uni.navigateTo({
 		url: '/sub-pages/setting/setting'
+	})
+}
+
+const goToOrderList = (type: number) => {
+	if (type == 5) {
+		uni.showToast({
+			title: '暂未开放',
+			icon: 'none'
+		})
+		return
+	}
+	uni.navigateTo({
+		url: `/sub-pages/order-list/order-list?type=${type}`
 	})
 }
 </script>
@@ -86,7 +99,7 @@ const handleGoToSetting = () => {
 				</view>
 			</view>
 			<view class="around mt-4">
-				<view class="flex-col center" v-for="icon in icons" :key="icon.title">
+				<view class="flex-col center" v-for="icon in icons" :key="icon.title" @click="goToOrderList(icon.type)">
 					<image :src="icon.src" class="w-6 h-6" />
 					<view class="mt-1 text-[#333]">{{ icon.title }}</view>
 				</view>
