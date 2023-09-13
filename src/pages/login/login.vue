@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-27 17:47:15
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-13 18:43:41
+ * @LastEditTime: 2023-09-13 20:34:57
  * @FilePath: \hello-uniapp\src\pages\login\login.vue
  * @Description: 
 -->
@@ -15,12 +15,6 @@ const handleWeixinLogin = () => {
 }
 const userStore = useUserStore()
 const { user } = storeToRefs(userStore)
-
-onLoad(() => {
-	uni.showLoading({
-		title: '加载中...'
-	})
-})
 
 const handleMockLogin = async () => {
 	//18600000000

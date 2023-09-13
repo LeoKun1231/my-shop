@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-09-10 20:16:23
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-12 20:03:30
+ * @LastEditTime: 2023-09-13 20:33:02
  * @FilePath: \hello-uniapp\src\sub-pages\order-list\components\order-list-item.vue
  * @Description: 
 -->
@@ -141,15 +141,15 @@ const goToOrderDetail = (id: string) => {
 </script>
 
 <template>
-	<app-scroll-view class="p-2" :scrolltolower="handleScollToLower" :refresher-enabled="false">
-		<view class="bg-white rounded-1 mb-2 p-2" v-for="order in orderList" :key="order.id">
+	<app-scroll-view :scrolltolower="handleScollToLower" :refresher-enabled="false">
+		<view class="bg-white m-2 rounded-1 mb-2 p-2" v-for="order in orderList" :key="order.id">
 			<view @click="goToOrderDetail(order.id)">
 				<view class="text-[#999] between text-sm">
 					<view>{{ order.createTime }}</view>
 					<view class="center-y">
 						<view>{{ orderState[order.orderState] }}</view>
 						<view
-							class="ml-1 center-y before:(content-['|'] inline-block mr-1 text-[#ddd])"
+							class="ml-1 center-y order-list-item-delete"
 							v-if="order.orderState == OrderState.Cancelled || order.orderState == OrderState.PendingReview"
 						>
 							<view class="i-carbon-delete" @click.stop="handleRemoveOrder(order.id)"></view>
@@ -198,4 +198,13 @@ const goToOrderDetail = (id: string) => {
 	</app-scroll-view>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.order-list-item-delete {
+	&::before {
+		content: '|';
+		display: inline-block;
+		margin-right: 4rpx;
+		color: #ddd;
+	}
+}
+</style>
