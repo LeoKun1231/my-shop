@@ -122,8 +122,8 @@ const handleSelectedAll = (isSelectedAll: boolean) => {
 					</view>
 					<view class="w-full">
 						<uni-swipe-action>
-							<uni-swipe-action-item class="mb-2 rounded-2" v-for="cart in cartList" :key="cart.skuId">
-								<view>
+							<uni-swipe-action-item class="rounded-2" v-for="cart in cartList" :key="cart.skuId">
+								<view class="mb-2">
 									<view class="bg-white py-2 w-full flex items-center rounded-2">
 										<view class="w-10 center">
 											<radio

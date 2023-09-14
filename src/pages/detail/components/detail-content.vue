@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-27 11:43:58
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-12 19:37:17
+ * @LastEditTime: 2023-09-14 17:12:07
  * @FilePath: \hello-uniapp\src\pages\detail\components\detail-content.vue
  * @Description: 
 -->
@@ -23,10 +23,10 @@ const popupRef = ref<AppPopupType>()
 type PopupType = '选购' | '配送至' | '服务说明'
 const currentPopupType = ref<PopupType>('选购')
 const detailSkuRef = ref<InstanceType<typeof detailSku>>()
-const modeStore = useModeStore()
+const skuModeStore = useSkuModeStore()
 const handleOpenPopup = (type: PopupType) => {
 	if (type == '选购') {
-		modeStore.setMode(SkuMode.Both)
+		skuModeStore.setSkuMode(SkuMode.Both)
 		detailSkuRef.value?.openOrClose(true)
 	} else {
 		popupRef.value?.open!()
@@ -40,9 +40,9 @@ const selectShop = ref('')
 const handleButtonClick: UniHelper.UniGoodsNavOnButtonClick = (e) => {
 	detailSkuRef.value?.openOrClose(true)
 	if (e.index == 0) {
-		modeStore.setMode(SkuMode.Cart)
+		skuModeStore.setSkuMode(SkuMode.Cart)
 	} else if (e.index == 1) {
-		modeStore.setMode(SkuMode.Buy)
+		skuModeStore.setSkuMode(SkuMode.Buy)
 	}
 }
 

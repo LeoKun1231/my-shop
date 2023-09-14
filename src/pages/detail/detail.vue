@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-26 17:43:24
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-09-06 10:43:31
+ * @LastEditTime: 2023-09-14 12:42:11
  * @FilePath: \hello-uniapp\src\pages\detail\detail.vue
  * @Description: 商品详情
 -->
@@ -25,8 +25,8 @@ async function getGoodDetailData(id: string) {
 </script>
 
 <template>
-	<view class="h-[calc(100vh-50px)] overflow-hidden" v-if="detailData">
-		<app-scroll-view class="h-full" :refresher-enabled="false" :padding-bottom="50">
+	<view class="h-100% overflow-hidden" v-if="detailData">
+		<app-scroll-view class="!h-[calc(100%-50px)] !overflow-hidden" :refresher-enabled="false" :padding-bottom="50">
 			<detail-swiper :urls="detailData?.mainPictures" />
 			<detail-content :goods="detailData" />
 			<detail-desc :desc="detailData?.details?.properties" :pictures="detailData?.details?.pictures" />

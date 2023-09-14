@@ -9,14 +9,11 @@ declare global {
   const Gender: typeof import('./profile.d')['Gender']
   const GetClipboardData: typeof import('../utils/board')['GetClipboardData']
   const SetClipboardData: typeof import('../utils/board')['SetClipboardData']
-  const SkuMode: typeof import('../store/modules/useMode')['SkuMode']
+  const SkuMode: typeof import('../store/modules/useSkuMode')['SkuMode']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
   const appFormItem: typeof import('../components/app-form-item/app-form-item.vue')['default']
   const appLoadMore: typeof import('../components/app-load-more/app-load-more.vue')['default']
   const computed: typeof import('vue')['computed']
-  const confirmOrderDelivery: (typeof import('../api/order'))['confirmOrderDelivery']
-  const confirmOrderDeliveryAPI: (typeof import('../api/order'))['confirmOrderDeliveryAPI']
-  const confirmOrderReve: (typeof import('../api/order'))['confirmOrderReve']
   const createApp: typeof import('vue')['createApp']
   const createPinia: typeof import('pinia')['createPinia']
   const customRef: typeof import('vue')['customRef']
@@ -44,10 +41,6 @@ declare global {
   const getHomeCategoryAPI: typeof import('../api/home')['getHomeCategoryAPI']
   const getHomeHotRecommendAPI: typeof import('../api/home')['getHomeHotRecommendAPI']
   const getHotDataAPI: typeof import('../api/hot')['getHotDataAPI']
-  const getLogisticsAPI: (typeof import('../api/order'))['getLogisticsAPI']
-  const getMockPayAPI: (typeof import('../api/order'))['getMockPayAPI']
-  const getMockShipmentAPI: (typeof import('../api/order'))['getMockShipmentAPI']
-  const getOrderAgaa: (typeof import('../api/order'))['getOrderAgaa']
   const getOrderAgainAPI: typeof import('../api/order')['getOrderAgainAPI']
   const getOrderDetailAPI: typeof import('../api/order')['getOrderDetailAPI']
   const getOrderListAPI: typeof import('../api/order')['getOrderListAPI']
@@ -57,7 +50,6 @@ declare global {
   const getOrderPreAPI: typeof import('../api/order')['getOrderPreAPI']
   const getOrderPreNowAPI: typeof import('../api/order')['getOrderPreNowAPI']
   const getUserProfileAPI: typeof import('../api/profile')['getUserProfileAPI']
-  const getWeiXinPayParams: (typeof import('../api/order'))['getWeiXinPayParams']
   const getWeiXinPayParamsAPI: typeof import('../api/order')['getWeiXinPayParamsAPI']
   const h: typeof import('vue')['h']
   const i18n: typeof import('../components/app-load-more/i18n/index.js')['default']
@@ -118,11 +110,9 @@ declare global {
   const provide: typeof import('vue')['provide']
   const put: typeof import('../utils/request')['put']
   const putAddressAPI: typeof import('../api/address')['putAddressAPI']
-  const putBuyCartAPI: (typeof import('../api/cart'))['putBuyCartAPI']
   const putCancelOrderAPI: typeof import('../api/order')['putCancelOrderAPI']
   const putCartAPI: typeof import('../api/cart')['putCartAPI']
   const putCartAllSelectedAPI: typeof import('../api/cart')['putCartAllSelectedAPI']
-  const putConfirmOrderDeliveryAPI: (typeof import('../api/order'))['putConfirmOrderDeliveryAPI']
   const putOrderConfirmOrderDeliveryAPI: typeof import('../api/order')['putOrderConfirmOrderDeliveryAPI']
   const putUserProfileAPI: typeof import('../api/profile')['putUserProfileAPI']
   const reactive: typeof import('vue')['reactive']
@@ -146,11 +136,10 @@ declare global {
   const useAddressStore: typeof import('../store/modules/useAddress')['useAddressStore']
   const useAppGuessLike: typeof import('../composables/useAppGuessLike')['default']
   const useAttrs: typeof import('vue')['useAttrs']
-  const useBack: (typeof import('../composables/useBack'))['useBack']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
-  const useModeStore: typeof import('../store/modules/useMode')['useModeStore']
   const useOrderStore: typeof import('../store/modules/useOrder')['useOrderStore']
+  const useSkuModeStore: typeof import('../store/modules/useSkuMode')['useSkuModeStore']
   const useSlots: typeof import('vue')['useSlots']
   const useSystem: typeof import('../composables/useSystem')['useSystem']
   const useUserStore: typeof import('../store/modules/useUser')['useUserStore']
@@ -174,7 +163,7 @@ declare module 'vue' {
     readonly Gender: UnwrapRef<typeof import('./profile.d')['Gender']>
     readonly GetClipboardData: UnwrapRef<typeof import('../utils/board')['GetClipboardData']>
     readonly SetClipboardData: UnwrapRef<typeof import('../utils/board')['SetClipboardData']>
-    readonly SkuMode: UnwrapRef<typeof import('../store/modules/useMode')['SkuMode']>
+    readonly SkuMode: UnwrapRef<typeof import('../store/modules/useSkuMode')['SkuMode']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
     readonly appFormItem: UnwrapRef<typeof import('../components/app-form-item/app-form-item.vue')['default']>
     readonly appLoadMore: UnwrapRef<typeof import('../components/app-load-more/app-load-more.vue')['default']>
@@ -303,8 +292,8 @@ declare module 'vue' {
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
-    readonly useModeStore: UnwrapRef<typeof import('../store/modules/useMode')['useModeStore']>
     readonly useOrderStore: UnwrapRef<typeof import('../store/modules/useOrder')['useOrderStore']>
+    readonly useSkuModeStore: UnwrapRef<typeof import('../store/modules/useSkuMode')['useSkuModeStore']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useSystem: UnwrapRef<typeof import('../composables/useSystem')['useSystem']>
     readonly useUserStore: UnwrapRef<typeof import('../store/modules/useUser')['useUserStore']>
@@ -322,7 +311,7 @@ declare module '@vue/runtime-core' {
     readonly Gender: UnwrapRef<typeof import('./profile.d')['Gender']>
     readonly GetClipboardData: UnwrapRef<typeof import('../utils/board')['GetClipboardData']>
     readonly SetClipboardData: UnwrapRef<typeof import('../utils/board')['SetClipboardData']>
-    readonly SkuMode: UnwrapRef<typeof import('../store/modules/useMode')['SkuMode']>
+    readonly SkuMode: UnwrapRef<typeof import('../store/modules/useSkuMode')['SkuMode']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
     readonly appFormItem: UnwrapRef<typeof import('../components/app-form-item/app-form-item.vue')['default']>
     readonly appLoadMore: UnwrapRef<typeof import('../components/app-load-more/app-load-more.vue')['default']>
@@ -451,8 +440,8 @@ declare module '@vue/runtime-core' {
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
-    readonly useModeStore: UnwrapRef<typeof import('../store/modules/useMode')['useModeStore']>
     readonly useOrderStore: UnwrapRef<typeof import('../store/modules/useOrder')['useOrderStore']>
+    readonly useSkuModeStore: UnwrapRef<typeof import('../store/modules/useSkuMode')['useSkuModeStore']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
     readonly useSystem: UnwrapRef<typeof import('../composables/useSystem')['useSystem']>
     readonly useUserStore: UnwrapRef<typeof import('../store/modules/useUser')['useUserStore']>

@@ -2,7 +2,7 @@
  * @Author: Leo l024983409@qq.com
  * @Date: 2023-08-11 18:59:32
  * @LastEditors: Leo l024983409@qq.com
- * @LastEditTime: 2023-08-25 19:16:39
+ * @LastEditTime: 2023-09-14 10:32:46
  * @FilePath: \hello-uniapp\src\pages\home\home.vue
  * @Description: 首页
 -->
@@ -72,7 +72,7 @@ async function getRecommendData() {
 	<home-header />
 	<home-skeleton v-if="isLoading" />
 	<app-scroll-view
-		class="fles-1 h-full overflow-hidden"
+		class="home-app-scroll-view flex-1 overflow-hidden"
 		v-else
 		:refresher-triggered="isRefresh"
 		:refresherrefresh="handleRefresh"
@@ -87,11 +87,23 @@ async function getRecommendData() {
 	</app-scroll-view>
 </template>
 <style lang="scss">
+/* #ifdef APP-PLUS */
+app,
+/* #endif */
 page {
 	height: 100%;
 	background-color: #f4f4f4;
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
+}
+
+.home-app-scroll-view {
+	/* #ifdef APP-PLUS */
+	height: calc(100% - 206rpx);
+	/* #endif */
+	/* #ifndef APP-PLUS */
+	height: 100%;
+	/* #endif */
 }
 </style>

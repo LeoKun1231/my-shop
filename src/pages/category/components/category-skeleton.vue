@@ -3,7 +3,7 @@
 		<view class="h-[56px] center w-full">
 			<view class="bg-[#f8f8f8] h-[36px] rounded-10 w-94%"></view>
 		</view>
-		<view class="h-_a_calc_a_100_a_-56px_a__a_">
+		<view class="h-[calc(100%-56px)]">
 			<view
 				class="flex category--flex flex-1 category--flex-1 h-full category--h-full data-v-6520f5e8 category--data-v-6520f5e8"
 			>
@@ -67,6 +67,54 @@
 								>杂项</view
 							>
 						</view>
+						<view class="px-4 category--px-4 py-2 category--py-2 data-v-6520f5e8 category--data-v-6520f5e8">
+							<view
+								class="text category--text px-3 category--px-3 py-2 category--py-2 border-b-1 category--border-b-1 border-b-solid category--border-b-solid border-b-_a__a_e2e2e2_a_ category--border-b-_a__a_e2e2e2_a_ text-black category--text-black data-v-6520f5e8 category--data-v-6520f5e8 sk-transparent sk-text-14-2857-85 sk-text"
+								>杂项</view
+							>
+						</view>
+						<view class="px-4 category--px-4 py-2 category--py-2 data-v-6520f5e8 category--data-v-6520f5e8">
+							<view
+								class="text category--text px-3 category--px-3 py-2 category--py-2 border-b-1 category--border-b-1 border-b-solid category--border-b-solid border-b-_a__a_e2e2e2_a_ category--border-b-_a__a_e2e2e2_a_ text-black category--text-black data-v-6520f5e8 category--data-v-6520f5e8 sk-transparent sk-text-14-2857-85 sk-text"
+								>杂项</view
+							>
+						</view>
+						<view class="px-4 category--px-4 py-2 category--py-2 data-v-6520f5e8 category--data-v-6520f5e8">
+							<view
+								class="text category--text px-3 category--px-3 py-2 category--py-2 border-b-1 category--border-b-1 border-b-solid category--border-b-solid border-b-_a__a_e2e2e2_a_ category--border-b-_a__a_e2e2e2_a_ text-black category--text-black data-v-6520f5e8 category--data-v-6520f5e8 sk-transparent sk-text-14-2857-85 sk-text"
+								>杂项</view
+							>
+						</view>
+						<view class="px-4 category--px-4 py-2 category--py-2 data-v-6520f5e8 category--data-v-6520f5e8">
+							<view
+								class="text category--text px-3 category--px-3 py-2 category--py-2 border-b-1 category--border-b-1 border-b-solid category--border-b-solid border-b-_a__a_e2e2e2_a_ category--border-b-_a__a_e2e2e2_a_ text-black category--text-black data-v-6520f5e8 category--data-v-6520f5e8 sk-transparent sk-text-14-2857-85 sk-text"
+								>杂项</view
+							>
+						</view>
+						<view class="px-4 category--px-4 py-2 category--py-2 data-v-6520f5e8 category--data-v-6520f5e8">
+							<view
+								class="text category--text px-3 category--px-3 py-2 category--py-2 border-b-1 category--border-b-1 border-b-solid category--border-b-solid border-b-_a__a_e2e2e2_a_ category--border-b-_a__a_e2e2e2_a_ text-black category--text-black data-v-6520f5e8 category--data-v-6520f5e8 sk-transparent sk-text-14-2857-85 sk-text"
+								>杂项</view
+							>
+						</view>
+						<view class="px-4 category--px-4 py-2 category--py-2 data-v-6520f5e8 category--data-v-6520f5e8">
+							<view
+								class="text category--text px-3 category--px-3 py-2 category--py-2 border-b-1 category--border-b-1 border-b-solid category--border-b-solid border-b-_a__a_e2e2e2_a_ category--border-b-_a__a_e2e2e2_a_ text-black category--text-black data-v-6520f5e8 category--data-v-6520f5e8 sk-transparent sk-text-14-2857-85 sk-text"
+								>杂项</view
+							>
+						</view>
+						<view class="px-4 category--px-4 py-2 category--py-2 data-v-6520f5e8 category--data-v-6520f5e8">
+							<view
+								class="text category--text px-3 category--px-3 py-2 category--py-2 border-b-1 category--border-b-1 border-b-solid category--border-b-solid border-b-_a__a_e2e2e2_a_ category--border-b-_a__a_e2e2e2_a_ text-black category--text-black data-v-6520f5e8 category--data-v-6520f5e8 sk-transparent sk-text-14-2857-85 sk-text"
+								>杂项</view
+							>
+						</view>
+						<view class="px-4 category--px-4 py-2 category--py-2 data-v-6520f5e8 category--data-v-6520f5e8">
+							<view
+								class="text category--text px-3 category--px-3 py-2 category--py-2 border-b-1 category--border-b-1 border-b-solid category--border-b-solid border-b-_a__a_e2e2e2_a_ category--border-b-_a__a_e2e2e2_a_ text-black category--text-black data-v-6520f5e8 category--data-v-6520f5e8 sk-transparent sk-text-14-2857-85 sk-text"
+								>杂项</view
+							>
+						</view>
 					</view>
 				</view>
 				<view class="flex-1 category--flex-1 h-full category--h-full data-v-6520f5e8 category--data-v-6520f5e8">
@@ -85,6 +133,164 @@
 										<image class="h-full swiper--h-full w-full swiper--w-full sk-image" mode="aspectFill"></image>
 									</swiper-item>
 								</swiper>
+							</view>
+						</view>
+						<view>
+							<view>
+								<view class="between py-3 mb-2 border-b-1 border-b-solid border-b-[#f8f8f8]">
+									<view class="sk-transparent sk-text-14-2857-440 sk-text">居家生活用品</view>
+									<view class="text-gray-300 center text-xs">
+										<view class="sk-transparent sk-text-12-5000-556 sk-text">全部</view>
+										<view class="ml-_a_-0_a_1rem_a_ w-_a_28rpx_a_ h-_a_28rpx_a_ i-carbon-chevron-right"></view>
+									</view>
+								</view>
+								<view class="grid grid-cols-3 gap-4">
+									<view>
+										<image :lazy-load="true" class="w-full sk-image" mode="widthFix" style="height: 79.6562px"></image>
+										<view
+											class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-408 sk-text"
+											>飞天53%vol500ml贵州茅台酒（带杯）</view
+										>
+										<view class="flex items-center text-sm text-_a__a_f00_a_">
+											<view class="symbol sk-transparent sk-opacity">¥</view>
+											<view class="ml-0_a_25 sk-transparent sk-text-15-0000-943 sk-text">1499.00</view>
+										</view>
+									</view>
+									<view>
+										<image :lazy-load="true" class="w-full sk-image" mode="widthFix" style="height: 79.6562px"></image>
+										<view
+											class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-439 sk-text"
+											>苏格兰陈年单一麦芽威士忌700毫升</view
+										>
+										<view class="flex items-center text-sm text-_a__a_f00_a_">
+											<view class="symbol sk-transparent sk-opacity">¥</view>
+											<view class="ml-0_a_25 sk-transparent sk-text-15-0000-237 sk-text">318.00</view>
+										</view>
+									</view>
+									<view>
+										<image :lazy-load="true" class="w-full sk-image" mode="widthFix" style="height: 79.6562px"></image>
+										<view
+											class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-445 sk-text"
+											>地道卤香好味道，桂林鲜米粉245克*6盒</view
+										>
+										<view class="flex items-center text-sm text-_a__a_f00_a_">
+											<view class="symbol sk-transparent sk-opacity">¥</view>
+											<view class="ml-0_a_25 sk-transparent sk-text-15-0000-124 sk-text">69.00</view>
+										</view>
+									</view>
+									<view>
+										<image :lazy-load="true" class="w-full sk-image" mode="widthFix" style="height: 79.6562px"></image>
+										<view
+											class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-983 sk-text"
+											>玛歌正牌干红750毫升2017年</view
+										>
+										<view class="flex items-center text-sm text-_a__a_f00_a_">
+											<view class="symbol sk-transparent sk-opacity">¥</view>
+											<view class="ml-0_a_25 sk-transparent sk-text-15-0000-891 sk-text">6699.00</view>
+										</view>
+									</view>
+									<view>
+										<image :lazy-load="true" class="w-full sk-image" mode="widthFix" style="height: 79.6562px"></image>
+										<view
+											class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-214 sk-text"
+											>下饭神器酸豆角50克*10袋</view
+										>
+										<view class="flex items-center text-sm text-_a__a_f00_a_">
+											<view class="symbol sk-transparent sk-opacity">¥</view>
+											<view class="ml-0_a_25 sk-transparent sk-text-15-0000-707 sk-text">16.00</view>
+										</view>
+									</view>
+									<view>
+										<image :lazy-load="true" class="w-full sk-image" mode="widthFix" style="height: 79.6562px"></image>
+										<view
+											class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-763 sk-text"
+											>古田糯耳150克</view
+										>
+										<view class="flex items-center text-sm text-_a__a_f00_a_">
+											<view class="symbol sk-transparent sk-opacity">¥</view>
+											<view class="ml-0_a_25 sk-transparent sk-text-15-0000-848 sk-text">26.00</view>
+										</view>
+									</view>
+								</view>
+							</view>
+						</view>
+						<view>
+							<view>
+								<view class="between py-3 mb-2 border-b-1 border-b-solid border-b-[#f8f8f8]">
+									<view class="sk-transparent sk-text-14-2857-440 sk-text">居家生活用品</view>
+									<view class="text-gray-300 center text-xs">
+										<view class="sk-transparent sk-text-12-5000-556 sk-text">全部</view>
+										<view class="ml-_a_-0_a_1rem_a_ w-_a_28rpx_a_ h-_a_28rpx_a_ i-carbon-chevron-right"></view>
+									</view>
+								</view>
+								<view class="grid grid-cols-3 gap-4">
+									<view>
+										<image :lazy-load="true" class="w-full sk-image" mode="widthFix" style="height: 79.6562px"></image>
+										<view
+											class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-408 sk-text"
+											>飞天53%vol500ml贵州茅台酒（带杯）</view
+										>
+										<view class="flex items-center text-sm text-_a__a_f00_a_">
+											<view class="symbol sk-transparent sk-opacity">¥</view>
+											<view class="ml-0_a_25 sk-transparent sk-text-15-0000-943 sk-text">1499.00</view>
+										</view>
+									</view>
+									<view>
+										<image :lazy-load="true" class="w-full sk-image" mode="widthFix" style="height: 79.6562px"></image>
+										<view
+											class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-439 sk-text"
+											>苏格兰陈年单一麦芽威士忌700毫升</view
+										>
+										<view class="flex items-center text-sm text-_a__a_f00_a_">
+											<view class="symbol sk-transparent sk-opacity">¥</view>
+											<view class="ml-0_a_25 sk-transparent sk-text-15-0000-237 sk-text">318.00</view>
+										</view>
+									</view>
+									<view>
+										<image :lazy-load="true" class="w-full sk-image" mode="widthFix" style="height: 79.6562px"></image>
+										<view
+											class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-445 sk-text"
+											>地道卤香好味道，桂林鲜米粉245克*6盒</view
+										>
+										<view class="flex items-center text-sm text-_a__a_f00_a_">
+											<view class="symbol sk-transparent sk-opacity">¥</view>
+											<view class="ml-0_a_25 sk-transparent sk-text-15-0000-124 sk-text">69.00</view>
+										</view>
+									</view>
+									<view>
+										<image :lazy-load="true" class="w-full sk-image" mode="widthFix" style="height: 79.6562px"></image>
+										<view
+											class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-983 sk-text"
+											>玛歌正牌干红750毫升2017年</view
+										>
+										<view class="flex items-center text-sm text-_a__a_f00_a_">
+											<view class="symbol sk-transparent sk-opacity">¥</view>
+											<view class="ml-0_a_25 sk-transparent sk-text-15-0000-891 sk-text">6699.00</view>
+										</view>
+									</view>
+									<view>
+										<image :lazy-load="true" class="w-full sk-image" mode="widthFix" style="height: 79.6562px"></image>
+										<view
+											class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-214 sk-text"
+											>下饭神器酸豆角50克*10袋</view
+										>
+										<view class="flex items-center text-sm text-_a__a_f00_a_">
+											<view class="symbol sk-transparent sk-opacity">¥</view>
+											<view class="ml-0_a_25 sk-transparent sk-text-15-0000-707 sk-text">16.00</view>
+										</view>
+									</view>
+									<view>
+										<image :lazy-load="true" class="w-full sk-image" mode="widthFix" style="height: 79.6562px"></image>
+										<view
+											class="line-clamp-2 text-sm py-0_a_5 text-_a__a_333_a_ sk-transparent sk-text-15-0000-763 sk-text"
+											>古田糯耳150克</view
+										>
+										<view class="flex items-center text-sm text-_a__a_f00_a_">
+											<view class="symbol sk-transparent sk-opacity">¥</view>
+											<view class="ml-0_a_25 sk-transparent sk-text-15-0000-848 sk-text">26.00</view>
+										</view>
+									</view>
+								</view>
 							</view>
 						</view>
 						<view>

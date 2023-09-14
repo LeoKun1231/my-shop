@@ -22,8 +22,8 @@ const skuOpen = ref(false)
 const goodInfo = ref<SkuPopupLocaldata>()
 const skuPopupRef = ref<SkuPopupInstanceType>()
 
-const modeStore = useModeStore()
-const { mode } = storeToRefs(modeStore)
+const modeStore = useSkuModeStore()
+const { skuMode } = storeToRefs(modeStore)
 
 const goods = cloneDeep(props.goods)
 
@@ -128,7 +128,7 @@ defineExpose({
 		v-model="skuOpen"
 		border-radius="20"
 		:localdata="goodInfo"
-		:mode="mode"
+		:mode="skuMode"
 		:amount-type="0"
 		buy-now-background-color="linear-gradient(90deg, #FE6035, #EF1224)"
 		add-cart-background-color="linear-gradient(90deg, #FFCD1E, #FF8A18)"
